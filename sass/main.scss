@@ -1,0 +1,693 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+$grey-1: #d2d1d5;
+$grey-2: #acaab6;
+$grey-3: #2c2b30;
+$input-active: rgba(205, 214, 241, 0.5);
+.grey-3 {
+  color: $grey-3 !important;
+}
+
+.post-material {
+  &.step2,
+  &.step3,
+  &.step4,
+  &.step5 {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  color: #000;
+}
+
+.flex-row {
+  display: flex;
+  @media screen and (max-width: 630px) {
+    flex-wrap: wrap;
+    > * {
+      width: 100% !important;
+    }
+  }
+}
+.flex-2column {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > * {
+    width: 48% !important;
+  }
+  @media screen and (max-width: 630px) {
+    > * {
+      width: 100% !important;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  // outline: 1px solid rgb(250, 140, 140);
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  margin: 38px 0 8px;
+}
+h4 {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: $grey-3;
+}
+h5 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 10px 0;
+}
+a {
+  color: $grey-3;
+}
+
+p {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: $grey-2;
+  margin: 10px 0;
+}
+textarea {
+  width: 100%;
+  border: none;
+  background: rgba(237, 239, 248, 0.5);
+  border-radius: 20px;
+  outline: none;
+  padding: 20px;
+  &:focus {
+    background: $input-active;
+  }
+  ::placeholder {
+    color: $grey-1;
+  }
+}
+/* button type="submit"***************************************************************************************************** */
+
+.validateBtn {
+  width: 156px;
+  background: $grey-3;
+  box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.6),
+    0px -4px 10px rgba(255, 255, 255, 0.92);
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  height: 48px;
+  margin-top: 130px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: 0.1s;
+  &:hover {
+    background: #000;
+  }
+  &:active {
+    box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.4),
+      0px -4px 10px rgba(255, 255, 255, 0.8);
+  }
+}
+/* input**************************************************************************************************** */
+
+input {
+  border: none;
+  border-radius: 20px;
+  height: 56px;
+  background: rgba(237, 239, 248, 0.5);
+  // TODO удалить
+  // background: #ddd;
+  width: 100%;
+  outline: none;
+  padding: 0 16px;
+  &::placeholder {
+    font-size: 16px;
+    line-height: 18px;
+    color: $grey-2;
+  }
+  &:focus {
+    background: $input-active;
+  }
+}
+
+.text {
+  position: relative;
+}
+
+/* error******************************************************************************************************************* */
+
+.error {
+  font-size: 12px;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  & + .error {
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+  }
+}
+
+/* input-wrapper (with icon) ******************************************************************************************************************* */
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 22px;
+  &__icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 7px;
+    top: 10px;
+    background: linear-gradient(
+        135.37deg,
+        rgba(0, 0, 0, 0.4) 4.29%,
+        rgba(255, 255, 255, 0.4) 95.6%
+      ),
+      #ffffff;
+    background-blend-mode: soft-light, normal;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px rgba(172, 170, 182, 0.6),
+      -2px -2px 5px rgba(237, 239, 248, 0.5);
+    border-radius: 40px;
+  }
+  &__add-file-button {
+    background: linear-gradient(
+        141.89deg,
+        rgba(0, 0, 0, 0.4) 4.29%,
+        rgba(255, 255, 255, 0.4) 95.6%
+      ),
+      #ffffff;
+    background-blend-mode: soft-light, normal;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    box-shadow: 4px 4px 10px rgba(214, 216, 224, 0.67),
+      -4px -4px 7px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    width: max-content;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    color: $grey-2;
+
+    mix-blend-mode: normal;
+    cursor: pointer;
+
+    span {
+      margin-bottom: 13px;
+      display: inline-block;
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+  }
+  &__input {
+    padding-left: 55px;
+    &[type="file"] {
+      display: none;
+    }
+    &--low {
+      padding: 15px 15px 5px 55px;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  &__hint {
+    position: absolute;
+    top: -20px;
+    left: 55px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: $grey-2;
+  }
+}
+.text,
+select {
+  margin-bottom: 20px;
+}
+
+/* radio**************************************************************************************************** */
+
+.radio {
+  border-radius: 40px;
+  h4 {
+    margin: 20px 0 35px;
+  }
+  &__item {
+    height: 45px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 40px;
+    margin-bottom: 1px;
+    cursor: pointer;
+
+    &:hover {
+      background: $input-active;
+    }
+    &:focus-within {
+      background: $input-active;
+    }
+  }
+
+  &__text {
+    /* width: 100%; */
+    height: 100%;
+    padding: 14px 0 0 14px;
+    color: #000;
+  }
+
+  &__input {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+  }
+}
+// tabs************************************************************************************************************
+.tabs {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: $grey-1;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  text-transform: uppercase;
+  align-items: center;
+
+  .active {
+    color: $grey-3;
+  }
+
+  li[data-step] {
+    cursor: pointer;
+    transition: 0.2s;
+
+    :not(.active):hover {
+      color: $grey-2;
+    }
+  }
+}
+
+/* logoFormalist********************************************************************************************** */
+
+.logoFormalist {
+  margin-top: 130px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  &__label {
+    font-size: 14px;
+    line-height: 16px;
+    color: #b0c0f0;
+  }
+
+  &__icon {
+    height: 40px;
+    width: 70px;
+  }
+}
+// step1******************************************************************************************
+// ************************************************************************************************
+.step1 form {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "fio           fio         "
+    "tel           email       "
+    "line          line        "
+    "radio         organization"
+    "radio         jobTitle    "
+    "radio         .           "
+    "logoFormalist validateBtn ";
+  .fio {
+    grid-area: fio;
+  }
+  .tel {
+    grid-area: tel;
+  }
+  .email {
+    grid-area: email;
+  }
+  .line {
+    grid-area: line;
+    border-bottom: 2px solid #000;
+    margin: 20px 0;
+  }
+
+  .radio {
+    grid-area: radio;
+  }
+  .organization {
+    grid-area: organization;
+    padding-top: 70px;
+  }
+  .jobTitle {
+    grid-area: jobTitle;
+  }
+  .logoFormalist {
+    grid-area: logoFormalist;
+  }
+  .validateBtn {
+    grid-area: validateBtn;
+  }
+  @media screen and (max-width: 630px) {
+    grid-template-areas:
+      "fio fio  "
+      "tel tel"
+      "email email"
+      "radio radio"
+      "organization organization"
+      "jobTitle jobTitle"
+      "logoFormalist validateBtn";
+    .organization {
+      padding-top: 0px;
+    }
+    .logoFormalist,
+    .validateBtn {
+      margin-top: 20px;
+    }
+  }
+}
+
+// step2******************************************************************************************
+// ************************************************************************************************
+
+.step2 {
+  form {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "who-committed    who-dont-react  "
+      "where-committed  where-committed "
+      "who-was-informed who-was-informed"
+      "appeal           appeal          "
+      "evidence         evidence        "
+      "logoFormalist    validateBtn     ";
+    .who-committed {
+      grid-area: who-committed;
+    }
+    .who-dont-react {
+      grid-area: who-dont-react;
+    }
+    .where-committed {
+      grid-area: where-committed;
+    }
+    .who-was-informed {
+      grid-area: who-was-informed;
+    }
+
+    .appeal {
+      grid-area: appeal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .evidence {
+      grid-area: evidence;
+    }
+    .logoFormalist {
+      grid-area: logoFormalist;
+    }
+    .validateBtn {
+      grid-area: validateBtn;
+    }
+    @media screen and (max-width: 630px) {
+      grid-template-areas:
+        "who-committed    who-committed   "
+        "who-dont-react   who-dont-react  "
+        "where-committed  where-committed "
+        "who-was-informed who-was-informed"
+        "appeal           appeal          "
+        "evidence         evidence        "
+        "logoFormalist    validateBtn     ";
+
+      .logoFormalist,
+      .validateBtn {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// step3******************************************************************************************
+// ************************************************************************************************
+.step3 {
+  form {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "photo          heading     "
+      "description    description "
+      "main           main        "
+      "logoFormalist  validateBtn ";
+    @media screen and (max-width: 630px) {
+      grid-template-areas:
+        "photo          photo       "
+        "heading        heading     "
+        "description    description "
+        "main           main        "
+        "logoFormalist  validateBtn ";
+    }
+    .photo {
+      grid-area: photo;
+    }
+    .heading {
+      grid-area: heading;
+    }
+    .description {
+      grid-area: description;
+    }
+    .main {
+      grid-area: main;
+    }
+    .logoFormalist {
+      grid-area: logoFormalist;
+    }
+    .validateBtn {
+      grid-area: validateBtn;
+    }
+    .photo .input-wrapper__add-file-button {
+      width: 147px;
+      height: 130px;
+      padding-top: 40px;
+    }
+
+    .description {
+      p:nth-of-type(2) {
+        margin-bottom: 0;
+      }
+
+      ul {
+        font-size: 14px;
+        color: $grey-2;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+    .examples {
+      display: block;
+      color: $grey-3;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 23px;
+    }
+  }
+}
+
+// step4******************************************************************************************
+// ************************************************************************************************
+.step4 {
+  form {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "suggestion          suggestion     "
+      "logoFormalist  validateBtn ";
+
+    .suggestion {
+      grid-area: suggestion;
+    }
+    .logoFormalist {
+      grid-area: logoFormalist;
+    }
+    .validateBtn {
+      grid-area: validateBtn;
+    }
+  }
+}
+
+// step5******************************************************************************************
+// ************************************************************************************************
+.step5 {
+  h3 {
+    margin-bottom: 30px;
+  }
+  hr {
+    margin: 50px 0;
+  }
+  .validateBtn {
+    float: right;
+  }
+  .logoFormalist {
+    width: 150px;
+  }
+  input {
+    max-width: 370px;
+  }
+  .checkbox {
+    background: rgba(205, 214, 241, 0.3);
+    border-radius: 20px;
+    width: 367px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &__input {
+      width: max-content;
+      height: 16px;
+      margin: 0 9px 0 19px;
+      border: none;
+      outline: none;
+      visibility: hidden;
+      &:checked::after {
+        visibility: visible;
+        display: block;
+        content: "\2714";
+        position: absolute;
+      }
+    }
+  }
+  .email {
+    margin: 50px 0;
+  }
+  form {
+    display: grid;
+    // grid-column-gap: 50px;
+    // grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "acceptTerms          acceptTerms     "
+      "monthlyTransfer          monthlyTransfer     "
+      "email          email     "
+      "transferValueRadio          transferValueRadio     "
+      "transferValueText          transferValueText     "
+      "logoFormalist  validateBtn ";
+
+    .acceptTerms {
+      grid-area: acceptTerms;
+    }
+    .monthlyTransfer {
+      grid-area: monthlyTransfer;
+    }
+    .email {
+      grid-area: email;
+    }
+    .email {
+      grid-area: email;
+    }
+    .email {
+      grid-area: email;
+    }
+    .transferValue.radio {
+      grid-area: transferValueRadio;
+    }
+    .transferValue.text {
+      grid-area: transferValueText;
+    }
+    .logoFormalist {
+      grid-area: logoFormalist;
+      margin-top: 50px;
+    }
+    .validateBtn {
+      grid-area: validateBtn;
+      margin-top: 50px;
+    }
+    .transferValue {
+      &.text {
+        margin-top: 30px;
+        input {
+          width: 140px;
+          height: 40px;
+          ::placeholder {
+            font-size: 14px;
+            line-height: 16px;
+            /* identical to box height */
+
+            text-align: center;
+
+            color: #c5c4cd;
+          }
+        }
+      }
+      .default {
+        display: none;
+      }
+      .radio {
+        &__item {
+          padding: 0;
+          margin-right: 10px;
+          height: 40px;
+        }
+        &__label {
+          line-height: 40px;
+          padding: 0 20px;
+          border-radius: 20px;
+          cursor: pointer;
+        }
+        &__input {
+          display: none;
+          &:checked ~ .radio__label {
+            background: $input-active;
+          }
+        }
+      }
+    }
+  }
+}

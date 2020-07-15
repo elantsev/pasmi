@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщить о коррупции</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul class="tabs">
+            <li data-step="step1" class="active">Кто Вы?</li>
+            <li>&#8594</li>
+            <li data-step="step2">Что произошло? </li>
+            <li>&#8594</li>
+            <li data-step="step3">Статья </li>
+            <li>&#8594</li>
+            <li data-step="step4">Ваши предложения</li>
+            <li>&#8594</li>
+            <li data-step="step5">поддержать редакцию</li>
+        </ul>
+        <div class="post-material step1" id="step1">
+            <h3>Кто Вы?</h3>
+            <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
+            <form action="#">
+                <div class="text fio">
+                    <input type="text" name="fio" placeholder="ФИО">
+                </div>
+                <div class="tel input-wrapper">
+                    <label>
+                        <p class="input-wrapper__hint">моб. телефон</p>
+                        <svg class="input-wrapper__icon">
+                            <use xlink:href="icons.svg#tel"></use>
+                        </svg>
+                        <input class="input-wrapper__input" id="online_phone" name="phone" type="tel" maxlength="50"
+                            value="+7 (___) ___ __ __" placeholder="+7 (___) ___ __ __">
+                    </label>
+                </div>
+                <div class="email input-wrapper">
+                    <label>
+                        <svg class="input-wrapper__icon">
+                            <use xlink:href="icons.svg#email"></use>
+                        </svg>
+                        <input class="input-wrapper__input" name="email" type="text" placeholder="e-mail">
+                    </label>
+                </div>
+                <div class="line"></div>
+                <div class="radio">
+                    <h4>Статус</h4>
+                    <label class="radio__item">
+                        <input class="radio__input" name="status" type="radio" checked value="Executive">
+                        <span class="radio__text">Должностное лицо</span>
+                    </label>
+                    <label class="radio__item">
+                        <input class="radio__input" name="status" type="radio" value="Businessman">
+                        <span class="radio__text">Предприниматель</span>
+                    </label>
+                    <label class="radio__item">
+                        <input class="radio__input" name="status" type="radio" value="Journalist">
+                        <span class="radio__text">Журналист</span>
+                    </label>
+                    <label class="radio__item">
+                        <input class="radio__input" name="status" type="radio" value="Lawyer">
+                        <span class="radio__text">Адвокат</span>
+                    </label>
+                    <label class="radio__item">
+                        <input class="radio__input" name="status" type="radio" value="Individual">
+                        <span class="radio__text">Физическое лицо</span>
+                    </label>
+                </div>
+                <div class="text organization">
+                    <input name="organization" type="text" placeholder="Название организации">
+                </div>
+                <div class="text jobTitle">
+                    <input name="jobTitle" type="text" placeholder="Должность ">
+                </div>
+
+                <div class="logoFormalist">
+                    <p class="logoFormalist__label">Сделано на</p>
+                    <svg class="logoFormalist__icon">
+                        <use xlink:href="icons.svg#logoFormalist"></use>
+                    </svg>
+                </div>
+
+
+
+                <button type="submit" value="" class='validateBtn'>Далее</button>
+
+            </form>
+        </div>
+
+        <div class="post-material step2" id="step2">
+            <h3>Что произошло?</h3>
+            <form action="#">
+                <div class="who-committed">
+                    <h4>Кто совершил правонарушение? </h4>
+                    <select name="">
+                        <option value="">название органа / организации</option>
+                        <option value="1111">11111</option>
+                        <option value="2222">22222</option>
+                    </select>
+                    <div class="input-wrapper fio">
+                        <input type="text" name="CommitPersonFIO" placeholder="ФИО">
+                    </div>
+                    <div class="input-wrapper fio">
+                        <input type="text" name="CommitPersonPosition" placeholder="Должность">
+                    </div>
+                </div>
+                <div class="who-dont-react">
+                    <h4>Кто совершил правонарушение? </h4>
+                    <select name="">
+                        <option value="">название органа</option>
+                        <option value="1111">11111</option>
+                        <option value="2222">22222</option>
+                    </select>
+                    <div class="text fio">
+                        <input type="text" name="dontReactPersonFIO" placeholder="ФИО">
+                    </div>
+                    <div class="text fio">
+                        <input type="text" name="dontReactPersonPosition" placeholder="Должность">
+                    </div>
+                </div>
+                <div class="where-committed">
+                    <h4>Где совершено преступление?</h4>
+                    <div class="flex-2column">
+                        <select name="">
+                            <option value="">субъект</option>
+                            <option value="1111">11111</option>
+                            <option value="2222">22222</option>
+                        </select>
+                        <div class="coordinates input-wrapper">
+                            <label>
+                                <svg class="input-wrapper__icon">
+                                    <use xlink:href="icons.svg#coordinates"></use>
+                                </svg>
+                                <input class="input-wrapper__input " name="coordinates" type="text"
+                                    placeholder="адрес или координаты">
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="who-was-informed ">
+                    <h4>Кому сообщили о коррупции?</h4>
+                    <div class="radio flex-2column">
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" checked value="Putin">
+                            <span class="radio__text">Владимиру Путину</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Bortnikov">
+                            <span class="radio__text">Александру Бортникову</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Kolokoltsev">
+                            <span class="radio__text">Владимиру Колокольцеву</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Lebedev">
+                            <span class="radio__text">Вячеславу Лебедеву</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Krasnov">
+                            <span class="radio__text">Игорю Краснову</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Bastrikin">
+                            <span class="radio__text">Александру Бастрыкину</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="personWasInformed" type="radio" value="Other">
+                            <span class="radio__text">Иному должностному лицу</span>
+                        </label>
+                    </div>
+
+                    <p>Важно обжаловать незаконные действия поэтапно: от местного к региональному, далее на федеральном
+                        уровне. Не нужно сразу писать президенту и главам правоохранительных органов.
+                    </p>
+                    <p class="grey-3">Вы не сможете опубликовать свое обращение без подтверждения, что вы направили
+                        официальное обращение
+                        вышеуказанному должностному лицу. Необходимо прекрепить копию обращения.
+                    </p>
+                </div>
+                <div class="appeal flex-row">
+                    <div class="input-wrapper">
+                        <label>
+                            <p class="input-wrapper__hint">дата обращения</p>
+                            <svg class="input-wrapper__icon">
+                                <use xlink:href="icons.svg#calendar"></use>
+                            </svg>
+                            <input class="input-wrapper__input--low " name="appealPerson" type="date">
+                        </label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" name="appealRegNumber" placeholder="Регистрационный № ">
+                    </div>
+                    <div class="input-wrapper">
+                        <label>
+                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br> файл</p>
+                            <input class="input-wrapper__input" type="file" name="appealFile" multiple>
+                        </label>
+                    </div>
+                </div>
+                <div class="evidence">
+                    <h4>Ваши доказательства</h4>
+                    <div class="input-wrapper">
+                        <label>
+                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br> файл</p>
+                            <input class="input-wrapper__input" type="file" name="personWasInformedFile" multiple>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="logoFormalist">
+                    <p class="logoFormalist__label">Сделано на</p>
+                    <svg class="logoFormalist__icon">
+                        <use xlink:href="icons.svg#logoFormalist"></use>
+                    </svg>
+                </div>
+
+
+
+                <button type="submit" value="" class='validateBtn'>Далее</button>
+            </form>
+        </div>
+        <div class="post-material step3" id="step3">
+            <h3>Статья</h3>
+            <form action="#">
+
+                <div class="photo">
+                    <h4>Фото для статьи</h4>
+                    <div class="input-wrapper">
+                        <label>
+                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br>фото</p>
+                            <input class="input-wrapper__input" type="file" name="appealFile" multiple>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="heading">
+                    <h4>Заголовок</h4>
+                    <p>Одно предложение, которое отражает суть проблемы</p>
+                    <div class="text">
+                        <input type="text" name="fio" placeholder="введите">
+                    </div>
+                    <!-- TODO  в каком формате будет???  -->
+                    <a class="examples" href="http://" target="_blank" rel="noopener noreferrer">&#8250;
+                        Примеры.</a>
+                </div>
+
+                <div class="description">
+                    <h4>Краткое описание</h4>
+                    <p>В 3-5 предложениях опишите краткое содержание вашего обращения. Это должно быть чуть более
+                        расширенное пояснение информации, указанной в заголовке. </p>
+                    <p>Принцип следующий: </p>
+                    <ul>
+                        <li>- что произошло</li>
+                        <li>- кто в этом виноват (замешан)</li>
+                        <li>- какой ущерб (опасность) это принесло стране (региону, бизнесу, человеку, проекту или
+                            программе)</li>
+                        <li>- кто бездействует или прикрывает нарушителей</li>
+                    </ul>
+                    <p>Информация в отношении высокопоставленных чиновников, <br />
+                        их должности и имена должны быть отражены во вводной части.</p>
+
+                    <textarea name="" cols="30" rows="10" placeholder="введите"></textarea>
+
+                    <!-- TODO  в каком формате будет???  -->
+                    <a class="examples" href="http://" target="_blank" rel="noopener noreferrer">&#8250;
+                        Примеры.</a>
+                </div>
+
+                <div class="main">
+                    <h4>Основная чать</h4>
+                    <h5>История в хронологии</h5>
+                    <p>Указажите даты всех ключевых событий, имена действующих лиц (Имя и Фамилия людей который вы
+                        упоминаете должны быть указаны без сокращений, исключение - если вы сами не знаете имени) и
+                        должности действующих лиц. Опишите те коррупционные нарушения, о которых вы хотите сообщить.
+                    </p>
+                    <h5>Позиция правоохранительных структур и власти</h5>
+                    <p>В какие органы вы сообщали о проблеме (с обязательным указанием даты обращения) и какие
+                        ответы получили. Если эти ответы вас не устраивают, то объясните почем </p>
+                    <h5>Существенные обстоятельства</h5>
+                    <p>Не расписывайте незначительные подробности, уберите все лишнее, описывайте только ключевые
+                        события. </p>
+                    <h5>Доказательства</h5>
+                    <p>Опишите тип и краткие характеристики доказательств. Не обязательно делать расшифровку
+                        аудиозаписи, например: “я владею аудио-видео файлами требований сотрудника правоохранительных
+                        структур (И.Ф. сотрудника и его должность), где он требует взятку/угрожает физической расправой
+                        и т.д.”</p>
+
+                    <textarea class="editor" name="" cols="30" rows="10" placeholder="введите"></textarea>
+
+                    <p class="grey-3">Внимание!</p>
+                    <p class="grey-3">Нельзя обвинять лицо в совершение преступления пока его причастность не докажут в
+                        судебном порядке <br />
+                        <a href="http://" target="_blank" rel="noopener noreferrer">ст. 14 УПК РФ</a>.</p>
+                    <p class="grey-3">Нельзя распространять информацию в неприличной форме<br />
+                        <a href="http://" target="_blank" rel="noopener noreferrer">ч.3 ст. 20.1 КоАП РФ</a>.
+                    </p>
+                    <p class="grey-3">Нельзя распространять заведомо ложные сведения<br />
+                        <a href="http://" target="_blank" rel="noopener noreferrer">ч.3,5 ст.128.1 УК РФ</a> .
+                    </p>
+                </div>
+
+                <div class="logoFormalist">
+                    <p class="logoFormalist__label">Сделано на</p>
+                    <svg class="logoFormalist__icon">
+                        <use xlink:href="icons.svg#logoFormalist"></use>
+                    </svg>
+                </div>
+
+                <button type="submit" value="" class='validateBtn'>Далее</button>
+            </form>
+        </div>
+        <div class="post-material step4" id="step4">
+            <h3>Ваши предложения</h3>
+            <h4>Что думаете о борьбе с коррупцией и ваши предложения?</h4>
+            <p>В свободной форме оцените уровень коррумпированности, работу правоохранительных и судебных органов,
+                руководства страны. Что вы предлагаете для совершенствования работы правоохранительных органов,
+                снижения криминализации в стране.</p>
+            <form action="#">
+                <textarea class="suggestion" name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
+
+                <div class="logoFormalist">
+                    <p class="logoFormalist__label">Сделано на</p>
+                    <svg class="logoFormalist__icon">
+                        <use xlink:href="icons.svg#logoFormalist"></use>
+                    </svg>
+                </div>
+
+                <button type="submit" value="" class='validateBtn'>Далее</button>
+            </form>
+        </div>
+        <div class="post-material step5" id="step5">
+            <h3>Поддержать редакцию</h3>
+            <p class="grey-3">Мы не финансируемся государством. <br /> Экономическая независимость дает нам возможность
+                честно и непредвзято освещать проблемы борьбы с коррупцией в России.</p>
+
+
+            <p class="grey-3">За молчание нам предлагают деньги министры и губернаторы, но мы сохраняем чистоту и
+                продолжаем давать читателям правдивую, актуальную информацию. <br /> Мы поможем вам опубликовать факты
+                коррупции, вы - поддержите юристов и журналистов редакции.</p>
+
+            <p class="grey-3">Запомните дату, время и сумму пожертвования и сообщите данные юристу, который с вами
+                свяжется.</p>
+
+            <p class="grey-3">Нам важно сказать вам спасибо.</p>
+            <hr />
+            <form action="">
+
+                <label class="checkbox acceptTerms"><input class="checkbox__input" type="checkbox" name="acceptTerms">Я
+                    принимаю &nbsp; <a href="http://" target="_blank" rel="noopener noreferrer">условия</a></label>
+                <label class="checkbox monthlyTransfer"><input class="checkbox__input" type="checkbox"
+                        name="monthlyTransfer">Ежемесячный перевод</label>
+                <div class="email input-wrapper">
+                    <label>
+                        <svg class="input-wrapper__icon">
+                            <use xlink:href="icons.svg#email"></use>
+                        </svg>
+                        <input class="input-wrapper__input" name="email" type="text"
+                            placeholder="почта для платежной системы">
+                    </label>
+                </div>
+
+                <div class="transferValue radio flex-row">
+                    <div class="radio__item default">
+                        <input class="radio__input" name="transferValue" id="transferValue1" type="radio" checked
+                            value="">
+                        <label for="transferValue1" class="radio__label"></label>
+                    </div>
+                    <div class="radio__item">
+                        <input class="radio__input" name="transferValue" id="transferValue3000" type="radio"
+                            value="3000">
+                        <label for="transferValue3000" class="radio__label">3 000</label>
+                    </div>
+                    <div class="radio__item">
+                        <input class="radio__input" name="transferValue" id="transferValue5000" type="radio"
+                            value="5000">
+                        <label for="transferValue5000" class="radio__label">5 000</label>
+                    </div>
+                    <div class="radio__item">
+                        <input class="radio__input" name="transferValue" id="transferValue7000" type="radio"
+                            value="7000">
+                        <label for="transferValue7000" class="radio__label">7 000</label>
+                    </div>
+                    <div class="radio__item">
+                        <input class="radio__input" name="transferValue" id="transferValue10000" type="radio"
+                            value="10000">
+                        <label for="transferValue10000" class="radio__label">10 000</label>
+                    </div>
+
+                </div>
+
+                <div class="transferValue text">
+                    <input type="text" name="transferValue" placeholder="другая сумма">
+                </div>
+
+                <div class="logoFormalist">
+                    <p class="logoFormalist__label">Сделано на</p>
+                    <svg class="logoFormalist__icon">
+                        <use xlink:href="icons.svg#logoFormalist"></use>
+                    </svg>
+                </div>
+
+                <button type="submit" value="" class='validateBtn'>Отправить</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
