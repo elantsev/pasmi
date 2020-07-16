@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сообщить о коррупции</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -271,8 +272,10 @@
                     </ul>
                     <p>Информация в отношении высокопоставленных чиновников, <br />
                         их должности и имена должны быть отражены во вводной части.</p>
+                    <div class="text">
+                        <textarea name="description" cols="30" rows="10" placeholder="введите"></textarea>
+                    </div>
 
-                    <textarea name="" cols="30" rows="10" placeholder="введите"></textarea>
 
                     <!-- TODO  в каком формате будет???  -->
                     <a class="examples" href="http://" target="_blank" rel="noopener noreferrer">&#8250;
@@ -298,7 +301,9 @@
                         структур (И.Ф. сотрудника и его должность), где он требует взятку/угрожает физической расправой
                         и т.д.”</p>
 
-                    <textarea class="editor" name="" cols="30" rows="10" placeholder="введите"></textarea>
+                    <div class="editor-contaiter">
+                        <div id="editor"></div>
+                    </div>
 
                     <p class="grey-3">Внимание!</p>
                     <p class="grey-3">Нельзя обвинять лицо в совершение преступления пока его причастность не докажут в
@@ -329,7 +334,9 @@
                 руководства страны. Что вы предлагаете для совершенствования работы правоохранительных органов,
                 снижения криминализации в стране.</p>
             <form action="#">
-                <textarea class="suggestion" name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
+                <div class="text suggestion">
+                    <textarea name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
+                </div>
 
                 <div class="logoFormalist">
                     <p class="logoFormalist__label">Сделано на</p>
@@ -418,6 +425,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="/main.js"></script>
 </body>
 

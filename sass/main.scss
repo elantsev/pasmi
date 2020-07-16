@@ -9,7 +9,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step3,
+  &.step2,
   &.step4,
   &.step5 {
     display: none;
@@ -757,5 +757,25 @@ select {
         }
       }
     }
+  }
+}
+
+// editor-contaiter***************************************************************************************************************
+
+.editor-contaiter {
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 20px;
+  position: relative;
+
+  &:focus-within {
+    background: $input-active;
+  }
+  .ql-container {
+    border: none;
+    min-height: 277px;
+  }
+  .ql-toolbar {
+    border: none;
   }
 }

@@ -87,13 +87,20 @@ const checkFieldsPresence = (fields) => {
     let result = true
 
     for (let i = 0; i < fields.length; i++) {
-        if (!fields[i].value) {
+
+        if (fields[i]?.dataset.link === "https://quilljs.com") {
+            continue
+        } else if (fields[i].tagName === "DIV") {
+            if (fields[i].querySelector('.ql-blank')) {
+                let error = generateError('Пожалуйста, заполните обязательное поле.')
+                fields[i].parentElement.insertBefore(error, fields[i])
+                result = false
+            }
+        } else if (!fields[i].value) {
             let error = generateError('Пожалуйста, заполните обязательное поле.')
             fields[i].parentElement.insertBefore(error, fields[i])
             result = false
-        }
-
-        if (fields[i].type === "checkbox" && !fields[i].checked) {
+        } else if (fields[i].type === "checkbox" && !fields[i].checked) {
             let error = generateError('Чекбокс не отмечен.')
             fields[i].parentElement.insertBefore(error, fields[i])
             result = false
@@ -145,17 +152,22 @@ const submitForm = (event, step) => {
     const { name, form } = step
     event.preventDefault()
     removeValidation(form)
-    const fields = form.querySelectorAll('input')
+    const textareas = form.querySelectorAll('textarea')
+    const inputs = form.querySelectorAll('input')
+    const editor = form.querySelectorAll('#editor')
+    const fields = [...inputs, ...textareas, ...editor]
+    console.log("submitForm -> fields", fields)
     const tel = form.querySelector('.tel input')
     const email = form.querySelector('.email input')
 
     const isFields = checkFieldsPresence(fields);
+    console.log("submitForm -> isFields", isFields)
     const isTelValid = checkTelFormat(tel);
     const isEmailValid = checkEmailFormat(email);
 
     if (
-        // true
-        isFields && (!tel || isTelValid) && (!email || isEmailValid)
+        true
+        // isFields && (!tel || isTelValid) && (!email || isEmailValid)
     ) {
         saveResult(name, fields)
         const currentIndex = steps.findIndex(s => s.name === step.name)
@@ -163,9 +175,8 @@ const submitForm = (event, step) => {
         setOpenStep(name, true)
         setValidStep(name, true)
         setOpenStep(nextStep.name, true)
-        setActiveStep(nextStep.name)
+        // setActiveStep(nextStep.name)
     } else {
-        console.log(name);
         setValidStep(name, false)
     }
 }
@@ -304,3 +315,13 @@ function closeAllSelect (elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+// editor**************************************************************************************
+
+var options = {
+    // debug: 'info', 
+    placeholder: 'введите',
+    theme: 'snow'
+};
+
+var quill = new Quill('#editor', options);
