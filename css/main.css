@@ -990,6 +990,7 @@ select {
           flex-direction: column-reverse;
   border-radius: 20px;
   position: relative;
+  margin: 20px 0;
 }
 
 .editor-contaiter:focus-within {
