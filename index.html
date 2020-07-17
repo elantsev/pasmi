@@ -85,8 +85,6 @@
                     </svg>
                 </div>
 
-
-
                 <button type="submit" value="" class='validateBtn'>Далее</button>
 
             </form>
@@ -324,8 +322,11 @@
                     <h4>Фото для статьи</h4>
                     <div class="input-wrapper">
                         <label>
-                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br>фото</p>
-                            <input class="input-wrapper__input" type="file" name="appealFile" multiple>
+                            <img id="uploadPreview" style="width: 100%; height: 100%; display: none;" />
+                            <input id="uploadImage" class="input-wrapper__input" type="file" name="appealFile"
+                                accept="image/*" onchange="PreviewImage()">
+                            <p id="uploadImageLabel" class="input-wrapper__add-file-button"><span>+</span> <br>
+                                добавить<br>фото</p>
                         </label>
                     </div>
                 </div>

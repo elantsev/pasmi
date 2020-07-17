@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
   display: none;
 }
 

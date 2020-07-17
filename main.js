@@ -144,7 +144,6 @@ const saveResult = (name, fields) => {
         }
     })
     data[name] = result
-    console.log("saveResult -> data", data)
 }
 
 const submitForm = (event, step) => {
@@ -156,12 +155,10 @@ const submitForm = (event, step) => {
     const inputs = form.querySelectorAll('input')
     const editor = form.querySelectorAll('#editor')
     const fields = [...inputs, ...textareas, ...editor]
-    console.log("submitForm -> fields", fields)
     const tel = form.querySelector('.tel input')
     const email = form.querySelector('.email input')
 
     const isFields = checkFieldsPresence(fields);
-    console.log("submitForm -> isFields", isFields)
     const isTelValid = checkTelFormat(tel);
     const isEmailValid = checkEmailFormat(email);
 
@@ -175,7 +172,11 @@ const submitForm = (event, step) => {
         setOpenStep(name, true)
         setValidStep(name, true)
         setOpenStep(nextStep.name, true)
-        // setActiveStep(nextStep.name)
+        if (name !== "step5") {
+            // setActiveStep(nextStep.name)
+        } else {
+            // sendDataToServer(data)
+        }
     } else {
         setValidStep(name, false)
     }
@@ -325,3 +326,20 @@ var options = {
 };
 
 var quill = new Quill('#editor', options);
+
+
+// PreviewImage******************************************************************************************************
+
+function PreviewImage () {
+    let uploadImage = document.getElementById("uploadImage")
+    let uploadPreview = document.getElementById("uploadPreview")
+    let uploadImageLabel = document.getElementById("uploadImageLabel")
+
+    let oFReader = new FileReader();
+    oFReader.readAsDataURL(uploadImage.files[0]);
+    uploadImageLabel.style.display = 'none'
+    uploadPreview.style.display = 'block'
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("uploadPreview").src = oFREvent.target.result;
+    };
+};
