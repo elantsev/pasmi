@@ -8,10 +8,10 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
-  &.step1,
   &.step2,
   &.step3,
-  &.step4 {
+  &.step4,
+  &.step5 {
     display: none;
   }
 }
@@ -208,29 +208,47 @@ textarea {
 }
 
 /* input**************************************************************************************************** */
-
-input {
-  border: none;
-  border-radius: 20px;
+label.text {
+  display: block;
+  position: relative;
+  width: 100%;
   height: 56px;
   background: rgba(237, 239, 248, 0.5);
-  // TODO удалить
-  // background: #ddd;
-  width: 100%;
-  outline: none;
-  padding: 0 16px;
-  &::placeholder {
+  input {
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    &:focus,
+    &:not(:placeholder-shown) {
+      background: $input-active;
+      + span {
+        position: absolute;
+        top: 7px;
+        left: 20px;
+        font-size: 11px;
+        line-height: 13px;
+        letter-spacing: 0.5px;
+        color: #acaab6;
+        transition: 0.3s;
+      }
+    }
+  }
+  span {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: 0.3s;
     font-size: 16px;
     line-height: 18px;
+
     color: $grey-2;
   }
-  &:focus {
-    background: $input-active;
-  }
-}
-
-.text {
-  position: relative;
 }
 
 /* error******************************************************************************************************************* */
@@ -458,7 +476,7 @@ select {
   }
   .organization {
     grid-area: organization;
-    padding-top: 70px;
+    // padding-top: 70px;
   }
   .jobTitle {
     grid-area: jobTitle;

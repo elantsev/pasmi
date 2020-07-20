@@ -26,9 +26,10 @@
             <h3>Кто Вы?</h3>
             <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
             <form action="#">
-                <div class="text fio">
-                    <input type="text" name="fio" placeholder="ФИО">
-                </div>
+                <label class="text fio">
+                    <input type="text" name="fio" placeholder=" ">
+                    <span>ФИО</span>
+                </label>
                 <div class="tel input-wrapper">
                     <label>
                         <p class="input-wrapper__hint">моб. телефон</p>
@@ -75,12 +76,15 @@
                         <span class="radio__text">Физическое лицо</span>
                     </label>
                 </div>
-                <div class="text organization">
-                    <input name="organization" type="text" placeholder="Название организации">
-                </div>
-                <div class="text jobTitle">
-                    <input name="jobTitle" type="text" placeholder="Должность ">
-                </div>
+
+                <label class="text organization">
+                    <input type="text" name="fio" placeholder=" ">
+                    <span>Название организации</span>
+                </label>
+                <label class="text jobTitle">
+                    <input type="text" name="jobTitle" placeholder=" ">
+                    <span>Должность</span>
+                </label>
 
                 <div class="logoFormalist">
                     <p class="logoFormalist__label">Сделано на</p>
@@ -107,12 +111,15 @@
                             <option value="2222">22222</option>
                         </select>
                     </div>
-                    <div class="input-wrapper fio">
-                        <input type="text" name="CommitPersonFIO" placeholder="ФИО">
-                    </div>
-                    <div class="input-wrapper fio">
-                        <input type="text" name="CommitPersonPosition" placeholder="Должность">
-                    </div>
+                    <label class="text fio">
+                        <input type="text" name="CommitPersonFIO" placeholder=" ">
+                        <span>ФИО</span>
+                    </label>
+                    <label class="text fio">
+                        <input type="text" name="CommitPersonPosition" placeholder=" ">
+                        <span>Должность</span>
+                    </label>
+
                 </div>
                 <div class="who-dont-react">
                     <h4>Кто совершил правонарушение? </h4>
@@ -123,12 +130,15 @@
                             <option value="2222">22222</option>
                         </select>
                     </div>
-                    <div class="text fio">
-                        <input type="text" name="dontReactPersonFIO" placeholder="ФИО">
-                    </div>
-                    <div class="text fio">
-                        <input type="text" name="dontReactPersonPosition" placeholder="Должность">
-                    </div>
+
+                    <label class="text fio">
+                        <input type="text" name="dontReactPersonFIO" placeholder=" ">
+                        <span>ФИО</span>
+                    </label>
+                    <label class="text fio">
+                        <input type="text" name="dontReactPersonPosition" placeholder=" ">
+                        <span>Должность</span>
+                    </label>
                 </div>
                 <div class="where-committed">
                     <h4>Где совершено преступление?</h4>
@@ -290,9 +300,11 @@
                             <input class="input-wrapper__input--low " name="appealPerson" type="date">
                         </label>
                     </div>
-                    <div class="input-wrapper">
-                        <input type="text" name="appealRegNumber" placeholder="Регистрационный № ">
-                    </div>
+
+                    <label class="text">
+                        <input type="text" name="appealRegNumber" placeholder=" ">
+                        <span>Регистрационный №</span>
+                    </label>
                     <div class="input-wrapper">
                         <label>
                             <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br> файл</p>
@@ -342,9 +354,10 @@
                 <div class="heading">
                     <h4>Заголовок</h4>
                     <p>Одно предложение, которое отражает суть проблемы</p>
-                    <div class="text">
-                        <input type="text" name="fio" placeholder="введите">
-                    </div>
+                    <label class="text">
+                        <input type="text" name="essence" placeholder=" ">
+                        <span>введите</span>
+                    </label>
                     <!-- TODO  в каком формате будет???  -->
                     <a class="examples" href="http://" target="_blank" rel="noopener noreferrer">&#8250;
                         Примеры.</a>
@@ -507,9 +520,11 @@
 
                 </div>
 
-                <div class="transferValue text">
-                    <input type="text" name="transferValue" placeholder="другая сумма">
-                </div>
+                <label class="text transferValue">
+                    <input type="text" name="transferValue" placeholder=" ">
+                    <span>другая сумма</span>
+                </label>
+
 
                 <div class="logoFormalist">
                     <p class="logoFormalist__label">Сделано на</p>

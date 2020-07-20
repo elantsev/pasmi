@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step4 {
+.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -240,46 +240,51 @@ textarea ::placeholder {
 }
 
 /* input**************************************************************************************************** */
-input {
-  border: none;
-  border-radius: 20px;
+label.text {
+  display: block;
+  position: relative;
+  width: 100%;
   height: 56px;
   background: rgba(237, 239, 248, 0.5);
+}
+
+label.text input {
+  border: none;
+  border-radius: 20px;
   width: 100%;
+  height: 100%;
   outline: none;
   padding: 0 16px;
+  width: 100%;
+  background: transparent;
+  border: none;
 }
 
-input::-webkit-input-placeholder {
-  font-size: 16px;
-  line-height: 18px;
-  color: #acaab6;
-}
-
-input:-ms-input-placeholder {
-  font-size: 16px;
-  line-height: 18px;
-  color: #acaab6;
-}
-
-input::-ms-input-placeholder {
-  font-size: 16px;
-  line-height: 18px;
-  color: #acaab6;
-}
-
-input::placeholder {
-  font-size: 16px;
-  line-height: 18px;
-  color: #acaab6;
-}
-
-input:focus {
+label.text input:focus, label.text input:not(:placeholder-shown) {
   background: rgba(205, 214, 241, 0.5);
 }
 
-.text {
-  position: relative;
+label.text input:focus + span, label.text input:not(:placeholder-shown) + span {
+  position: absolute;
+  top: 7px;
+  left: 20px;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.5px;
+  color: #acaab6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+label.text span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 16px;
+  line-height: 18px;
+  color: #acaab6;
 }
 
 /* error******************************************************************************************************************* */
@@ -561,7 +566,6 @@ select {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: organization;
-  padding-top: 70px;
 }
 
 .step1 form .jobTitle {
