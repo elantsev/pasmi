@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step4 {
   display: none;
 }
 
@@ -824,7 +824,12 @@ select {
           align-items: center;
   position: relative;
   margin-bottom: 15px;
+  color: #acaab6;
   cursor: pointer;
+}
+
+.step5 .checkbox a {
+  color: #acaab6;
 }
 
 .step5 .checkbox__input {
@@ -835,7 +840,18 @@ select {
   margin: 0 9px 0 19px;
   border: none;
   outline: none;
+}
+
+.step5 .checkbox__input:checked {
   visibility: hidden;
+}
+
+.step5 .checkbox__input:checked + span {
+  color: #2c2b30;
+}
+
+.step5 .checkbox__input:checked + span a {
+  color: #2c2b30;
 }
 
 .step5 .checkbox__input:checked::after {

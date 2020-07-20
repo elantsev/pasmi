@@ -8,10 +8,10 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
+  &.step1,
   &.step2,
   &.step3,
-  &.step4,
-  &.step5 {
+  &.step4 {
     display: none;
   }
 }
@@ -672,7 +672,11 @@ select {
     align-items: center;
     position: relative;
     margin-bottom: 15px;
+    color: $grey-2;
     cursor: pointer;
+    a {
+      color: $grey-2;
+    }
 
     &__input {
       width: max-content;
@@ -680,7 +684,15 @@ select {
       margin: 0 9px 0 19px;
       border: none;
       outline: none;
-      visibility: hidden;
+      &:checked {
+        visibility: hidden;
+        & + span {
+          color: $grey-3;
+          a {
+            color: $grey-3;
+          }
+        }
+      }
       &:checked::after {
         visibility: visible;
         display: block;
