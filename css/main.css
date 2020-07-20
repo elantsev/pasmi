@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
+.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -200,7 +200,6 @@ textarea ::placeholder {
 .select-selected {
   color: #2c2b30;
   padding: 8px 16px;
-  border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
 }
@@ -318,6 +317,15 @@ input:focus {
   -webkit-box-shadow: 3px 3px 5px rgba(172, 170, 182, 0.6), -2px -2px 5px rgba(237, 239, 248, 0.5);
           box-shadow: 3px 3px 5px rgba(172, 170, 182, 0.6), -2px -2px 5px rgba(237, 239, 248, 0.5);
   border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-wrapper__icon svg {
+  max-width: 45%;
+  max-height: 45%;
+  margin: auto;
 }
 
 .input-wrapper__add-file-button {
