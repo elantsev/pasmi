@@ -27,8 +27,8 @@
             <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
             <form action="#">
                 <label class="input-wrapper fio">
-                    <input type="text" name="fio" placeholder=" ">
-                    <span>ФИО</span>
+                    <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
+                    <span class="input-wrapper__text">ФИО</span>
                 </label>
                 <!-- <div class="tel input-wrapper">
                     <label>
@@ -44,7 +44,7 @@
                 </div> -->
                 <label class="tel input-wrapper icon">
                     <input class="input-wrapper__input" name="tel" type="text" placeholder=" ">
-                    <span>моб. телефон</span>
+                    <span class="input-wrapper__text">моб. телефон</span>
                     <div class="input-wrapper__icon">
                         <svg>
                             <use href="icons.svg#tel"></use>
@@ -53,7 +53,7 @@
                 </label>
                 <label class="email input-wrapper icon">
                     <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
-                    <span>e-mail</span>
+                    <span class="input-wrapper__text">e-mail</span>
                     <div class="input-wrapper__icon">
                         <svg>
                             <use href="icons.svg#email"></use>
@@ -86,12 +86,12 @@
                 </div>
 
                 <label class="input-wrapper organization">
-                    <input type="text" name="fio" placeholder=" ">
-                    <span>Название организации</span>
+                    <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
+                    <span class="input-wrapper__text">Название организации</span>
                 </label>
                 <label class="input-wrapper jobTitle">
-                    <input type="text" name="jobTitle" placeholder=" ">
-                    <span>Должность</span>
+                    <input class="input-wrapper__input" type="text" name="jobTitle" placeholder=" ">
+                    <span class="input-wrapper__text">Должность</span>
                 </label>
 
                 <div class="logoFormalist">
@@ -120,12 +120,12 @@
                         </select>
                     </div>
                     <label class="input-wrapper fio">
-                        <input type="text" name="CommitPersonFIO" placeholder=" ">
-                        <span>ФИО</span>
+                        <input class="input-wrapper__input" type="text" name="CommitPersonFIO" placeholder=" ">
+                        <span class="input-wrapper__text">ФИО</span>
                     </label>
                     <label class="input-wrapper fio">
-                        <input type="text" name="CommitPersonPosition" placeholder=" ">
-                        <span>Должность</span>
+                        <input class="input-wrapper__input" type="text" name="CommitPersonPosition" placeholder=" ">
+                        <span class="input-wrapper__text">Должность</span>
                     </label>
 
                 </div>
@@ -140,12 +140,12 @@
                     </div>
 
                     <label class="input-wrapper fio">
-                        <input type="text" name="dontReactPersonFIO" placeholder=" ">
-                        <span>ФИО</span>
+                        <input class="input-wrapper__input" type="text" name="dontReactPersonFIO" placeholder=" ">
+                        <span class="input-wrapper__text">ФИО</span>
                     </label>
                     <label class="input-wrapper fio">
-                        <input type="text" name="dontReactPersonPosition" placeholder=" ">
-                        <span>Должность</span>
+                        <input class="input-wrapper__input" type="text" name="dontReactPersonPosition" placeholder=" ">
+                        <span class="input-wrapper__text">Должность</span>
                     </label>
                 </div>
                 <div class="where-committed">
@@ -244,7 +244,7 @@
 
                         <label class="coordinates input-wrapper icon">
                             <input class="input-wrapper__input" name="coordinates" type="text" placeholder=" ">
-                            <span>адрес или координаты</span>
+                            <span class="input-wrapper__text">адрес или координаты</span>
                             <div class="input-wrapper__icon">
                                 <svg>
                                     <use href="icons.svg#coordinates"></use>
@@ -296,37 +296,35 @@
                     </p>
                 </div>
                 <div class="appeal flex-row">
-                    <div class="input-wrapper">
-                        <label>
-                            <p class="input-wrapper__hint">дата обращения</p>
-                            <div class="input-wrapper__icon">
-                                <svg>
-                                    <use xlink:href="icons.svg#calendar"></use>
-                                </svg>
-                            </div>
-                            <input class="input-wrapper__input--low " name="appealPerson" type="date">
-                        </label>
-                    </div>
+
+                    <label class="input-wrapper icon">
+                        <input class="input-wrapper__input" name="appealDate" type="text" placeholder=" ">
+                        <span class="input-wrapper__text">дата обращения</span>
+                        <div class="input-wrapper__icon">
+                            <svg>
+                                <use href="icons.svg#calendar"></use>
+                            </svg>
+                        </div>
+                    </label>
 
                     <label class="input-wrapper">
-                        <input type="text" name="appealRegNumber" placeholder=" ">
-                        <span>Регистрационный №</span>
+                        <input class="input-wrapper__input" type="text" name="appealRegNumber" placeholder=" ">
+                        <span class="input-wrapper__text">Регистрационный №</span>
                     </label>
-                    <div class="input-wrapper">
-                        <label>
-                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br> файл</p>
-                            <input class="input-wrapper__input" type="file" name="appealFile" multiple>
-                        </label>
-                    </div>
+
+                    <label class="input-wrapper file">
+                        <input class="input-wrapper__input" name="appealDate" type="file">
+                        <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
+                    </label>
+
                 </div>
                 <div class="evidence">
                     <h4>Ваши доказательства</h4>
-                    <div class="input-wrapper">
-                        <label>
-                            <p class="input-wrapper__add-file-button"><span>+</span> <br> добавить<br> файл</p>
-                            <input class="input-wrapper__input" type="file" name="personWasInformedFile" multiple>
-                        </label>
-                    </div>
+
+                    <label class="input-wrapper file">
+                        <input class="input-wrapper__input" name="personWasInformedFile" type="file" multiple>
+                        <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
+                    </label>
 
                 </div>
                 <div class="logoFormalist">
@@ -344,26 +342,27 @@
         <div class="post-material step3" id="step3">
             <h3>Статья</h3>
             <form action="#">
-
+В
                 <div class="photo">
                     <h4>Фото для статьи</h4>
-                    <div class="text">
-                        <label>
-                            <img id="uploadPreview" style="width: 100%; height: 100%; display: none;" />
-                            <input id="uploadImage" class="input-wrapper__input" type="file" name="appealFile"
-                                accept="image/*" onchange="PreviewImage()">
-                            <p id="uploadImageLabel" class="input-wrapper__add-file-button"><span>+</span> <br>
-                                добавить<br>фото</p>
-                        </label>
-                    </div>
+                    <label class="input-wrapper file">
+                        <input id="uploadImage" class="input-wrapper__input" name="appealFile" type="file" multiple
+                            onchange="previewImage()">
+                        <p id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
+                            файл</p>
+                        <img id="uploadPreview" class="input-wrapper__preview" />
+                        <span id="deleteImage" onclick="deleteImage()" class="input-wrapper__delete">&#9421;
+                            <span class="input-wrapper__hint" >Удалить</span>
+                        </span>
+                    </label>
                 </div>
 
                 <div class="heading">
                     <h4>Заголовок</h4>
                     <p>Одно предложение, которое отражает суть проблемы</p>
-                    <label class="text">
-                        <input type="text" name="essence" placeholder=" ">
-                        <span>введите</span>
+                    <label class="input-wrapper">
+                        <input class="input-wrapper__input" type="text" name="essence" placeholder=" ">
+                        <span class="input-wrapper__text">введите</span>
                     </label>
                     <!-- TODO  в каком формате будет???  -->
                     <a class="examples" href="http://" target="_blank" rel="noopener noreferrer">&#8250;
@@ -479,17 +478,17 @@
 
                 <label class="checkbox acceptTerms">
                     <input class="checkbox__input" type="checkbox" name="acceptTerms">
-                    <span>Я принимаю &nbsp; <a href="http://" target="_blank"
+                    <span class="checkbox__text">Я принимаю &nbsp; <a href="http://" target="_blank"
                             rel="noopener noreferrer">условия</a></span>
                 </label>
                 <label class="checkbox monthlyTransfer">
                     <input class="checkbox__input" type="checkbox" name="monthlyTransfer">
-                    <span>Ежемесячный перевод</span>
+                    <span class="checkbox__text">Ежемесячный перевод</span>
                 </label>
 
                 <label class="email input-wrapper icon">
                     <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
-                    <span>адрес или координаты</span>
+                    <span class="input-wrapper__text">адрес или координаты</span>
                     <div class="input-wrapper__icon">
                         <svg>
                             <use href="icons.svg#email"></use>
@@ -526,9 +525,9 @@
 
                 </div>
 
-                <label class="text transferValue">
-                    <input type="text" name="transferValue" placeholder=" ">
-                    <span>другая сумма</span>
+                <label class="input-wrapper transferValue">
+                    <input class="input-wrapper__input" type="text" name="transferValue" placeholder=" ">
+                    <span class="input-wrapper__text">другая сумма</span>
                 </label>
 
 

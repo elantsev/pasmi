@@ -185,42 +185,42 @@ const submitForm = (event, step) => {
 
 // маска телефона*******************************************************************************************************
 
-function setCursorPosition (pos, e) {
-    if (e.setSelectionRange) e.setSelectionRange(pos, pos);
-    else if (e.createTextRange) {
-        let range = e.createTextRange();
-        range.collapse(true);
-        range.moveEnd("character", pos);
-        range.moveStart("character", pos);
-        range.select()
-    }
-}
+// function setCursorPosition (pos, e) {
+//     if (e.setSelectionRange) e.setSelectionRange(pos, pos);
+//     else if (e.createTextRange) {
+//         let range = e.createTextRange();
+//         range.collapse(true);
+//         range.moveEnd("character", pos);
+//         range.moveStart("character", pos);
+//         range.select()
+//     }
+// }
 
-function mask (e) {
-    let matrix = this.placeholder, // .defaultValue
-        i = 0,
-        def = matrix.replace(/\D/g, ""),
-        val = this.value.replace(/\D/g, "");
-    def.length >= val.length && (val = def);
-    matrix = matrix.replace(/[_\d]/g, function (a) {
-        return val.charAt(i++) || "_"
-    });
-    this.value = matrix;
-    i = matrix.lastIndexOf(val.substr(-1));
-    i < matrix.length && matrix != this.placeholder ? i++ : i = matrix.indexOf("_");
-    setCursorPosition(i, this)
-}
-window.addEventListener("DOMContentLoaded", function () {
-    let input = document.querySelector("#online_phone");
-    input.addEventListener("input", mask, false);
-    setCursorPosition(4, input);
-});
+// function mask (e) {
+//     let matrix = this.placeholder, // .defaultValue
+//         i = 0,
+//         def = matrix.replace(/\D/g, ""),
+//         val = this.value.replace(/\D/g, "");
+//     def.length >= val.length && (val = def);
+//     matrix = matrix.replace(/[_\d]/g, function (a) {
+//         return val.charAt(i++) || "_"
+//     });
+//     this.value = matrix;
+//     i = matrix.lastIndexOf(val.substr(-1));
+//     i < matrix.length && matrix != this.placeholder ? i++ : i = matrix.indexOf("_");
+//     setCursorPosition(i, this)
+// }
+// window.addEventListener("DOMContentLoaded", function () {
+//     let input = document.querySelector("#online_phone");
+//     input.addEventListener("input", mask, false);
+//     setCursorPosition(4, input);
+// });
 
 
 // step5 Поддержать редакцию - выбор суммы transferValue*****************************************************************************
 
 
-let text = document.querySelector('.transferValue.text input[name="transferValue"]')
+let text = document.querySelector('.transferValue.input-wrapper input[name="transferValue"]')
 let checkboxes = document.querySelectorAll('.transferValue.radio input[name="transferValue"]')
 
 checkboxes.forEach(checkbox => checkbox.addEventListener("click", (e) => setTransferValue(e)))
@@ -330,15 +330,22 @@ var quill = new Quill('#editor', options);
 
 // PreviewImage******************************************************************************************************
 
-function PreviewImage () {
+function deleteImage (e) {
+    console.log("deleteImage -> e", this)
+    e.stopPropagation()
+    document.getElementById("uploadPreview").src = " "
+}
+function previewImage () {
     let uploadImage = document.getElementById("uploadImage")
     let uploadPreview = document.getElementById("uploadPreview")
     let uploadImageLabel = document.getElementById("uploadImageLabel")
+    let deleteImage = document.getElementById("deleteImage")
 
     let oFReader = new FileReader();
     oFReader.readAsDataURL(uploadImage.files[0]);
     uploadImageLabel.style.display = 'none'
     uploadPreview.style.display = 'block'
+    deleteImage.style.visibility = 'block'
     oFReader.onload = function (oFREvent) {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };

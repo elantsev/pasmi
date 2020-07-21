@@ -8,8 +8,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
+  &.step1,
   &.step2,
-  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -208,15 +208,62 @@ textarea {
 }
 
 /* input**************************************************************************************************** */
-label.input-wrapper,
-label.text {
+.input-wrapper {
   display: block;
   position: relative;
   width: 100%;
   height: 56px;
   background: rgba(237, 239, 248, 0.5);
   border-radius: 20px;
-  input {
+  margin-bottom: 22px;
+  &__icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 7px;
+    top: 10px;
+    background: linear-gradient(
+        135.37deg,
+        rgba(0, 0, 0, 0.4) 4.29%,
+        rgba(255, 255, 255, 0.4) 95.6%
+      ),
+      #ffffff;
+    background-blend-mode: soft-light, normal;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px rgba(172, 170, 182, 0.6),
+      -2px -2px 5px rgba(237, 239, 248, 0.5);
+    border-radius: 40px;
+    display: flex;
+  }
+  &__button {
+    background: linear-gradient(
+        141.89deg,
+        rgba(0, 0, 0, 0.4) 4.29%,
+        rgba(255, 255, 255, 0.4) 95.6%
+      ),
+      #ffffff;
+    background-blend-mode: soft-light, normal;
+    border: 0.5px solid rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    box-shadow: 4px 4px 10px rgba(214, 216, 224, 0.67),
+      -4px -4px 7px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    width: max-content;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.25px;
+
+    color: $grey-2;
+
+    mix-blend-mode: normal;
+    cursor: pointer;
+  }
+
+  &__input {
     border: none;
     border-radius: 20px;
     width: 100%;
@@ -242,7 +289,7 @@ label.text {
       }
     }
   }
-  span {
+  &__text {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -252,6 +299,11 @@ label.text {
     color: $grey-2;
   }
   &.icon {
+    svg {
+      max-width: 45%;
+      max-height: 45%;
+      margin: auto;
+    }
     input {
       padding-left: 55px;
       &:focus,
@@ -263,6 +315,56 @@ label.text {
       + span {
         left: 55px;
       }
+    }
+  }
+  &.file {
+    height: 100%;
+    .input-wrapper__input {
+      display: none;
+      &--low {
+        padding: 15px 15px 5px 55px;
+      }
+    }
+    .input-wrapper__button {
+      span {
+        margin-bottom: 13px;
+        text-align: center;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 1.6rem;
+      }
+    }
+    .input-wrapper__preview {
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .input-wrapper__delete {
+      visibility: hidden;
+      z-index: 10;
+      position: absolute;
+      top: -2px;
+      right: 5px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        color: #f00;
+        .input-wrapper__hint {
+          color: #f00;
+          visibility: visible;
+        }
+      }
+    }
+    .input-wrapper__hint {
+      visibility: hidden;
+      position: absolute;
+      display: block;
+      left: 25px;
+      top: -18px;
+      transition: 0.3s;
+      color: transparent;
     }
   }
 }
@@ -283,92 +385,7 @@ label.text {
 
 /* input-wrapper (with icon) ******************************************************************************************************************* */
 
-.input-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 22px;
-  &__icon {
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    left: 7px;
-    top: 10px;
-    background: linear-gradient(
-        135.37deg,
-        rgba(0, 0, 0, 0.4) 4.29%,
-        rgba(255, 255, 255, 0.4) 95.6%
-      ),
-      #ffffff;
-    background-blend-mode: soft-light, normal;
-    border: 0.5px solid rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    box-shadow: 3px 3px 5px rgba(172, 170, 182, 0.6),
-      -2px -2px 5px rgba(237, 239, 248, 0.5);
-    border-radius: 40px;
-    display: flex;
-    svg {
-      max-width: 45%;
-      max-height: 45%;
-      margin: auto;
-    }
-  }
-  &__add-file-button {
-    background: linear-gradient(
-        141.89deg,
-        rgba(0, 0, 0, 0.4) 4.29%,
-        rgba(255, 255, 255, 0.4) 95.6%
-      ),
-      #ffffff;
-    background-blend-mode: soft-light, normal;
-    border: 0.5px solid rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    box-shadow: 4px 4px 10px rgba(214, 216, 224, 0.67),
-      -4px -4px 7px rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    text-align: center;
-    width: max-content;
-    padding: 10px;
-    font-size: 12px;
-    line-height: 12px;
-    text-align: center;
-    letter-spacing: 0.25px;
-
-    color: $grey-2;
-
-    mix-blend-mode: normal;
-    cursor: pointer;
-
-    span {
-      margin-bottom: 13px;
-      display: inline-block;
-      font-weight: 500;
-      font-size: 1.6rem;
-    }
-  }
-  &__input {
-    padding-left: 55px;
-    &[type="file"] {
-      display: none;
-    }
-    &--low {
-      padding: 15px 15px 5px 55px;
-    }
-
-    &::placeholder {
-      font-size: 14px;
-      line-height: 16px;
-    }
-  }
-  &__hint {
-    position: absolute;
-    top: -20px;
-    left: 55px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    color: $grey-2;
-  }
-}
-.text,
+// .text,
 select {
   margin-bottom: 20px;
 }
@@ -625,7 +642,7 @@ select {
     .validateBtn {
       grid-area: validateBtn;
     }
-    .photo .input-wrapper__add-file-button {
+    .photo .input-wrapper__button {
       width: 147px;
       height: 130px;
       padding-top: 40px;
