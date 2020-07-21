@@ -340,8 +340,7 @@ textarea {
       display: none;
     }
     .input-wrapper__delete {
-      visibility: hidden;
-      z-index: 10;
+      display: none;
       position: absolute;
       top: -2px;
       right: 5px;

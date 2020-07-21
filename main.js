@@ -331,7 +331,7 @@ var quill = new Quill('#editor', options);
 // PreviewImage******************************************************************************************************
 
 function deleteImage (e) {
-    console.log("deleteImage -> e", this)
+    console.log("deleteImage -> e", e)
     e.stopPropagation()
     document.getElementById("uploadPreview").src = " "
 }
@@ -345,7 +345,7 @@ function previewImage () {
     oFReader.readAsDataURL(uploadImage.files[0]);
     uploadImageLabel.style.display = 'none'
     uploadPreview.style.display = 'block'
-    deleteImage.style.visibility = 'block'
+    deleteImage.style.display = 'block'
     oFReader.onload = function (oFREvent) {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
