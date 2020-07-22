@@ -1,5 +1,5 @@
 // переменная для аккумулирования введенных данных**************************************************************
-const data = {
+let data = {
 
 }
 
@@ -136,14 +136,33 @@ const checkEmailFormat = (email) => {
     return result
 }
 
-const saveResult = (name, fields) => {
+const saveResult = (stepName, fields, fieldName) => {
     let result = {}
+    if (fieldName) {
+
+        data = {
+            ...data,
+            [stepName]: {
+                ...data[stepName], [fieldName]: fields
+            }
+        }
+        return
+    }
     fields.forEach(field => {
+        if (field.type === 'file') {
+            return
+        }
         if (field.type === 'radio' && field.checked || field.type !== 'radio') {
             result[field.name] = result[field.name] ? result[field.name] : field.value
         }
     })
-    data[name] = result
+
+    data = {
+        ...data,
+        [stepName]: {
+            ...data[stepName], ...result
+        }
+    }
 }
 
 const submitForm = (event, step) => {
@@ -353,16 +372,19 @@ function previewImage () {
 
 // PreviewFiles******************************************************************************************************
 
-previewFiles('.evidence .file')
-previewFiles('.appeal .file')
+previewFiles('.evidence .file', 'step2')
+previewFiles('.appeal .file', 'step2')
 
-function previewFiles (selector) {
+function previewFiles (selector, step) {
     const input = document.querySelector(`${selector}  input`);
     const preview = document.querySelector(`${selector} .input-wrapper__fileList`);
 
     input.style.opacity = 0;
 
-    input.addEventListener('change', updateImageDisplay);
+    input.addEventListener('change', () => {
+        updateImageDisplay()
+        saveResult(step, [...input.files], input.name)
+    });
 
     function updateImageDisplay (e, curFiles) {
         while (preview.firstChild) {
@@ -375,7 +397,8 @@ function previewFiles (selector) {
 
         if (curFiles.length === 0) {
             const para = document.createElement('p');
-            para.textContent = 'No files currently selected for upload';
+            para.style.color = 'red'
+            para.textContent = 'выберите данные для загрузки';
             preview.appendChild(para);
         } else {
             const list = document.createElement('ol');
@@ -393,12 +416,16 @@ function previewFiles (selector) {
                     listItem.appendChild(image);
                 }
                 const deleteButton = document.createElement('p');
-                deleteButton.className ="input-wrapper__delete-button"
+                deleteButton.className = "input-wrapper__delete-button"
                 deleteButton.textContent = 'x';
                 deleteButton.onclick = (e) => {
                     e.preventDefault()
                     curFiles = curFiles.filter(f => f.name !== file.name)
                     updateImageDisplay(null, curFiles)
+                    saveResult(step, curFiles, input.name)
+                    if (!curFiles.length) {
+                        input.value = null
+                    }
                 }
                 listItem.appendChild(deleteButton)
                 list.appendChild(listItem);
