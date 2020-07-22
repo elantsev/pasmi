@@ -372,12 +372,18 @@ textarea {
       }
       li {
         display: flex;
+        align-items: center;
       }
       img {
         max-width: 50px;
         max-height: 50px;
         padding: 5px;
       }
+    }
+    .input-wrapper__delete-button {
+      padding: 10px;
+      border-radius: 50%;
+      color: red;
     }
   }
 }

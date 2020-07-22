@@ -331,7 +331,6 @@ var quill = new Quill('#editor', options);
 // PreviewImage******************************************************************************************************
 
 function deleteImage (e) {
-    console.log("deleteImage -> e", e)
     e.stopPropagation()
     document.getElementById("uploadPreview").src = " "
 }
@@ -357,7 +356,7 @@ function previewImage () {
 previewFiles('.evidence .file')
 previewFiles('.appeal .file')
 
-function previewFiles(selector) {
+function previewFiles (selector) {
     const input = document.querySelector(`${selector}  input`);
     const preview = document.querySelector(`${selector} .input-wrapper__fileList`);
 
@@ -365,12 +364,15 @@ function previewFiles(selector) {
 
     input.addEventListener('change', updateImageDisplay);
 
-    function updateImageDisplay () {
+    function updateImageDisplay (e, curFiles) {
         while (preview.firstChild) {
             preview.removeChild(preview.firstChild);
         }
 
-        const curFiles = input.files;
+        if (!curFiles) {
+            curFiles = [...input.files]
+        }
+
         if (curFiles.length === 0) {
             const para = document.createElement('p');
             para.textContent = 'No files currently selected for upload';
@@ -390,7 +392,15 @@ function previewFiles(selector) {
 
                     listItem.appendChild(image);
                 }
-
+                const deleteButton = document.createElement('p');
+                deleteButton.className ="input-wrapper__delete-button"
+                deleteButton.textContent = 'x';
+                deleteButton.onclick = (e) => {
+                    e.preventDefault()
+                    curFiles = curFiles.filter(f => f.name !== file.name)
+                    updateImageDisplay(null, curFiles)
+                }
+                listItem.appendChild(deleteButton)
                 list.appendChild(listItem);
             }
         }

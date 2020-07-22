@@ -418,12 +418,21 @@ textarea ::placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .input-wrapper.file .input-wrapper__fileList img {
   max-width: 50px;
   max-height: 50px;
   padding: 5px;
+}
+
+.input-wrapper.file .input-wrapper__delete-button {
+  padding: 10px;
+  border-radius: 50%;
+  color: red;
 }
 
 /* error******************************************************************************************************************* */
