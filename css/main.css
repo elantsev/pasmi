@@ -789,6 +789,10 @@ select {
   padding-top: 40px;
 }
 
+.step3 form .photo .input-wrapper__preview {
+  cursor: pointer;
+}
+
 .step3 form .description p:nth-of-type(2) {
   margin-bottom: 0;
 }

@@ -349,24 +349,30 @@ var quill = new Quill('#editor', options);
 
 // PreviewImage******************************************************************************************************
 
+let uploadImage = document.getElementById("uploadImage")
+let uploadPreview = document.getElementById("uploadPreview")
+let deleteImageBtn = document.getElementById("deleteImage")
+let uploadImageLabel = document.getElementById("uploadImageLabel")
+deleteImageBtn.onclick = deleteImage
 function deleteImage (e) {
-    e.stopPropagation()
-    document.getElementById("uploadPreview").src = " "
+    e.preventDefault()
+    uploadPreview.style.display = "none"
+    uploadImage.value = null
+    deleteImageBtn.style.display = "none"
+    uploadImageLabel.style.display = 'block'
+    saveResult('step3', null, uploadImage.name)
 }
 function previewImage () {
-    let uploadImage = document.getElementById("uploadImage")
-    let uploadPreview = document.getElementById("uploadPreview")
-    let uploadImageLabel = document.getElementById("uploadImageLabel")
-    let deleteImage = document.getElementById("deleteImage")
 
     let oFReader = new FileReader();
     oFReader.readAsDataURL(uploadImage.files[0]);
     uploadImageLabel.style.display = 'none'
     uploadPreview.style.display = 'block'
-    deleteImage.style.display = 'block'
+    deleteImageBtn.style.display = 'block'
     oFReader.onload = function (oFREvent) {
         document.getElementById("uploadPreview").src = oFREvent.target.result;
     };
+    saveResult('step3', uploadImage.files[0], uploadImage.name)
 };
 
 

@@ -661,10 +661,15 @@ select {
     .validateBtn {
       grid-area: validateBtn;
     }
-    .photo .input-wrapper__button {
-      width: 147px;
-      height: 130px;
-      padding-top: 40px;
+    .photo .input-wrapper {
+      &__button {
+        width: 147px;
+        height: 130px;
+        padding-top: 40px;
+      }
+      &__preview {
+        cursor: pointer;
+      }
     }
 
     .description {
