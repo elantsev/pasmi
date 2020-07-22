@@ -9,7 +9,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step2,
+  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -364,6 +364,20 @@ textarea {
       top: -18px;
       transition: 0.3s;
       color: transparent;
+    }
+    .input-wrapper__fileList {
+      ol {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        display: flex;
+      }
+      img {
+        max-width: 50px;
+        max-height: 50px;
+        padding: 5px;
+      }
     }
   }
 }

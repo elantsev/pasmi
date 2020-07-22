@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -407,6 +407,23 @@ textarea ::placeholder {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: transparent;
+}
+
+.input-wrapper.file .input-wrapper__fileList ol {
+  padding: 0;
+  margin: 0;
+}
+
+.input-wrapper.file .input-wrapper__fileList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-wrapper.file .input-wrapper__fileList img {
+  max-width: 50px;
+  max-height: 50px;
+  padding: 5px;
 }
 
 /* error******************************************************************************************************************* */
