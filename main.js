@@ -3,6 +3,35 @@ let data = {
 
 }
 
+const saveResult = (stepName, fields, fieldName) => {
+    let result = {}
+    if (fieldName) {
+ 
+        data = {
+            ...data,
+            [stepName]: {  
+                ...data[stepName], [fieldName]: fields
+            }
+        }
+        return
+    }
+    fields.forEach(field => {
+        if (field.type === 'file') {
+            return
+        }
+        if (field.type === 'radio' && field.checked || field.type !== 'radio') {
+            result[field.name] = result[field.name] ? result[field.name] : field.value
+        }
+    })
+
+    data = {
+        ...data,
+        [stepName]: {
+            ...data[stepName], ...result
+        }
+    }
+}
+
 //переключение шагов********************************************************************************************
 class Step {
     constructor(name, isOpen, isActive = false) {
@@ -134,35 +163,6 @@ const checkEmailFormat = (email) => {
         result = false
     }
     return result
-}
-
-const saveResult = (stepName, fields, fieldName) => {
-    let result = {}
-    if (fieldName) {
-
-        data = {
-            ...data,
-            [stepName]: {
-                ...data[stepName], [fieldName]: fields
-            }
-        }
-        return
-    }
-    fields.forEach(field => {
-        if (field.type === 'file') {
-            return
-        }
-        if (field.type === 'radio' && field.checked || field.type !== 'radio') {
-            result[field.name] = result[field.name] ? result[field.name] : field.value
-        }
-    })
-
-    data = {
-        ...data,
-        [stepName]: {
-            ...data[stepName], ...result
-        }
-    }
 }
 
 const submitForm = (event, step) => {

@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .flex-2column > * {
-  width: 48% !important;
+  width: 46.5% !important;
 }
 
 @media screen and (max-width: 630px) {
@@ -72,6 +72,7 @@ h4 {
   line-height: 21px;
   letter-spacing: 0.02em;
   color: #2c2b30;
+  margin: 0 0 30px;
 }
 
 h5 {
@@ -405,6 +406,12 @@ textarea ::placeholder {
   color: transparent;
 }
 
+.input-wrapper.file .input-wrapper__fileList {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .input-wrapper.file .input-wrapper__fileList ol {
   padding: 0;
   margin: 0;
@@ -685,15 +692,22 @@ select {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: appeal;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.step2 form .appeal .input-wrapper {
+  max-width: 225px;
+  margin: 0;
+}
+
+.step2 form .appeal .input-wrapper:not(:last-child) {
+  margin-right: 30px;
+}
+
+.step2 form .appeal .input-wrapper__button {
+  margin: 0;
 }
 
 .step2 form .evidence {
@@ -715,6 +729,19 @@ select {
   grid-area: validateBtn;
 }
 
+.step2 form .input-wrapper,
+.step2 form .custom-select {
+  margin-bottom: 30px;
+}
+
+.step2 form .radio {
+  margin-bottom: 28px;
+}
+
+.step2 form .radio__item {
+  margin-bottom: 22px;
+}
+
 @media screen and (max-width: 630px) {
   .step2 form {
         grid-template-areas: "who-committed    who-committed   " "who-dont-react   who-dont-react  " "where-committed  where-committed " "who-was-informed who-was-informed" "appeal           appeal          " "evidence         evidence        " "logoFormalist    validateBtn     ";
@@ -723,6 +750,10 @@ select {
   .step2 form .validateBtn {
     margin-top: 20px;
   }
+}
+
+.step2 .input-wrapper {
+  margin-bottom: 30px;
 }
 
 .step3 form {
@@ -791,6 +822,14 @@ select {
   cursor: pointer;
 }
 
+.step3 form .description {
+  padding-bottom: 20px;
+}
+
+.step3 form .description .examples {
+  margin-top: 10px;
+}
+
 .step3 form .description p:nth-of-type(2) {
   margin-bottom: 0;
 }
@@ -809,6 +848,21 @@ select {
   font-size: 14px;
   text-decoration: none;
   margin-top: 23px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.step3 form .examples span {
+  font-size: 30px;
+  position: relative;
+  top: 4px;
+}
+
+.step3 form .main p a {
+  font-weight: 500;
 }
 
 .step4 form {

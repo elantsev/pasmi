@@ -8,8 +8,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
+  &.step1,
   &.step2,
-  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -39,7 +39,7 @@ $input-active: rgba(205, 214, 241, 0.5);
   flex-wrap: wrap;
   justify-content: space-between;
   > * {
-    width: 48% !important;
+    width: 46.5% !important;
   }
   @media screen and (max-width: 630px) {
     > * {
@@ -66,6 +66,7 @@ h4 {
   line-height: 21px;
   letter-spacing: 0.02em;
   color: $grey-3;
+  margin: 0 0 30px;
 }
 h5 {
   font-weight: 500;
@@ -361,6 +362,7 @@ textarea {
       color: transparent;
     }
     .input-wrapper__fileList {
+      width: max-content;
       ol {
         padding: 0;
         margin: 0;
@@ -516,7 +518,6 @@ select {
   .line {
     grid-area: line;
     border-bottom: 2px solid #000;
-    // margin: 20px 0;
   }
 
   .radio {
@@ -573,6 +574,8 @@ select {
       "logoFormalist    validateBtn     ";
     .who-committed {
       grid-area: who-committed;
+      .flex-2column {
+      }
     }
     .who-dont-react {
       grid-area: who-dont-react;
@@ -586,9 +589,18 @@ select {
 
     .appeal {
       grid-area: appeal;
-      display: flex;
-      justify-content: center;
+      // display: flex;
       align-items: center;
+      .input-wrapper {
+        max-width: 225px;
+        margin: 0;
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+        &__button {
+          margin: 0;
+        }
+      }
     }
     .evidence {
       grid-area: evidence;
@@ -598,6 +610,16 @@ select {
     }
     .validateBtn {
       grid-area: validateBtn;
+    }
+    .input-wrapper,
+    .custom-select {
+      margin-bottom: 30px;
+    }
+    .radio {
+      &__item {
+        margin-bottom: 22px;
+      }
+      margin-bottom: 28px;
     }
     @media screen and (max-width: 630px) {
       grid-template-areas:
@@ -614,6 +636,9 @@ select {
         margin-top: 20px;
       }
     }
+  }
+  .input-wrapper {
+    margin-bottom: 30px;
   }
 }
 
@@ -669,6 +694,10 @@ select {
     }
 
     .description {
+      padding-bottom: 20px;
+      .examples {
+        margin-top: 10px;
+      }
       p:nth-of-type(2) {
         margin-bottom: 0;
       }
@@ -687,6 +716,17 @@ select {
       font-size: 14px;
       text-decoration: none;
       margin-top: 23px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      width: max-content;
+      span {
+        font-size: 30px;
+        position: relative;
+        top: 4px;
+      }
+    }
+    .main p a {
+      font-weight: 500;
     }
   }
 }
