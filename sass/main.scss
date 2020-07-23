@@ -8,8 +8,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
-  &.step1,
   &.step2,
+  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -59,7 +59,7 @@ h3 {
   line-height: 28px;
   letter-spacing: 0.01em;
   color: #000000;
-  margin: 38px 0 8px;
+  margin: 38px 0 30px;
 }
 h4 {
   font-size: 18px;
@@ -213,7 +213,8 @@ textarea {
   position: relative;
   width: 100%;
   height: 56px;
-  background: rgba(237, 239, 248, 0.5);
+  //TODO  вернуть background: rgba(237, 239, 248, 0.5). сейчас 0,9 тк 0,5 не
+  background: rgba(237, 239, 248, 0.9);
   border-radius: 20px;
   margin-bottom: 22px;
   &__icon {
@@ -306,12 +307,6 @@ textarea {
     }
     input {
       padding-left: 55px;
-      &:focus,
-      &:not(:placeholder-shown) {
-        + span {
-          left: 55px;
-        }
-      }
       + span {
         left: 55px;
       }
@@ -505,11 +500,12 @@ select {
     "tel           email       "
     "line          line        "
     "radio         organization"
+    "radio         organization"
     "radio         jobTitle    "
-    "radio         .           "
     "logoFormalist validateBtn ";
   .fio {
     grid-area: fio;
+    margin-top: 20px;
   }
   .tel {
     grid-area: tel;
@@ -520,7 +516,7 @@ select {
   .line {
     grid-area: line;
     border-bottom: 2px solid #000;
-    margin: 20px 0;
+    // margin: 20px 0;
   }
 
   .radio {
@@ -528,7 +524,7 @@ select {
   }
   .organization {
     grid-area: organization;
-    // padding-top: 70px;
+    margin-top: 80px;
   }
   .jobTitle {
     grid-area: jobTitle;
