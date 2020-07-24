@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step5 {
   display: none;
 }
 
@@ -880,6 +880,10 @@ select {
   font-weight: 500;
 }
 
+.step4 h4 {
+  margin-bottom: 9px;
+}
+
 .step4 form {
   display: -ms-grid;
   display: grid;
@@ -889,7 +893,7 @@ select {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "suggestion          suggestion     " "logoFormalist  validateBtn ";
+      grid-template-areas: "suggestion     suggestion  " "logoFormalist  validateBtn ";
 }
 
 .step4 form .suggestion {
@@ -897,6 +901,7 @@ select {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: suggestion;
+  margin-top: 10px;
 }
 
 .step4 form .logoFormalist {

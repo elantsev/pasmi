@@ -10,7 +10,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 .post-material {
   &.step1,
   &.step2,
-  &.step4,
+  &.step3,
   &.step5 {
     display: none;
   }
@@ -746,6 +746,9 @@ select {
 // step4******************************************************************************************
 // ************************************************************************************************
 .step4 {
+  h4 {
+    margin-bottom: 9px;
+  }
   form {
     display: grid;
     grid-column-gap: 50px;
@@ -753,11 +756,12 @@ select {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "suggestion          suggestion     "
+      "suggestion     suggestion  "
       "logoFormalist  validateBtn ";
 
     .suggestion {
       grid-area: suggestion;
+      margin-top: 10px;
     }
     .logoFormalist {
       grid-area: logoFormalist;
