@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step5 {
+.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -67,6 +67,14 @@ h3 {
   margin: 38px 0 30px;
 }
 
+@media screen and (max-width: 630px) {
+  h3 {
+    font-size: 18px;
+    line-height: 21px;
+    margin: 33px 0 30px;
+  }
+}
+
 h4 {
   font-style: normal;
   font-weight: normal;
@@ -77,12 +85,26 @@ h4 {
   margin: 0 0 30px;
 }
 
+@media screen and (max-width: 630px) {
+  h4 {
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+  }
+}
+
 h5 {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.5px;
-  margin: 10px 0;
+  margin: 30px 0 10px;
+}
+
+@media screen and (max-width: 630px) {
+  h5 {
+    margin: 20px 0 5px;
+  }
 }
 
 a {
@@ -95,6 +117,12 @@ p {
   letter-spacing: 0.01em;
   color: #acaab6;
   margin: 10px 0;
+}
+
+@media screen and (max-width: 630px) {
+  p {
+    line-height: 16px;
+  }
 }
 
 textarea {
@@ -161,6 +189,15 @@ textarea::placeholder {
 .validateBtn:active {
   -webkit-box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.4), 0px -4px 10px rgba(255, 255, 255, 0.8);
           box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.4), 0px -4px 10px rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 630px) {
+  .validateBtn {
+    font-size: 14px;
+    line-height: 16px;
+    height: 40px;
+    width: 115px;
+  }
 }
 
 /* The container must be positioned relative: */
@@ -467,6 +504,16 @@ select {
   left: 0;
 }
 
+@media screen and (max-width: 630px) {
+  .error {
+    font-size: 9px;
+    bottom: -14px;
+  }
+  .error + .error {
+    bottom: -26px;
+  }
+}
+
 /* radio**************************************************************************************************** */
 .radio {
   border-radius: 40px;
@@ -502,7 +549,6 @@ select {
 }
 
 .radio__text {
-  /* width: 100%; */
   height: 100%;
   padding: 14px 0 0 14px;
   color: #000;
@@ -545,6 +591,13 @@ select {
 
 .tabs li[data-step] :not(.active):hover {
   color: #acaab6;
+}
+
+@media screen and (max-width: 630px) {
+  .tabs {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 /* logoFormalist********************************************************************************************** */
@@ -653,14 +706,28 @@ select {
 
 @media screen and (max-width: 630px) {
   .step1 form {
+    grid-row-gap: 25px;
         grid-template-areas: "fio fio  " "tel tel" "email email" "radio radio" "organization organization" "jobTitle jobTitle" "logoFormalist validateBtn";
   }
   .step1 form .organization {
-    padding-top: 0px;
+    margin-top: 0px;
   }
   .step1 form .logoFormalist,
   .step1 form .validateBtn {
-    margin-top: 20px;
+    margin-top: 25px;
+  }
+  .step1 form .line {
+    display: none;
+  }
+  .step1 form .radio {
+    padding-top: 10px;
+  }
+  .step1 form .radio::before {
+    display: block;
+    position: relative;
+    top: -5px;
+    content: "";
+    border-bottom: 2px solid #000;
   }
 }
 
