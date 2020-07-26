@@ -9,9 +9,9 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step2,
   &.step3,
-  &.step4 {
+  &.step4,
+  &.step5 {
     display: none;
   }
 }
@@ -479,6 +479,17 @@ select {
     cursor: pointer;
     width: 14px;
     height: 14px;
+    color: $grey-3;
+    &:checked {
+      &::after {
+        display: block;
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: $grey-3;
+        border-radius: 50%;
+      }
+    }
   }
 }
 // tabs************************************************************************************************************

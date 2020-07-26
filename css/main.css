@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step4 {
+.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -559,6 +559,16 @@ select {
   cursor: pointer;
   width: 14px;
   height: 14px;
+  color: #2c2b30;
+}
+
+.radio__input:checked::after {
+  display: block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #2c2b30;
+  border-radius: 50%;
 }
 
 .tabs {
