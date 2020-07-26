@@ -412,15 +412,16 @@ function previewFiles (selector, step) {
 
             for (const file of curFiles) {
                 const listItem = document.createElement('li');
-                const para = document.createElement('p');
-                para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
-                listItem.appendChild(para);
                 if (isImage(file)) {
                     const image = document.createElement('img');
                     image.src = URL.createObjectURL(file);
 
                     listItem.appendChild(image);
                 }
+                const para = document.createElement('p');
+                para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
+                para.className = "input-wrapper__file-name";
+                listItem.appendChild(para);
                 const deleteButton = document.createElement('p');
                 deleteButton.className = "input-wrapper__delete-button"
                 deleteButton.textContent = 'x';
