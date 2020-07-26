@@ -9,7 +9,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step3,
+  &.step2,
   &.step4,
   &.step5 {
     display: none;
@@ -677,6 +677,7 @@ select {
       margin-bottom: 28px;
     }
     @media screen and (max-width: 630px) {
+      grid-row-gap: 25px;
       grid-template-areas:
         "who-committed    who-committed   "
         "who-dont-react   who-dont-react  "
@@ -692,7 +693,7 @@ select {
       }
       .input-wrapper,
       .custom-select {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
       }
       .radio {
         &__item {
@@ -732,12 +733,17 @@ select {
       "main           main        "
       "logoFormalist  validateBtn ";
     @media screen and (max-width: 630px) {
+      grid-row-gap: 25px;
       grid-template-areas:
         "photo          photo       "
         "heading        heading     "
         "description    description "
         "main           main        "
         "logoFormalist  validateBtn ";
+      .validateBtn,
+      .logoFormalist {
+        margin-top: 20px;
+      }
     }
     .photo {
       grid-area: photo;
