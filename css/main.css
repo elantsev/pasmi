@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step3, .post-material.step4 {
   display: none;
 }
 
@@ -27,7 +27,7 @@
         flex-wrap: wrap;
   }
   .flex-row > * {
-    width: 100% !important;
+    width: 100%;
   }
 }
 
@@ -90,6 +90,7 @@ h4 {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.02em;
+    margin-bottom: 25px !important;
   }
 }
 
@@ -693,13 +694,13 @@ select {
 }
 
 .step1 form .logoFormalist {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
 .step1 form .validateBtn {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
@@ -800,13 +801,13 @@ select {
 }
 
 .step2 form .logoFormalist {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
 .step2 form .validateBtn {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
@@ -900,13 +901,13 @@ select {
 }
 
 .step3 form .logoFormalist {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
 .step3 form .validateBtn {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
@@ -989,13 +990,13 @@ select {
 }
 
 .step4 form .logoFormalist {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
 .step4 form .validateBtn {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
@@ -1023,7 +1024,7 @@ select {
 .step5 .checkbox {
   background: rgba(205, 214, 241, 0.3);
   border-radius: 20px;
-  width: 367px;
+  max-width: 367px;
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1081,7 +1082,7 @@ select {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "acceptTerms          acceptTerms     " "monthlyTransfer          monthlyTransfer     " "email          email     " "transferValueRadio          transferValueRadio     " "transferValueText          transferValueText     " "logoFormalist  validateBtn ";
+      grid-template-areas: "acceptTerms          acceptTerms     " "monthlyTransfer          monthlyTransfer     " "email               email     " "transferValue          transferValue    " "logoFormalist  validateBtn ";
 }
 
 .step5 form .acceptTerms {
@@ -1106,73 +1107,42 @@ select {
   max-width: 369px;
 }
 
-.step5 form .transferValue.radio {
+.step5 form .transferValue {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: transferValueRadio;
-}
-
-.step5 form .transferValue.text {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: transferValueText;
+  grid-area: transferValue;
 }
 
 .step5 form .logoFormalist {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
   margin-top: 50px;
 }
 
 .step5 form .validateBtn {
-  -ms-grid-row: 6;
+  -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
   margin-top: 50px;
 }
 
-.step5 form .transferValue.text {
-  margin-top: 30px;
+.step5 form .transferValue {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 400px;
 }
 
-.step5 form .transferValue.text input {
+.step5 form .transferValue .radio__item {
+  width: 81px;
+}
+
+.step5 form .transferValue .input-wrapper {
   width: 140px;
-  height: 40px;
-}
-
-.step5 form .transferValue.text input ::-webkit-input-placeholder {
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height */
-  text-align: center;
-  color: #c5c4cd;
-}
-
-.step5 form .transferValue.text input :-ms-input-placeholder {
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height */
-  text-align: center;
-  color: #c5c4cd;
-}
-
-.step5 form .transferValue.text input ::-ms-input-placeholder {
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height */
-  text-align: center;
-  color: #c5c4cd;
-}
-
-.step5 form .transferValue.text input ::placeholder {
-  font-size: 14px;
-  line-height: 16px;
-  /* identical to box height */
-  text-align: center;
-  color: #c5c4cd;
 }
 
 .step5 form .transferValue .default {
@@ -1198,6 +1168,12 @@ select {
 
 .step5 form .transferValue .radio__input:checked ~ .radio__label {
   background: rgba(205, 214, 241, 0.5);
+}
+
+@media screen and (max-width: 630px) {
+  .step5 hr {
+    margin: 30px 0;
+  }
 }
 
 .editor-contaiter {

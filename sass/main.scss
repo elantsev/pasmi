@@ -10,8 +10,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 .post-material {
   &.step1,
   &.step2,
-  &.step4,
-  &.step5 {
+  &.step3,
+  &.step4 {
     display: none;
   }
 }
@@ -29,7 +29,7 @@ $input-active: rgba(205, 214, 241, 0.5);
   @media screen and (max-width: 630px) {
     flex-wrap: wrap;
     > * {
-      width: 100% !important;
+      width: 100%;
     }
   }
 }
@@ -78,6 +78,7 @@ h4 {
     font-size: 16px;
     line-height: 18px;
     letter-spacing: 0.02em;
+    margin-bottom: 25px !important;
   }
 }
 h5 {
@@ -248,7 +249,7 @@ select {
   position: relative;
   width: 100%;
   height: 56px;
-  //TODO  вернуть background: rgba(237, 239, 248, 0.5). сейчас 0,9 тк 0,5 не
+  //TODO  вернуть background: rgba(237, 239, 248, 0.5). сейчас 0,9 тк 0,5 не видно
   background: rgba(237, 239, 248, 0.9);
   border-radius: 20px;
   margin-bottom: 22px;
@@ -862,7 +863,7 @@ select {
   .checkbox {
     background: rgba(205, 214, 241, 0.3);
     border-radius: 20px;
-    width: 367px;
+    max-width: 367px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -909,9 +910,8 @@ select {
     grid-template-areas:
       "acceptTerms          acceptTerms     "
       "monthlyTransfer          monthlyTransfer     "
-      "email          email     "
-      "transferValueRadio          transferValueRadio     "
-      "transferValueText          transferValueText     "
+      "email               email     "
+      "transferValue          transferValue    "
       "logoFormalist  validateBtn ";
 
     .acceptTerms {
@@ -925,12 +925,10 @@ select {
       max-width: 369px;
     }
 
-    .transferValue.radio {
-      grid-area: transferValueRadio;
+    .transferValue {
+      grid-area: transferValue;
     }
-    .transferValue.text {
-      grid-area: transferValueText;
-    }
+
     .logoFormalist {
       grid-area: logoFormalist;
       margin-top: 50px;
@@ -940,21 +938,14 @@ select {
       margin-top: 50px;
     }
     .transferValue {
-      &.text {
-        margin-top: 30px;
-        input {
-          width: 140px;
-          height: 40px;
-          ::placeholder {
-            font-size: 14px;
-            line-height: 16px;
-            /* identical to box height */
-
-            text-align: center;
-
-            color: #c5c4cd;
-          }
-        }
+      align-items: baseline;
+      flex-wrap: wrap;
+      max-width: 400px;
+      .radio__item {
+        width: 81px;
+      }
+      .input-wrapper {
+        width: 140px;
       }
       .default {
         display: none;
@@ -978,6 +969,11 @@ select {
           }
         }
       }
+    }
+  }
+  @media screen and (max-width: 630px) {
+    hr {
+      margin: 30px 0;
     }
   }
 }

@@ -6,10 +6,10 @@ let data = {
 const saveResult = (stepName, fields, fieldName) => {
     let result = {}
     if (fieldName) {
- 
+
         data = {
             ...data,
-            [stepName]: {  
+            [stepName]: {
                 ...data[stepName], [fieldName]: fields
             }
         }
@@ -239,8 +239,8 @@ const submitForm = (event, step) => {
 // step5 Поддержать редакцию - выбор суммы transferValue*****************************************************************************
 
 
-let text = document.querySelector('.transferValue.input-wrapper input[name="transferValue"]')
-let checkboxes = document.querySelectorAll('.transferValue.radio input[name="transferValue"]')
+let text = document.querySelector('.transferValue .input-wrapper input[type="text"]')
+let checkboxes = document.querySelectorAll('.transferValue.radio input[type="radio"]')
 
 checkboxes.forEach(checkbox => checkbox.addEventListener("click", (e) => setTransferValue(e)))
 const setTransferValue = (e) => {
