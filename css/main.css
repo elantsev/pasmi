@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -121,7 +121,7 @@ p {
 
 @media screen and (max-width: 630px) {
   p {
-    line-height: 16px;
+    line-height: 20px;
   }
 }
 
@@ -506,11 +506,11 @@ select {
 
 @media screen and (max-width: 630px) {
   .error {
-    font-size: 9px;
+    font-size: 10px;
     bottom: -14px;
   }
   .error + .error {
-    bottom: -26px;
+    bottom: -28px;
   }
 }
 
@@ -811,11 +811,6 @@ select {
   grid-area: validateBtn;
 }
 
-.step2 form .input-wrapper,
-.step2 form .custom-select {
-  margin-bottom: 30px;
-}
-
 .step2 form .radio {
   margin-bottom: 28px;
 }
@@ -830,11 +825,27 @@ select {
   }
   .step2 form .logoFormalist,
   .step2 form .validateBtn {
-    margin-top: 20px;
+    margin-top: 0;
+  }
+  .step2 form .input-wrapper,
+  .step2 form .custom-select {
+    margin-bottom: 25px;
+  }
+  .step2 form .radio__item {
+    margin-bottom: 1px;
+  }
+  .step2 form .appeal .input-wrapper {
+    margin-bottom: 20px;
+    padding: 0;
+    max-width: 100%;
+  }
+  .step2 form .appeal .input-wrapper:not(:last-child) {
+    margin-right: 0px;
   }
 }
 
-.step2 .input-wrapper {
+.step2 .input-wrapper,
+.step2 .custom-select {
   margin-bottom: 30px;
 }
 

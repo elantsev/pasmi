@@ -8,7 +8,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
-  &.step2,
+  &.step1,
   &.step3,
   &.step4,
   &.step5 {
@@ -101,7 +101,7 @@ p {
   color: $grey-2;
   margin: 10px 0;
   @media screen and (max-width: 630px) {
-    line-height: 16px;
+    line-height: 20px;
   }
 }
 textarea {
@@ -435,10 +435,10 @@ select {
     left: 0;
   }
   @media screen and (max-width: 630px) {
-    font-size: 9px;
+    font-size: 10px;
     bottom: -14px;
     & + .error {
-      bottom: -26px;
+      bottom: -28px;
     }
   }
 }
@@ -669,10 +669,7 @@ select {
     .validateBtn {
       grid-area: validateBtn;
     }
-    .input-wrapper,
-    .custom-select {
-      margin-bottom: 30px;
-    }
+
     .radio {
       &__item {
         margin-bottom: 22px;
@@ -691,11 +688,31 @@ select {
 
       .logoFormalist,
       .validateBtn {
-        margin-top: 20px;
+        margin-top: 0;
+      }
+      .input-wrapper,
+      .custom-select {
+        margin-bottom: 25px;
+      }
+      .radio {
+        &__item {
+          margin-bottom: 1px;
+        }
+      }
+      .appeal {
+        .input-wrapper {
+          margin-bottom: 20px;
+          padding: 0;
+          max-width: 100%;
+          &:not(:last-child) {
+            margin-right: 0px;
+          }
+        }
       }
     }
   }
-  .input-wrapper {
+  .input-wrapper,
+  .custom-select {
     margin-bottom: 30px;
   }
 }
