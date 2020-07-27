@@ -1096,7 +1096,7 @@ select {
 .step5 .checkbox__input:checked::after {
   visibility: visible;
   display: block;
-  content: "\2714";
+  content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADRSURBVHgBldFBDsFAFAbgea9KWNnRK9DwOp0RrDiCC3AER+g4CVdwArOTsMApsLPuovVqIVGV1J/MzGLmy+S9B+KP+D4ZADHHsqDXkwYBIgDclgLEgPphShSuSwFJygSkEkm6JJDKhHKQ8voE3W7/5HfI5IGSA6PVMNV6/PWD0257I8fBpdfy4Ha/2hdQQ4OIERduD8f9LI8g24JAb/jBAlCsUFQEnxFfnesNd2qtfRQiokmz6sY7ngFxS1NGl1qtUgjeKMuEYVxPMijcKv4EWZ4TjDWAtgLzfwAAAABJRU5ErkJggg==");
   position: absolute;
 }
 
