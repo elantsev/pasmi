@@ -186,15 +186,21 @@ const submitForm = (event, step) => {
         // isFields && (!tel || isTelValid) && (!email || isEmailValid)
     ) {
         saveResult(name, fields)
-        const currentIndex = steps.findIndex(s => s.name === step.name)
-        const nextStep = steps[currentIndex + 1]
         setOpenStep(name, true)
         setValidStep(name, true)
-        setOpenStep(nextStep.name, true)
         if (name !== "step5") {
-            // setActiveStep(nextStep.name)
-        } else {
+            const currentIndex = steps.findIndex(s => s.name === step.name)
+            const nextStep = steps[currentIndex + 1]
+            setOpenStep(nextStep.name, true)
+            setActiveStep(nextStep.name)
+        }
+        if (name === "step4") {
             // sendDataToServer(data)
+            console.log("submitForm -> data", data)
+        }
+        if (name === "step5") {
+            // sendDataToServer(data)
+            console.log("submitForm -> data", data.step5)
         }
     } else {
         setValidStep(name, false)
@@ -264,7 +270,7 @@ for (i = 0; i < l; i++) {
     ll = selElmnt.length;
     /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
-    a.setAttribute("class", "select-selected");
+    a.setAttribute("class", "select-selected qqq");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
