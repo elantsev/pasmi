@@ -145,7 +145,8 @@ const checkTelFormat = (tel) => {
     let result = true
     let regExp = /^([+]?[0-9\s-\(\)]{3,25})*$/i
     if (regExp.test(tel.value) === false) {
-        let error = generateError('Некорректный номер телефона.')
+        let errorText = tel.value === "+7 (___) ___ __ __" ? 'Введите номер телефона.' : 'Некорректный номер телефона.'
+        let error = generateError(errorText)
         tel.parentElement.insertBefore(error, tel)
         result = false
     }
@@ -164,6 +165,20 @@ const checkEmailFormat = (email) => {
     }
     return result
 }
+const checkDateFormat = (date) => {
+    if (!date) {
+        return true
+    }
+    let result = true
+    let regExp = /\d\d\.\d\d\.\d\d\d\d/
+    if (regExp.test(date.value) === false) {
+        let errorText = date.value === "__.__.____" ? 'Введите дату.' : 'Некорректная дата.'
+        let error = generateError(errorText)
+        date.parentElement.insertBefore(error, date)
+        result = false
+    }
+    return result
+}
 
 const submitForm = (event, step) => {
 
@@ -176,31 +191,32 @@ const submitForm = (event, step) => {
     const fields = [...inputs, ...textareas, ...editor]
     const tel = form.querySelector('.tel input')
     const email = form.querySelector('.email input')
+    const date = form.querySelector('.step2 .appeal input[name="appealDate"]')
 
     const isFields = checkFieldsPresence(fields);
     const isTelValid = checkTelFormat(tel);
     const isEmailValid = checkEmailFormat(email);
+    const isDateValid = checkDateFormat(date);
 
     if (
         true
-        // isFields && (!tel || isTelValid) && (!email || isEmailValid)
+        // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)
     ) {
         saveResult(name, fields)
         setOpenStep(name, true)
         setValidStep(name, true)
+        console.log("submitForm -> data", data)
         if (name !== "step5") {
             const currentIndex = steps.findIndex(s => s.name === step.name)
             const nextStep = steps[currentIndex + 1]
             setOpenStep(nextStep.name, true)
-            setActiveStep(nextStep.name)
+            // setActiveStep(nextStep.name)
         }
         if (name === "step4") {
             // sendDataToServer(data)
-            console.log("submitForm -> data", data)
         }
         if (name === "step5") {
-            // sendDataToServer(data)
-            console.log("submitForm -> data", data.step5)
+            // sendDataToServer(data.step5)
         }
     } else {
         setValidStep(name, false)
@@ -208,38 +224,35 @@ const submitForm = (event, step) => {
 }
 
 
+// маска даты*******************************************************************************************************
+
+let dateMask = IMask(
+    document.querySelector('.step2 .appeal input[name="appealDate"]'),
+    {
+        mask: Date,
+        lazy: false,
+        overwrite: true,
+        autofix: true,
+        blocks: {
+            d: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1, to: 31, maxLength: 2 },
+            m: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1, to: 12, maxLength: 2 },
+            Y: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1900, to: 2100, maxLength: 4 }
+        }
+    }
+
+
+
+);
+
+
 // маска телефона*******************************************************************************************************
 
-// function setCursorPosition (pos, e) {
-//     if (e.setSelectionRange) e.setSelectionRange(pos, pos);
-//     else if (e.createTextRange) {
-//         let range = e.createTextRange();
-//         range.collapse(true);
-//         range.moveEnd("character", pos);
-//         range.moveStart("character", pos);
-//         range.select()
-//     }
-// }
+let phoneMask = IMask(
+    document.querySelector('.step1 .tel input[name="tel"]'), {
+    mask: '+{7} (000) 000 00 00',
+    lazy: false
+});
 
-// function mask (e) {
-//     let matrix = this.placeholder, // .defaultValue
-//         i = 0,
-//         def = matrix.replace(/\D/g, ""),
-//         val = this.value.replace(/\D/g, "");
-//     def.length >= val.length && (val = def);
-//     matrix = matrix.replace(/[_\d]/g, function (a) {
-//         return val.charAt(i++) || "_"
-//     });
-//     this.value = matrix;
-//     i = matrix.lastIndexOf(val.substr(-1));
-//     i < matrix.length && matrix != this.placeholder ? i++ : i = matrix.indexOf("_");
-//     setCursorPosition(i, this)
-// }
-// window.addEventListener("DOMContentLoaded", function () {
-//     let input = document.querySelector("#online_phone");
-//     input.addEventListener("input", mask, false);
-//     setCursorPosition(4, input);
-// });
 
 
 // step5 Поддержать редакцию - выбор суммы transferValue*****************************************************************************
