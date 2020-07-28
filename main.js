@@ -179,6 +179,21 @@ const checkDateFormat = (date) => {
     }
     return result
 }
+const checkSelects = (selects) => {
+    if (!selects) {
+        return true
+    }
+    let result = true
+    for (let i = 0; i < selects.length; i++) {
+
+        if (!selects[i].value) {
+            let error = generateError('Селект не выбран.')
+            selects[i].parentElement.insertBefore(error, selects[i])
+            result = false
+        }
+    }
+    return result
+}
 
 const submitForm = (event, step) => {
 
@@ -192,15 +207,18 @@ const submitForm = (event, step) => {
     const tel = form.querySelector('.tel input')
     const email = form.querySelector('.email input')
     const date = form.querySelector('.step2 .appeal input[name="appealDate"]')
+    const selects = form.querySelectorAll('select')
+
 
     const isFields = checkFieldsPresence(fields);
     const isTelValid = checkTelFormat(tel);
     const isEmailValid = checkEmailFormat(email);
     const isDateValid = checkDateFormat(date);
+    const isSelectsSelected = checkSelects(selects);
 
     if (
         true
-        // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)
+        // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)&& (!selects || isSelectsSelected)
     ) {
         saveResult(name, fields)
         setOpenStep(name, true)
