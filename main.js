@@ -230,7 +230,7 @@ let dateMask = IMask(
     document.querySelector('.step2 .appeal input[name="appealDate"]'),
     {
         mask: Date,
-        lazy: false,
+        lazy: true,
         overwrite: true,
         autofix: true,
         blocks: {
@@ -250,7 +250,7 @@ let dateMask = IMask(
 let phoneMask = IMask(
     document.querySelector('.step1 .tel input[name="tel"]'), {
     mask: '+{7} (000) 000 00 00',
-    lazy: false
+    lazy: true
 });
 
 
@@ -358,7 +358,6 @@ document.addEventListener("click", closeAllSelect);
 // editor**************************************************************************************
 
 var options = {
-    // debug: 'info', 
     placeholder: 'введите',
     theme: 'snow'
 };

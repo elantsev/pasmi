@@ -31,24 +31,18 @@
   }
 }
 
-.flex-2column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.flex-2column > * {
-  width: 46.5% !important;
+.two-column {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
 }
 
 @media screen and (max-width: 630px) {
-  .flex-2column > * {
-    width: 100% !important;
+  .two-column {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
@@ -296,7 +290,7 @@ select {
   position: relative;
   width: 100%;
   height: 56px;
-  background: rgba(237, 239, 248, 0.9);
+  background: rgba(237, 239, 248, 0.5);
   border-radius: 20px;
   margin-bottom: 22px;
 }
@@ -571,6 +565,9 @@ select {
   padding: 0 20px;
   border-radius: 40px;
   margin-bottom: 1px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   cursor: pointer;
 }
 
@@ -970,6 +967,10 @@ select {
   width: 147px;
   height: 130px;
   cursor: pointer;
+}
+
+.step3 form .photo .input-wrapper__delete-button {
+  display: none;
 }
 
 .step3 form .description {

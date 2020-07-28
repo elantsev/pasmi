@@ -33,17 +33,12 @@ $input-active: rgba(205, 214, 241, 0.5);
     }
   }
 }
-.flex-2column {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  > * {
-    width: 46.5% !important;
-  }
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
   @media screen and (max-width: 630px) {
-    > * {
-      width: 100% !important;
-    }
+    grid-template-columns: 1fr;
   }
 }
 
@@ -250,7 +245,7 @@ select {
   width: 100%;
   height: 56px;
   //TODO  вернуть background: rgba(237, 239, 248, 0.5). сейчас 0,9 тк 0,5 не видно
-  background: rgba(237, 239, 248, 0.9);
+  background: rgba(237, 239, 248, 0.5);
   border-radius: 20px;
   margin-bottom: 22px;
   &__icon {
@@ -493,6 +488,7 @@ select {
     padding: 0 20px;
     border-radius: 40px;
     margin-bottom: 1px;
+    width: max-content;
     cursor: pointer;
 
     &:hover {
@@ -683,8 +679,6 @@ select {
       "logoFormalist    validateBtn     ";
     .who-committed {
       grid-area: who-committed;
-      .flex-2column {
-      }
     }
     .who-dont-react {
       grid-area: who-dont-react;
@@ -824,6 +818,9 @@ select {
         width: 147px;
         height: 130px;
         cursor: pointer;
+      }
+      &__delete-button {
+        display: none;
       }
     }
 
