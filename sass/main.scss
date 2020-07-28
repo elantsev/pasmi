@@ -356,7 +356,8 @@ select {
     flex-wrap: wrap;
     min-width: 97.39px;
     min-height: 77.4px;
-    width: max-content;
+    // width: max-content;
+    background: #fff;
     .error {
       bottom: -50px;
     }
@@ -405,7 +406,7 @@ select {
         width: 97px;
         height: 77px;
         position: relative;
-        margin: 5px;
+        margin: 10px;
         box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2),
           -4px -4px 7px rgba(255, 255, 255, 0.5);
         border-radius: 10px;
@@ -1037,15 +1038,27 @@ select {
   border-radius: 20px;
   position: relative;
   margin: 20px 0;
+  color: red;
 
-  &:focus-within {
-    background: $input-active;
-  }
   .ql-container {
     border: none;
     min-height: 277px;
   }
   .ql-toolbar {
     border: none;
+    * {
+      color: $grey-2;
+      stroke: $grey-2;
+    }
+  }
+  .ql-editor p {
+    color: #000;
+  }
+  .ql-blank::before {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: $grey-1;
   }
 }

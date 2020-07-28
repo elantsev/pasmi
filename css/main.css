@@ -409,9 +409,7 @@ select {
       flex-wrap: wrap;
   min-width: 97.39px;
   min-height: 77.4px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  background: #fff;
 }
 
 .input-wrapper.file .error {
@@ -472,7 +470,7 @@ select {
   width: 97px;
   height: 77px;
   position: relative;
-  margin: 5px;
+  margin: 10px;
   -webkit-box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
           box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
@@ -1239,10 +1237,7 @@ select {
   border-radius: 20px;
   position: relative;
   margin: 20px 0;
-}
-
-.editor-contaiter:focus-within {
-  background: rgba(205, 214, 241, 0.5);
+  color: red;
 }
 
 .editor-contaiter .ql-container {
@@ -1252,5 +1247,22 @@ select {
 
 .editor-contaiter .ql-toolbar {
   border: none;
+}
+
+.editor-contaiter .ql-toolbar * {
+  color: #acaab6;
+  stroke: #acaab6;
+}
+
+.editor-contaiter .ql-editor p {
+  color: #000;
+}
+
+.editor-contaiter .ql-blank::before {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #d2d1d5;
 }
 /*# sourceMappingURL=main.css.map */

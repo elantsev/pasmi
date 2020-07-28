@@ -370,9 +370,12 @@ const editorContaiter = document.querySelector(".step3 .editor-contaiter")
 document.addEventListener("click", (e) => {
     editorContaiter.style.background = "#ffffff"
 })
+
 editorContaiter.addEventListener('click', (e) => {
     e.stopPropagation()
     editorContaiter.style.background = "rgba(205, 214, 241, 0.5)"
+    const editor = editorContaiter.querySelector(".ql-editor.ql-blank")
+    editor.focus()
 })
 
 
@@ -452,9 +455,12 @@ function previewFiles (selector, step) {
                     para.className = "input-wrapper__file-name";
                     listItem.appendChild(para);
                 }
-                const deleteButton = document.createElement('p');
+                const deleteButton = document.createElement('span');
                 deleteButton.className = "input-wrapper__delete-button"
                 deleteButton.textContent = '+';
+                const hint = document.createElement('span');
+                hint.className = "input-wrapper__hint"
+                hint.textContent = 'Удалить';
                 deleteButton.onclick = (e) => {
                     e.preventDefault()
                     curFiles = curFiles.filter(f => f.name !== file.name)
@@ -465,6 +471,7 @@ function previewFiles (selector, step) {
                     }
                 }
                 listItem.appendChild(deleteButton)
+                listItem.appendChild(hint)
                 list.appendChild(listItem);
             }
         }
