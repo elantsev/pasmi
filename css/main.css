@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step2, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -402,7 +402,20 @@ select {
 }
 
 .input-wrapper.file {
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 97.39px;
+  min-height: 77.4px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.input-wrapper.file .error {
+  bottom: -50px;
 }
 
 .input-wrapper.file .input-wrapper__input {
@@ -411,6 +424,12 @@ select {
 
 .input-wrapper.file .input-wrapper__input--low {
   padding: 15px 15px 5px 55px;
+}
+
+.input-wrapper.file .input-wrapper__button {
+  width: 97.39px;
+  height: 77.4px;
+  margin: 0;
 }
 
 .input-wrapper.file .input-wrapper__button span {
@@ -427,33 +446,12 @@ select {
   display: none;
 }
 
-.input-wrapper.file .input-wrapper__delete {
-  display: none;
-  position: absolute;
-  top: -2px;
-  right: 5px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.input-wrapper.file .input-wrapper__delete:hover {
-  color: #f00;
-}
-
-.input-wrapper.file .input-wrapper__delete:hover .input-wrapper__hint {
-  color: #f00;
-  visibility: visible;
-}
-
 .input-wrapper.file .input-wrapper__hint {
   visibility: hidden;
   position: absolute;
   display: block;
-  left: 25px;
-  top: -18px;
+  right: -50px;
+  top: -20px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: transparent;
@@ -475,6 +473,9 @@ select {
   height: 77px;
   position: relative;
   margin: 5px;
+  -webkit-box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
+          box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 .input-wrapper.file .input-wrapper__fileList .input-wrapper__file-name {
@@ -497,6 +498,9 @@ select {
   max-height: 100%;
   top: 0;
   left: 0;
+  -webkit-box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
+          box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 .input-wrapper.file .input-wrapper__delete-button {
@@ -504,10 +508,22 @@ select {
   padding: 10px;
   margin: 0;
   border-radius: 50%;
-  color: red;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   top: 0;
   right: 0;
   line-height: 8px;
+  font-size: 28px;
+  color: #c4c4c4;
+}
+
+.input-wrapper.file .input-wrapper__delete-button:hover {
+  color: #2c2b30;
+}
+
+.input-wrapper.file .input-wrapper__delete-button:hover + .input-wrapper__hint {
+  color: #2c2b30;
+  visibility: visible;
 }
 
 /* error******************************************************************************************************************* */
@@ -720,6 +736,8 @@ select {
   -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: jobTitle;
+  position: relative;
+  top: -55px;
 }
 
 .step1 form .logoFormalist {
@@ -741,6 +759,9 @@ select {
   }
   .step1 form .organization {
     margin-top: 0px;
+  }
+  .step1 form .jobTitle {
+    top: 0;
   }
   .step1 form .logoFormalist,
   .step1 form .validateBtn {
@@ -948,6 +969,8 @@ select {
 }
 
 .step3 form .photo .input-wrapper__preview {
+  width: 147px;
+  height: 130px;
   cursor: pointer;
 }
 

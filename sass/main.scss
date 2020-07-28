@@ -8,8 +8,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
+  &.step1,
   &.step2,
-  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -352,7 +352,14 @@ select {
     }
   }
   &.file {
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 97.39px;
+    min-height: 77.4px;
+    width: max-content;
+    .error {
+      bottom: -50px;
+    }
     .input-wrapper__input {
       display: none;
       &--low {
@@ -360,6 +367,9 @@ select {
       }
     }
     .input-wrapper__button {
+      width: 97.39px;
+      height: 77.4px;
+      margin: 0;
       span {
         margin-bottom: 13px;
         text-align: center;
@@ -373,29 +383,13 @@ select {
       height: 100%;
       display: none;
     }
-    .input-wrapper__delete {
-      display: none;
-      position: absolute;
-      top: -2px;
-      right: 5px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-      &:hover {
-        color: #f00;
-        .input-wrapper__hint {
-          color: #f00;
-          visibility: visible;
-        }
-      }
-    }
+
     .input-wrapper__hint {
       visibility: hidden;
       position: absolute;
       display: block;
-      left: 25px;
-      top: -18px;
+      right: -50px;
+      top: -20px;
       transition: 0.3s;
       color: transparent;
     }
@@ -412,6 +406,9 @@ select {
         height: 77px;
         position: relative;
         margin: 5px;
+        box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2),
+          -4px -4px 7px rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
       }
       .input-wrapper__file-name {
         position: absolute;
@@ -432,6 +429,9 @@ select {
         max-height: 100%;
         top: 0;
         left: 0;
+        box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2),
+          -4px -4px 7px rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
       }
     }
     .input-wrapper__delete-button {
@@ -439,10 +439,19 @@ select {
       padding: 10px;
       margin: 0;
       border-radius: 50%;
-      color: red;
+      transform: rotate(45deg);
       top: 0;
       right: 0;
       line-height: 8px;
+      font-size: 28px;
+      color: #c4c4c4;
+      &:hover {
+        color: $grey-3;
+        + .input-wrapper__hint {
+          color: $grey-3;
+          visibility: visible;
+        }
+      }
     }
   }
 }
@@ -609,6 +618,8 @@ select {
   }
   .jobTitle {
     grid-area: jobTitle;
+    position: relative;
+    top: -55px;
   }
   .logoFormalist {
     grid-area: logoFormalist;
@@ -628,6 +639,9 @@ select {
       "logoFormalist validateBtn";
     .organization {
       margin-top: 0px;
+    }
+    .jobTitle {
+      top: 0;
     }
     .logoFormalist,
     .validateBtn {
@@ -806,6 +820,8 @@ select {
         padding-top: 40px;
       }
       &__preview {
+        width: 147px;
+        height: 130px;
         cursor: pointer;
       }
     }

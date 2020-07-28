@@ -170,7 +170,7 @@ const checkDateFormat = (date) => {
         return true
     }
     let result = true
-    let regExp = /\d\d\.\d\d\.\d\d\d\d/
+    let regExp = /\d{2}\.\d{2}\.\d{4}/
     if (regExp.test(date.value) === false) {
         let errorText = date.value === "__.__.____" ? 'Введите дату.' : 'Некорректная дата.'
         let error = generateError(errorText)
@@ -365,6 +365,16 @@ var options = {
 
 var quill = new Quill('#editor', options);
 
+const editorContaiter = document.querySelector(".step3 .editor-contaiter")
+
+document.addEventListener("click", (e) => {
+    editorContaiter.style.background = "#ffffff"
+})
+editorContaiter.addEventListener('click', (e) => {
+    e.stopPropagation()
+    editorContaiter.style.background = "rgba(205, 214, 241, 0.5)"
+})
+
 
 // PreviewImage******************************************************************************************************
 
@@ -423,7 +433,7 @@ function previewFiles (selector, step) {
         if (curFiles.length === 0) {
             const para = document.createElement('p');
             para.style.color = 'red'
-            para.textContent = 'выберите данные для загрузки';
+            para.textContent = 'выберите файлы для загрузки';
             preview.appendChild(para);
         } else {
             const list = document.createElement('ol');
@@ -436,14 +446,15 @@ function previewFiles (selector, step) {
                     image.src = URL.createObjectURL(file);
 
                     listItem.appendChild(image);
+                } else {
+                    const para = document.createElement('p');
+                    para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
+                    para.className = "input-wrapper__file-name";
+                    listItem.appendChild(para);
                 }
-                const para = document.createElement('p');
-                para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
-                para.className = "input-wrapper__file-name";
-                listItem.appendChild(para);
                 const deleteButton = document.createElement('p');
                 deleteButton.className = "input-wrapper__delete-button"
-                deleteButton.textContent = 'x';
+                deleteButton.textContent = '+';
                 deleteButton.onclick = (e) => {
                     e.preventDefault()
                     curFiles = curFiles.filter(f => f.name !== file.name)
