@@ -119,6 +119,10 @@ const checkFieldsPresence = (fields) => {
 
         if (fields[i]?.dataset.link === "https://quilljs.com") {
             continue
+        } else if (fields[i].tagName === "SELECT" && !fields[i].value) {
+            let error = generateError('Пожалуйста, выберите значение.')
+            fields[i].parentElement.insertBefore(error, fields[i])
+            result = false
         } else if (fields[i].tagName === "DIV") {
             if (fields[i].querySelector('.ql-blank')) {
                 let error = generateError('Пожалуйста, заполните обязательное поле.')
@@ -179,21 +183,6 @@ const checkDateFormat = (date) => {
     }
     return result
 }
-const checkSelects = (selects) => {
-    if (!selects) {
-        return true
-    }
-    let result = true
-    for (let i = 0; i < selects.length; i++) {
-
-        if (!selects[i].value) {
-            let error = generateError('Селект не выбран.')
-            selects[i].parentElement.insertBefore(error, selects[i])
-            result = false
-        }
-    }
-    return result
-}
 
 const submitForm = (event, step) => {
 
@@ -203,22 +192,21 @@ const submitForm = (event, step) => {
     const textareas = form.querySelectorAll('textarea')
     const inputs = form.querySelectorAll('input')
     const editor = form.querySelectorAll('#editor')
-    const fields = [...inputs, ...textareas, ...editor]
+    const selects = form.querySelectorAll('select')
+    const fields = [...inputs, ...textareas, ...editor, ...selects]
     const tel = form.querySelector('.tel input')
     const email = form.querySelector('.email input')
     const date = form.querySelector('.step2 .appeal input[name="appealDate"]')
-    const selects = form.querySelectorAll('select')
 
 
     const isFields = checkFieldsPresence(fields);
     const isTelValid = checkTelFormat(tel);
     const isEmailValid = checkEmailFormat(email);
     const isDateValid = checkDateFormat(date);
-    const isSelectsSelected = checkSelects(selects);
 
     if (
         true
-        // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)&& (!selects || isSelectsSelected)
+        // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)
     ) {
         saveResult(name, fields)
         setOpenStep(name, true)
@@ -303,7 +291,6 @@ for (i = 0; i < l; i++) {
     a = document.createElement("DIV");
     a.setAttribute("class", "select-selected placeholder");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-    console.log("selElmnt.selectedIndex", selElmnt.selectedIndex)
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
@@ -325,7 +312,6 @@ for (i = 0; i < l; i++) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
                     h.classList.remove('placeholder')
-                    console.log("h.classList", h.classList)
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     yl = y.length;
                     for (k = 0; k < yl; k++) {
