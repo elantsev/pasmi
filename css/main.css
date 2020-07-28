@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -206,6 +206,10 @@ textarea::placeholder {
   /*hide original SELECT element: */
 }
 
+.custom-select .placeholder {
+  color: #acaab6;
+}
+
 .select-selected {
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 10px 4px rgba(205, 214, 241, 0.6);
@@ -277,7 +281,7 @@ textarea::placeholder {
 
 .select-items div:hover,
 .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(205, 214, 241, 0.5);
 }
 
 select {
@@ -929,6 +933,7 @@ select {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: heading;
+  margin-top: 40px;
 }
 
 .step3 form .description {

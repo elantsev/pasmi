@@ -283,8 +283,9 @@ for (i = 0; i < l; i++) {
     ll = selElmnt.length;
     /* For each element, create a new DIV that will act as the selected item: */
     a = document.createElement("DIV");
-    a.setAttribute("class", "select-selected qqq");
+    a.setAttribute("class", "select-selected placeholder");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    console.log("selElmnt.selectedIndex", selElmnt.selectedIndex)
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
@@ -305,6 +306,8 @@ for (i = 0; i < l; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
+                    h.classList.remove('placeholder')
+                    console.log("h.classList", h.classList)
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     yl = y.length;
                     for (k = 0; k < yl; k++) {

@@ -9,7 +9,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step2,
+  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -163,6 +163,9 @@ textarea {
   select {
     display: none; /*hide original SELECT element: */
   }
+  .placeholder {
+    color: $grey-2;
+  }
 }
 
 .select-selected {
@@ -231,7 +234,7 @@ textarea {
 
 .select-items div:hover,
 .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: $input-active;
 }
 
 select {
@@ -795,6 +798,7 @@ select {
     }
     .heading {
       grid-area: heading;
+      margin-top: 40px;
     }
     .description {
       grid-area: description;
