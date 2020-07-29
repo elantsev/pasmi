@@ -19,6 +19,11 @@ const saveResult = (stepName, fields, fieldName) => {
         if (field.type === 'file') {
             return
         }
+        if (field.id === "editor") {
+            const data = field.querySelector(".ql-editor").innerHTML
+            const name = field.dataset.name
+            result[name] = result[data]
+        }
         if (field.type === 'radio' && field.checked || field.type !== 'radio') {
             result[field.name] = result[field.name] ? result[field.name] : field.value
         }
@@ -381,7 +386,7 @@ document.addEventListener("click", (e) => {
 editorContaiter.addEventListener('click', (e) => {
     e.stopPropagation()
     editorContaiter.style.background = "rgba(205, 214, 241, 0.5)"
-    const editor = editorContaiter.querySelector(".ql-editor.ql-blank")
+    const editor = editorContaiter.querySelector(".ql-editor")
     editor.focus()
 })
 
