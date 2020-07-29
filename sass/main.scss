@@ -9,7 +9,7 @@ $input-active: rgba(205, 214, 241, 0.5);
 
 .post-material {
   &.step1,
-  &.step3,
+  &.step2,
   &.step4,
   &.step5 {
     display: none;
@@ -354,7 +354,7 @@ select {
     flex-wrap: wrap;
     min-width: 97.39px;
     min-height: 77.4px;
-    // width: max-content;
+    height: auto;
     background: #fff;
     .error {
       bottom: -50px;
@@ -368,7 +368,7 @@ select {
     .input-wrapper__button {
       width: 97.39px;
       height: 77.4px;
-      margin: 0;
+      margin: 0 0 10px;
       span {
         margin-bottom: 13px;
         text-align: center;
@@ -404,10 +404,11 @@ select {
         width: 97px;
         height: 77px;
         position: relative;
-        margin: 10px;
+        margin: 0 10px 10px 10px;
         box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2),
           -4px -4px 7px rgba(255, 255, 255, 0.5);
         border-radius: 10px;
+        background-size: cover;
       }
       .input-wrapper__file-name {
         position: absolute;
@@ -421,6 +422,25 @@ select {
         margin: 0 5px 0 10px;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+      p.input-wrapper__file-extension {
+        position: absolute;
+        background: linear-gradient(
+            121.96deg,
+            rgba(255, 255, 255, 0.4) -159.65%,
+            rgba(0, 0, 0, 0.4) 111.27%
+          ),
+          #cdd6f1;
+        border-radius: 0px 10px 10px 0px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding: 2px 10px;
       }
       img {
         position: absolute;
@@ -444,6 +464,7 @@ select {
       line-height: 8px;
       font-size: 28px;
       color: #c4c4c4;
+      cursor: pointer;
       &:hover {
         color: $grey-3;
         + .input-wrapper__hint {
@@ -819,12 +840,20 @@ select {
         padding-top: 40px;
       }
       &__preview {
+        object-fit: cover;
         width: 147px;
         height: 130px;
-        cursor: pointer;
+        border-radius: 10px;
       }
       &__delete-button {
+        right: auto;
+        left: 110px;
+        top: 0;
         display: none;
+        & + .input-wrapper__hint {
+          right: auto;
+          left: 120px;
+        }
       }
     }
 

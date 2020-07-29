@@ -3,7 +3,7 @@
   color: #2c2b30 !important;
 }
 
-.post-material.step1, .post-material.step3, .post-material.step4, .post-material.step5 {
+.post-material.step1, .post-material.step2, .post-material.step4, .post-material.step5 {
   display: none;
 }
 
@@ -407,6 +407,7 @@ select {
       flex-wrap: wrap;
   min-width: 97.39px;
   min-height: 77.4px;
+  height: auto;
   background: #fff;
 }
 
@@ -425,7 +426,7 @@ select {
 .input-wrapper.file .input-wrapper__button {
   width: 97.39px;
   height: 77.4px;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 .input-wrapper.file .input-wrapper__button span {
@@ -468,10 +469,11 @@ select {
   width: 97px;
   height: 77px;
   position: relative;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
   -webkit-box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
           box-shadow: 4px 4px 10px rgba(49, 53, 56, 0.2), -4px -4px 7px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+  background-size: cover;
 }
 
 .input-wrapper.file .input-wrapper__fileList .input-wrapper__file-name {
@@ -486,6 +488,21 @@ select {
   margin: 0 5px 0 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.input-wrapper.file .input-wrapper__fileList p.input-wrapper__file-extension {
+  position: absolute;
+  background: linear-gradient(121.96deg, rgba(255, 255, 255, 0.4) -159.65%, rgba(0, 0, 0, 0.4) 111.27%), #cdd6f1;
+  border-radius: 0px 10px 10px 0px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 2px 10px;
 }
 
 .input-wrapper.file .input-wrapper__fileList img {
@@ -511,6 +528,7 @@ select {
   line-height: 8px;
   font-size: 28px;
   color: #c4c4c4;
+  cursor: pointer;
 }
 
 .input-wrapper.file .input-wrapper__delete-button:hover {
@@ -969,13 +987,23 @@ select {
 }
 
 .step3 form .photo .input-wrapper__preview {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 147px;
   height: 130px;
-  cursor: pointer;
+  border-radius: 10px;
 }
 
 .step3 form .photo .input-wrapper__delete-button {
+  right: auto;
+  left: 110px;
+  top: 0;
   display: none;
+}
+
+.step3 form .photo .input-wrapper__delete-button + .input-wrapper__hint {
+  right: auto;
+  left: 120px;
 }
 
 .step3 form .description {

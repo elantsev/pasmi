@@ -451,15 +451,15 @@ function previewFiles (selector, step) {
             for (const file of curFiles) {
                 const listItem = document.createElement('li');
                 if (isImage(file)) {
-                    const image = document.createElement('img');
-                    image.src = URL.createObjectURL(file);
-
-                    listItem.appendChild(image);
+                    listItem.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
                 } else {
-                    const para = document.createElement('p');
-                    para.textContent = `${file.name}, ${returnFileSize(file.size)}.`;
-                    para.className = "input-wrapper__file-name";
-                    listItem.appendChild(para);
+                    const fileExtension = file.name.match(/[^.]+$/)[0]
+                    const fileName = file.name.match(/(.*)\.[^.]+$/)[1]
+                    const fileSize = returnFileSize(file.size)
+                    listItem.innerHTML = `
+                    <p class="input-wrapper__file-extension">${fileExtension}</p>
+                    <p class="input-wrapper__file-name">${fileName}, ${fileSize}.</p>
+                    `
                 }
                 const deleteButton = document.createElement('span');
                 deleteButton.className = "input-wrapper__delete-button"
