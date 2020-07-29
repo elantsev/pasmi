@@ -117,7 +117,8 @@ const checkFieldsPresence = (fields) => {
 
     for (let i = 0; i < fields.length; i++) {
 
-        if (fields[i]?.dataset.link === "https://quilljs.com") {
+        if (fields[i]?.dataset?.link === "https://quilljs.com" ||
+            fields[i]?.classList?.contains("ql-header")) {
             continue
         } else if (fields[i].tagName === "SELECT" && !fields[i].value) {
             let error = generateError('Пожалуйста, выберите значение.')

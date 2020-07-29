@@ -412,7 +412,7 @@ select {
 }
 
 .input-wrapper.file .error {
-  bottom: -50px;
+  bottom: -20px;
 }
 
 .input-wrapper.file .input-wrapper__input {
