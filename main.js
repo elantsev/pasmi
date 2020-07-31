@@ -276,7 +276,7 @@ let checkboxes = document.querySelectorAll('.transferValue.radio input[type="rad
 
 checkboxes.forEach(checkbox => checkbox.addEventListener("click", (e) => setTransferValue(e)))
 const setTransferValue = (e) => {
-    text.value = ""
+    text.value = e.target.value
 }
 
 text.addEventListener('keyup', () => clearCheckboxes())
