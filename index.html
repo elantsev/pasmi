@@ -22,516 +22,492 @@
             <li>&#8594</li>
             <li data-step="step5">поддержать редакцию</li>
         </ul>
-        <div class="post-material step1" id="step1">
-            <h3>Кто Вы?</h3>
-            <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
-            <form action="#">
-                <label class="input-wrapper fio">
-                    <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
-                    <span class="input-wrapper__text">ФИО</span>
-                </label>
-
-                <label class="tel input-wrapper icon">
-                    <input class="input-wrapper__input" name="tel" type="text" placeholder=" ">
-                    <span class="input-wrapper__text">моб. телефон</span>
-                    <div class="input-wrapper__icon">
-                        <svg>
-                            <use href="icons.svg#tel"></use>
-                        </svg>
-                    </div>
-                </label>
-                <label class="email input-wrapper icon">
-                    <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
-                    <span class="input-wrapper__text">e-mail</span>
-                    <div class="input-wrapper__icon">
-                        <svg>
-                            <use href="icons.svg#email"></use>
-                        </svg>
-                    </div>
-                </label>
-                <div class="line"></div>
-                <div class="radio">
-                    <h4>Статус</h4>
-                    <label class="radio__item">
-                        <input class="radio__input" name="status" type="radio" checked value="Executive">
-                        <span class="radio__text">Должностное лицо</span>
-                    </label>
-                    <label class="radio__item">
-                        <input class="radio__input" name="status" type="radio" value="Businessman">
-                        <span class="radio__text">Предприниматель</span>
-                    </label>
-                    <label class="radio__item">
-                        <input class="radio__input" name="status" type="radio" value="Journalist">
-                        <span class="radio__text">Журналист</span>
-                    </label>
-                    <label class="radio__item">
-                        <input class="radio__input" name="status" type="radio" value="Lawyer">
-                        <span class="radio__text">Адвокат</span>
-                    </label>
-                    <label class="radio__item">
-                        <input class="radio__input" name="status" type="radio" value="Individual">
-                        <span class="radio__text">Физическое лицо</span>
-                    </label>
-                </div>
-
-                <label class="input-wrapper organization">
-                    <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
-                    <span class="input-wrapper__text">Название организации</span>
-                </label>
-                <label class="input-wrapper jobTitle">
-                    <input class="input-wrapper__input" type="text" name="jobTitle" placeholder=" ">
-                    <span class="input-wrapper__text">Должность</span>
-                </label>
-
-                <div class="logoFormalist">
-                    <p class="logoFormalist__label">Сделано на</p>
-                    <svg class="logoFormalist__icon">
-                        <use xlink:href="icons.svg#logoFormalist"></use>
-                    </svg>
-                </div>
-
-                <button type="submit" value="" class='validateBtn'>Далее</button>
-
-            </form>
-        </div>
-
-        <div class="post-material step2" id="step2">
-            <h3>Что произошло?</h3>
-            <form action="#">
-                <div class="who-committed">
-                    <h4>Кто совершил правонарушение? </h4>
-                    <div class="custom-select">
-
-                        <select name="whoCommitted">
-                            <option value="">название органа / организации</option>
-                            <option value="1111">11111</option>
-                            <option value="2222">22222</option>
-                        </select>
-                    </div>
+        <form action="#">
+            <div class="post-material step1">
+                <h3>Кто Вы?</h3>
+                <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
+                <div class="form" action="#">
                     <label class="input-wrapper fio">
-                        <input class="input-wrapper__input" type="text" name="CommitPersonFIO" placeholder=" ">
+                        <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
                         <span class="input-wrapper__text">ФИО</span>
                     </label>
-                    <label class="input-wrapper fio">
-                        <input class="input-wrapper__input" type="text" name="CommitPersonPosition" placeholder=" ">
-                        <span class="input-wrapper__text">Должность</span>
-                    </label>
 
-                </div>
-                <div class="who-dont-react">
-                    <h4>Кто не реагирует?</h4>
-                    <div class="custom-select">
-                        <select name="whoDontReact">
-                            <option value="">название органа</option>
-                            <option value="1111">11111</option>
-                            <option value="2222">22222</option>
-                        </select>
+                    <label class="tel input-wrapper icon">
+                        <input class="input-wrapper__input" name="tel" type="text" placeholder=" ">
+                        <span class="input-wrapper__text">моб. телефон</span>
+                        <div class="input-wrapper__icon">
+                            <svg>
+                                <use href="icons.svg#tel"></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="email input-wrapper icon">
+                        <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
+                        <span class="input-wrapper__text">e-mail</span>
+                        <div class="input-wrapper__icon">
+                            <svg>
+                                <use href="icons.svg#email"></use>
+                            </svg>
+                        </div>
+                    </label>
+                    <div class="line"></div>
+                    <div class="radio">
+                        <h4>Статус</h4>
+                        <label class="radio__item">
+                            <input class="radio__input" name="status" type="radio" checked value="Executive">
+                            <span class="radio__text">Должностное лицо</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="status" type="radio" value="Businessman">
+                            <span class="radio__text">Предприниматель</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="status" type="radio" value="Journalist">
+                            <span class="radio__text">Журналист</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="status" type="radio" value="Lawyer">
+                            <span class="radio__text">Адвокат</span>
+                        </label>
+                        <label class="radio__item">
+                            <input class="radio__input" name="status" type="radio" value="Individual">
+                            <span class="radio__text">Физическое лицо</span>
+                        </label>
                     </div>
 
-                    <label class="input-wrapper fio">
-                        <input class="input-wrapper__input" type="text" name="dontReactPersonFIO" placeholder=" ">
-                        <span class="input-wrapper__text">ФИО</span>
+                    <label class="input-wrapper organization">
+                        <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
+                        <span class="input-wrapper__text">Название организации</span>
                     </label>
-                    <label class="input-wrapper fio">
-                        <input class="input-wrapper__input" type="text" name="dontReactPersonPosition" placeholder=" ">
+                    <label class="input-wrapper jobTitle">
+                        <input class="input-wrapper__input" type="text" name="jobTitle" placeholder=" ">
                         <span class="input-wrapper__text">Должность</span>
                     </label>
                 </div>
-                <div class="where-committed">
-                    <h4>Где совершено преступление?</h4>
-                    <div class="two-column">
+            </div>
+
+            <div class="post-material step2">
+                <h3>Что произошло?</h3>
+                <div class="form">
+                    <div class="who-committed">
+                        <h4>Кто совершил правонарушение? </h4>
                         <div class="custom-select">
-                            <select name="whereCommitted">
-                                <option value="">субъект</option>
-                                <option value="79">Республика Адыгея</option>
-                                <option value="84">Республика Алтай</option>
-                                <option value="80">Республика Башкортостан</option>
-                                <option value="81">Республика Бурятия</option>
-                                <option value="82">Республика Дагестан</option>
-                                <option value="26">Республика Ингушетия</option>
-                                <option value="83">Кабардино-Балкарская Республика</option>
-                                <option value="85">Республика Калмыкия</option>
-                                <option value="91">Карачаево-Черкесская Республика</option>
-                                <option value="86">Республика Карелия</option>
-                                <option value="87">Республика Коми</option>
-                                <option value="35">Республика Крым</option>
-                                <option value="88">Республика Марий Эл</option>
-                                <option value="89">Республика Мордовия</option>
-                                <option value="98">Республика Саха (Якутия)</option>
-                                <option value="90">Республика Северная Осетия</option>
-                                <option value="92">Республика Татарстан</option>
-                                <option value="93">Республика Тыва</option>
-                                <option value="94">Удмуртская Республика</option>
-                                <option value="95">Республика Хакасия</option>
-                                <option value="96">Чеченская Республика</option>
-                                <option value="97">Чувашская Республика</option>
-                                <option value="1">Алтайский край</option>
-                                <option value="76">Забайкальский край</option>
-                                <option value="30">Камчатский край</option>
-                                <option value="3">Краснодарский край</option>
-                                <option value="4">Красноярский край</option>
-                                <option value="57">Пермский край</option>
-                                <option value="5">Приморский край</option>
-                                <option value="7">Ставропольский край</option>
-                                <option value="8">Хабаровский край</option>
-                                <option value="10">Амурская область</option>
-                                <option value="11">Архангельская область</option>
-                                <option value="12">Астраханская область</option>
-                                <option value="14">Белгородская область</option>
-                                <option value="15">Брянская область</option>
-                                <option value="17">Владимирская область</option>
-                                <option value="18">Волгоградская область</option>
-                                <option value="19">Вологодская область</option>
-                                <option value="20">Воронежская область</option>
-                                <option value="24">Ивановская область</option>
-                                <option value="25">Иркутская область</option>
-                                <option value="27">Калининградская область</option>
-                                <option value="29">Калужская область</option>
-                                <option value="32">Кемеровская область — Кузбасс</option>
-                                <option value="33">Кировская область</option>
-                                <option value="34">Костромская область</option>
-                                <option value="37">Курганская область</option>
-                                <option value="38">Курская область</option>
-                                <option value="41">Ленинградская область</option>
-                                <option value="42">Липецкая область</option>
-                                <option value="44">Магаданская область</option>
-                                <option value="46">Московская область</option>
-                                <option value="47">Мурманская область</option>
-                                <option value="22">Нижегородская область</option>
-                                <option value="49">Новгородская область</option>
-                                <option value="50">Новосибирская область</option>
-                                <option value="52">Омская область</option>
-                                <option value="53">Оренбургская область</option>
-                                <option value="54">Орловская область</option>
-                                <option value="56">Пензенская область</option>
-                                <option value="58">Псковская область</option>
-                                <option value="60">Ростовская область</option>
-                                <option value="61">Рязанская область</option>
-                                <option value="36">Самарская область</option>
-                                <option value="63">Саратовская область</option>
-                                <option value="64">Сахалинская область</option>
-                                <option value="65">Свердловская область</option>
-                                <option value="66">Смоленская область</option>
-                                <option value="68">Тамбовская область</option>
-                                <option value="28">Тверская область</option>
-                                <option value="69">Томская область</option>
-                                <option value="70">Тульская область</option>
-                                <option value="71">Тюменская область</option>
-                                <option value="73">Ульяновская область</option>
-                                <option value="74">Челябинская область</option>
-                                <option value="78">Ярославская область</option>
-                                <option value="45">Москва</option>
-                                <option value="40">Санкт-Петербург</option>
-                                <option value="67">Севастополь</option>
-                                <option value="99">Еврейская АО</option>
-                                <option value="11">Ненецкий АО</option>
-                                <option value="71">Ханты-Мансийский АО — Югра</option>
-                                <option value="77">Чукотский АО</option>
-                                <option value="71">Ямало-Ненецкий АО</option>
+
+                            <select name="whoCommitted">
+                                <option value="">название органа / организации</option>
+                                <option value="1111">11111</option>
+                                <option value="2222">22222</option>
+                            </select>
+                        </div>
+                        <label class="input-wrapper fio">
+                            <input class="input-wrapper__input" type="text" name="CommitPersonFIO" placeholder=" ">
+                            <span class="input-wrapper__text">ФИО</span>
+                        </label>
+                        <label class="input-wrapper fio">
+                            <input class="input-wrapper__input" type="text" name="CommitPersonPosition" placeholder=" ">
+                            <span class="input-wrapper__text">Должность</span>
+                        </label>
+
+                    </div>
+                    <div class="who-dont-react">
+                        <h4>Кто не реагирует?</h4>
+                        <div class="custom-select">
+                            <select name="whoDontReact">
+                                <option value="">название органа</option>
+                                <option value="1111">11111</option>
+                                <option value="2222">22222</option>
                             </select>
                         </div>
 
-                        <label class="coordinates input-wrapper icon">
-                            <input class="input-wrapper__input" name="coordinates" type="text" placeholder=" ">
-                            <span class="input-wrapper__text">адрес или координаты</span>
+                        <label class="input-wrapper fio">
+                            <input class="input-wrapper__input" type="text" name="dontReactPersonFIO" placeholder=" ">
+                            <span class="input-wrapper__text">ФИО</span>
+                        </label>
+                        <label class="input-wrapper fio">
+                            <input class="input-wrapper__input" type="text" name="dontReactPersonPosition"
+                                placeholder=" ">
+                            <span class="input-wrapper__text">Должность</span>
+                        </label>
+                    </div>
+                    <div class="where-committed">
+                        <h4>Где совершено преступление?</h4>
+                        <div class="two-column">
+                            <div class="custom-select">
+                                <select name="whereCommitted">
+                                    <option value="">субъект</option>
+                                    <option value="79">Республика Адыгея</option>
+                                    <option value="84">Республика Алтай</option>
+                                    <option value="80">Республика Башкортостан</option>
+                                    <option value="81">Республика Бурятия</option>
+                                    <option value="82">Республика Дагестан</option>
+                                    <option value="26">Республика Ингушетия</option>
+                                    <option value="83">Кабардино-Балкарская Республика</option>
+                                    <option value="85">Республика Калмыкия</option>
+                                    <option value="91">Карачаево-Черкесская Республика</option>
+                                    <option value="86">Республика Карелия</option>
+                                    <option value="87">Республика Коми</option>
+                                    <option value="35">Республика Крым</option>
+                                    <option value="88">Республика Марий Эл</option>
+                                    <option value="89">Республика Мордовия</option>
+                                    <option value="98">Республика Саха (Якутия)</option>
+                                    <option value="90">Республика Северная Осетия</option>
+                                    <option value="92">Республика Татарстан</option>
+                                    <option value="93">Республика Тыва</option>
+                                    <option value="94">Удмуртская Республика</option>
+                                    <option value="95">Республика Хакасия</option>
+                                    <option value="96">Чеченская Республика</option>
+                                    <option value="97">Чувашская Республика</option>
+                                    <option value="1">Алтайский край</option>
+                                    <option value="76">Забайкальский край</option>
+                                    <option value="30">Камчатский край</option>
+                                    <option value="3">Краснодарский край</option>
+                                    <option value="4">Красноярский край</option>
+                                    <option value="57">Пермский край</option>
+                                    <option value="5">Приморский край</option>
+                                    <option value="7">Ставропольский край</option>
+                                    <option value="8">Хабаровский край</option>
+                                    <option value="10">Амурская область</option>
+                                    <option value="11">Архангельская область</option>
+                                    <option value="12">Астраханская область</option>
+                                    <option value="14">Белгородская область</option>
+                                    <option value="15">Брянская область</option>
+                                    <option value="17">Владимирская область</option>
+                                    <option value="18">Волгоградская область</option>
+                                    <option value="19">Вологодская область</option>
+                                    <option value="20">Воронежская область</option>
+                                    <option value="24">Ивановская область</option>
+                                    <option value="25">Иркутская область</option>
+                                    <option value="27">Калининградская область</option>
+                                    <option value="29">Калужская область</option>
+                                    <option value="32">Кемеровская область — Кузбасс</option>
+                                    <option value="33">Кировская область</option>
+                                    <option value="34">Костромская область</option>
+                                    <option value="37">Курганская область</option>
+                                    <option value="38">Курская область</option>
+                                    <option value="41">Ленинградская область</option>
+                                    <option value="42">Липецкая область</option>
+                                    <option value="44">Магаданская область</option>
+                                    <option value="46">Московская область</option>
+                                    <option value="47">Мурманская область</option>
+                                    <option value="22">Нижегородская область</option>
+                                    <option value="49">Новгородская область</option>
+                                    <option value="50">Новосибирская область</option>
+                                    <option value="52">Омская область</option>
+                                    <option value="53">Оренбургская область</option>
+                                    <option value="54">Орловская область</option>
+                                    <option value="56">Пензенская область</option>
+                                    <option value="58">Псковская область</option>
+                                    <option value="60">Ростовская область</option>
+                                    <option value="61">Рязанская область</option>
+                                    <option value="36">Самарская область</option>
+                                    <option value="63">Саратовская область</option>
+                                    <option value="64">Сахалинская область</option>
+                                    <option value="65">Свердловская область</option>
+                                    <option value="66">Смоленская область</option>
+                                    <option value="68">Тамбовская область</option>
+                                    <option value="28">Тверская область</option>
+                                    <option value="69">Томская область</option>
+                                    <option value="70">Тульская область</option>
+                                    <option value="71">Тюменская область</option>
+                                    <option value="73">Ульяновская область</option>
+                                    <option value="74">Челябинская область</option>
+                                    <option value="78">Ярославская область</option>
+                                    <option value="45">Москва</option>
+                                    <option value="40">Санкт-Петербург</option>
+                                    <option value="67">Севастополь</option>
+                                    <option value="99">Еврейская АО</option>
+                                    <option value="11">Ненецкий АО</option>
+                                    <option value="71">Ханты-Мансийский АО — Югра</option>
+                                    <option value="77">Чукотский АО</option>
+                                    <option value="71">Ямало-Ненецкий АО</option>
+                                </select>
+                            </div>
+
+                            <label class="coordinates input-wrapper icon">
+                                <input class="input-wrapper__input" name="coordinates" type="text" placeholder=" ">
+                                <span class="input-wrapper__text">адрес или координаты</span>
+                                <div class="input-wrapper__icon">
+                                    <svg>
+                                        <use href="icons.svg#coordinates"></use>
+                                    </svg>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="who-was-informed ">
+                        <h4>Кому сообщили о коррупции?</h4>
+                        <div class="radio two-column">
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" checked value="Putin">
+                                <span class="radio__text">Владимиру Путину</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Bortnikov">
+                                <span class="radio__text">Александру Бортникову</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Kolokoltsev">
+                                <span class="radio__text">Владимиру Колокольцеву</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Lebedev">
+                                <span class="radio__text">Вячеславу Лебедеву</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Krasnov">
+                                <span class="radio__text">Игорю Краснову</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Bastrikin">
+                                <span class="radio__text">Александру Бастрыкину</span>
+                            </label>
+                            <label class="radio__item">
+                                <input class="radio__input" name="personWasInformed" type="radio" value="Other">
+                                <span class="radio__text">Иному должностному лицу</span>
+                            </label>
+                        </div>
+
+                        <p>Важно обжаловать незаконные действия поэтапно: от местного к региональному, далее на
+                            федеральном
+                            уровне. Не нужно сразу писать президенту и главам правоохранительных органов.
+                        </p>
+                        <p class="grey-3">Вы не сможете опубликовать свое обращение без подтверждения, что вы направили
+                            официальное обращение
+                            вышеуказанному должностному лицу. Необходимо прекрепить копию обращения.
+                        </p>
+                    </div>
+                    <div class="appeal flex-row">
+
+                        <label class="input-wrapper icon">
+                            <input class="input-wrapper__input" name="appealDate" type="text" placeholder=" ">
+                            <span class="input-wrapper__text">дата обращения</span>
                             <div class="input-wrapper__icon">
                                 <svg>
-                                    <use href="icons.svg#coordinates"></use>
+                                    <use href="icons.svg#calendar"></use>
                                 </svg>
                             </div>
                         </label>
+
+                        <label class="input-wrapper">
+                            <input class="input-wrapper__input" type="text" name="appealRegNumber" placeholder=" ">
+                            <span class="input-wrapper__text">Регистрационный №</span>
+                        </label>
+
+                        <label class="input-wrapper file">
+                            <input class="input-wrapper__input" name="appealFile" type="file">
+                            <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
+                            <div class="input-wrapper__fileList"> </div>
+                        </label>
+
+                    </div>
+                    <div class="evidence">
+                        <h4>Ваши доказательства</h4>
+
+                        <label class="input-wrapper file">
+                            <input class="input-wrapper__input" name="personWasInformedFile" type="file" multiple>
+                            <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
+                            <div class="input-wrapper__fileList"> </div>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="post-material step3">
+                <h3>Статья</h3>
+                <div class="form" action="#">
+                    <div class="photo">
+                        <h4>Фото для статьи</h4>
+                        <label class="input-wrapper file">
+                            <input id="uploadImage" class="input-wrapper__input" name="photo" type="file" multiple
+                                onchange="previewImage()" accept="image/*">
+                            <p id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
+                                файл</p>
+                            <img id="uploadPreview" class="input-wrapper__preview" />
+                            <span id="deleteImage" class="input-wrapper__delete-button">+
+                            </span>
+                            <span class="input-wrapper__hint">Удалить</span>
+                        </label>
                     </div>
 
-                </div>
-                <div class="who-was-informed ">
-                    <h4>Кому сообщили о коррупции?</h4>
-                    <div class="radio two-column">
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" checked value="Putin">
-                            <span class="radio__text">Владимиру Путину</span>
+                    <div class="heading">
+                        <h4>Заголовок</h4>
+                        <p>Одно предложение, которое отражает суть проблемы</p>
+                        <label class="input-wrapper">
+                            <input class="input-wrapper__input" type="text" name="essence" placeholder=" ">
+                            <span class="input-wrapper__text">введите</span>
                         </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Bortnikov">
-                            <span class="radio__text">Александру Бортникову</span>
-                        </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Kolokoltsev">
-                            <span class="radio__text">Владимиру Колокольцеву</span>
-                        </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Lebedev">
-                            <span class="radio__text">Вячеславу Лебедеву</span>
-                        </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Krasnov">
-                            <span class="radio__text">Игорю Краснову</span>
-                        </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Bastrikin">
-                            <span class="radio__text">Александру Бастрыкину</span>
-                        </label>
-                        <label class="radio__item">
-                            <input class="radio__input" name="personWasInformed" type="radio" value="Other">
-                            <span class="radio__text">Иному должностному лицу</span>
-                        </label>
+                        <a class="examples" href="http://" target="_blank"
+                            rel="noopener noreferrer"><span>&#8250;</span>
+                            Примеры.</a>
                     </div>
 
-                    <p>Важно обжаловать незаконные действия поэтапно: от местного к региональному, далее на федеральном
-                        уровне. Не нужно сразу писать президенту и главам правоохранительных органов.
-                    </p>
-                    <p class="grey-3">Вы не сможете опубликовать свое обращение без подтверждения, что вы направили
-                        официальное обращение
-                        вышеуказанному должностному лицу. Необходимо прекрепить копию обращения.
-                    </p>
-                </div>
-                <div class="appeal flex-row">
+                    <div class="description">
+                        <h4>Краткое описание</h4>
+                        <p>В 3-5 предложениях опишите краткое содержание вашего обращения. Это должно быть чуть более
+                            расширенное пояснение информации, указанной в заголовке. </p>
+                        <p>Принцип следующий: </p>
+                        <ul>
+                            <li>- что произошло</li>
+                            <li>- кто в этом виноват (замешан)</li>
+                            <li>- какой ущерб (опасность) это принесло стране (региону, бизнесу, человеку, проекту или
+                                программе)</li>
+                            <li>- кто бездействует или прикрывает нарушителей</li>
+                        </ul>
+                        <p>Информация в отношении высокопоставленных чиновников, <br />
+                            их должности и имена должны быть отражены во вводной части.</p>
+                        <div class="text">
+                            <textarea name="description" cols="30" rows="10" placeholder="введите"></textarea>
+                        </div>
 
-                    <label class="input-wrapper icon">
-                        <input class="input-wrapper__input" name="appealDate" type="text" placeholder=" ">
-                        <span class="input-wrapper__text">дата обращения</span>
+
+                        <a class="examples" href="http://" target="_blank"
+                            rel="noopener noreferrer"><span>&#8250;</span>
+                            Примеры.</a>
+                    </div>
+
+                    <div class="main">
+                        <h4>Основная часть</h4>
+                        <h5>История в хронологии</h5>
+                        <p>Указажите даты всех ключевых событий, имена действующих лиц (Имя и Фамилия людей который вы
+                            упоминаете должны быть указаны без сокращений, исключение - если вы сами не знаете имени) и
+                            должности действующих лиц. Опишите те коррупционные нарушения, о которых вы хотите сообщить.
+                        </p>
+                        <h5>Позиция правоохранительных структур и власти</h5>
+                        <p>В какие органы вы сообщали о проблеме (с обязательным указанием даты обращения) и какие
+                            ответы получили. Если эти ответы вас не устраивают, то объясните почем </p>
+                        <h5>Существенные обстоятельства</h5>
+                        <p>Не расписывайте незначительные подробности, уберите все лишнее, описывайте только ключевые
+                            события. </p>
+                        <h5>Доказательства</h5>
+                        <p>Опишите тип и краткие характеристики доказательств. Не обязательно делать расшифровку
+                            аудиозаписи, например: “я владею аудио-видео файлами требований сотрудника
+                            правоохранительных
+                            структур (И.Ф. сотрудника и его должность), где он требует взятку/угрожает физической
+                            расправой
+                            и т.д.”</p>
+
+                        <div class="editor-contaiter">
+                            <div id="editor" data-name="main"></div>
+                        </div>
+
+                        <p class="grey-3">Внимание!</p>
+                        <p class="grey-3">Нельзя обвинять лицо в совершение преступления пока его причастность не
+                            докажут в
+                            судебном порядке <br />
+                            <a href="http://" target="_blank" rel="noopener noreferrer">ст. 14 УПК РФ</a>.</p>
+                        <p class="grey-3">Нельзя распространять информацию в неприличной форме<br />
+                            <a href="http://" target="_blank" rel="noopener noreferrer">ч.3 ст. 20.1 КоАП РФ</a>.
+                        </p>
+                        <p class="grey-3">Нельзя распространять заведомо ложные сведения<br />
+                            <a href="http://" target="_blank" rel="noopener noreferrer">ч.3,5 ст.128.1 УК РФ</a> .
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="post-material step4">
+                <h3>Ваши предложения</h3>
+                <h4>Что думаете о борьбе с коррупцией и ваши предложения?</h4>
+                <p>В свободной форме оцените уровень коррумпированности, работу правоохранительных и судебных органов,
+                    руководства страны. Что вы предлагаете для совершенствования работы правоохранительных органов,
+                    снижения криминализации в стране.</p>
+                <div class="form" action="#">
+                    <div class="text suggestion">
+                        <textarea name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="post-material step5">
+                <h3>Поддержать редакцию</h3>
+                <p class="grey-3">Мы не финансируемся государством. <br /> Экономическая независимость дает нам
+                    возможность
+                    честно и непредвзято освещать проблемы борьбы с коррупцией в России.</p>
+
+
+                <p class="grey-3">За молчание нам предлагают деньги министры и губернаторы, но мы сохраняем чистоту и
+                    продолжаем давать читателям правдивую, актуальную информацию. <br /> Мы поможем вам опубликовать
+                    факты
+                    коррупции, вы - поддержите юристов и журналистов редакции.</p>
+
+                <p class="grey-3">Запомните дату, время и сумму пожертвования и сообщите данные юристу, который с вами
+                    свяжется.</p>
+
+                <p class="grey-3">Нам важно сказать вам спасибо.</p>
+                <hr />
+                <div class="form" action="">
+
+                    <label class="checkbox acceptTerms">
+                        <input class="checkbox__input" type="checkbox" name="acceptTerms">
+                        <span class="checkbox__text">Я принимаю &nbsp; <a href="http://" target="_blank"
+                                rel="noopener noreferrer">условия</a></span>
+                    </label>
+                    <label class="checkbox monthlyTransfer">
+                        <input class="checkbox__input" type="checkbox" name="monthlyTransfer">
+                        <span class="checkbox__text">Ежемесячный перевод</span>
+                    </label>
+
+                    <label class="email input-wrapper icon">
+                        <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
+                        <span class="input-wrapper__text">почта для платежной системы</span>
                         <div class="input-wrapper__icon">
                             <svg>
-                                <use href="icons.svg#calendar"></use>
+                                <use href="icons.svg#email"></use>
                             </svg>
                         </div>
                     </label>
 
-                    <label class="input-wrapper">
-                        <input class="input-wrapper__input" type="text" name="appealRegNumber" placeholder=" ">
-                        <span class="input-wrapper__text">Регистрационный №</span>
-                    </label>
+                    <div class="transferValue radio flex-row">
+                        <div class="radio__item default">
+                            <input class="radio__input" name="transferValue" id="transferValue1" type="radio" checked
+                                value="">
+                            <label for="transferValue1" class="radio__label"></label>
+                        </div>
+                        <div class="radio__item">
+                            <input class="radio__input" name="transferValue" id="transferValue3000" type="radio"
+                                value="3000">
+                            <label for="transferValue3000" class="radio__label">3&nbsp;000</label>
+                        </div>
+                        <div class="radio__item">
+                            <input class="radio__input" name="transferValue" id="transferValue5000" type="radio"
+                                value="5000">
+                            <label for="transferValue5000" class="radio__label">5&nbsp;000</label>
+                        </div>
+                        <div class="radio__item">
+                            <input class="radio__input" name="transferValue" id="transferValue7000" type="radio"
+                                value="7000">
+                            <label for="transferValue7000" class="radio__label">7&nbsp;000</label>
+                        </div>
+                        <div class="radio__item">
+                            <input class="radio__input" name="transferValue" id="transferValue10000" type="radio"
+                                value="10000">
+                            <label for="transferValue10000" class="radio__label">10&nbsp;000</label>
+                        </div>
 
-                    <label class="input-wrapper file">
-                        <input class="input-wrapper__input" name="appealFile" type="file">
-                        <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
-                        <div class="input-wrapper__fileList"> </div>
-                    </label>
-
+                        <label class="input-wrapper">
+                            <input class="input-wrapper__input" type="text" name="transferValue" placeholder=" ">
+                            <span class="input-wrapper__text">другая сумма</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="evidence">
-                    <h4>Ваши доказательства</h4>
 
-                    <label class="input-wrapper file">
-                        <input class="input-wrapper__input" name="personWasInformedFile" type="file" multiple>
-                        <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
-                        <div class="input-wrapper__fileList"> </div>
-                    </label>
+            </div>
 
-                </div>
+            <div class="two-column footer">
                 <div class="logoFormalist">
                     <p class="logoFormalist__label">Сделано на</p>
                     <svg class="logoFormalist__icon">
                         <use xlink:href="icons.svg#logoFormalist"></use>
                     </svg>
                 </div>
-
-
-
-                <button type="submit" value="" class='validateBtn'>Далее</button>
-            </form>
-        </div>
-        <div class="post-material step3" id="step3">
-            <h3>Статья</h3>
-            <form action="#">
-                <div class="photo">
-                    <h4>Фото для статьи</h4>
-                    <label class="input-wrapper file">
-                        <input id="uploadImage" class="input-wrapper__input" name="photo" type="file" multiple
-                            onchange="previewImage()" accept="image/*">
-                        <p id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
-                            файл</p>
-                        <img id="uploadPreview" class="input-wrapper__preview" />
-                        <span id="deleteImage" class="input-wrapper__delete-button">+
-                        </span>
-                        <span class="input-wrapper__hint">Удалить</span>
-                    </label>
-                </div>
-
-                <div class="heading">
-                    <h4>Заголовок</h4>
-                    <p>Одно предложение, которое отражает суть проблемы</p>
-                    <label class="input-wrapper">
-                        <input class="input-wrapper__input" type="text" name="essence" placeholder=" ">
-                        <span class="input-wrapper__text">введите</span>
-                    </label>
-                    <!-- TODO  в каком формате будет???  -->
-                    <a class="examples" href="http://" target="_blank" rel="noopener noreferrer"><span>&#8250;</span>
-                        Примеры.</a>
-                </div>
-
-                <div class="description">
-                    <h4>Краткое описание</h4>
-                    <p>В 3-5 предложениях опишите краткое содержание вашего обращения. Это должно быть чуть более
-                        расширенное пояснение информации, указанной в заголовке. </p>
-                    <p>Принцип следующий: </p>
-                    <ul>
-                        <li>- что произошло</li>
-                        <li>- кто в этом виноват (замешан)</li>
-                        <li>- какой ущерб (опасность) это принесло стране (региону, бизнесу, человеку, проекту или
-                            программе)</li>
-                        <li>- кто бездействует или прикрывает нарушителей</li>
-                    </ul>
-                    <p>Информация в отношении высокопоставленных чиновников, <br />
-                        их должности и имена должны быть отражены во вводной части.</p>
-                    <div class="text">
-                        <textarea name="description" cols="30" rows="10" placeholder="введите"></textarea>
-                    </div>
-
-
-                    <!-- TODO  в каком формате будет???  -->
-                    <a class="examples" href="http://" target="_blank" rel="noopener noreferrer"><span>&#8250;</span>
-                        Примеры.</a>
-                </div>
-
-                <div class="main">
-                    <h4>Основная часть</h4>
-                    <h5>История в хронологии</h5>
-                    <p>Указажите даты всех ключевых событий, имена действующих лиц (Имя и Фамилия людей который вы
-                        упоминаете должны быть указаны без сокращений, исключение - если вы сами не знаете имени) и
-                        должности действующих лиц. Опишите те коррупционные нарушения, о которых вы хотите сообщить.
-                    </p>
-                    <h5>Позиция правоохранительных структур и власти</h5>
-                    <p>В какие органы вы сообщали о проблеме (с обязательным указанием даты обращения) и какие
-                        ответы получили. Если эти ответы вас не устраивают, то объясните почем </p>
-                    <h5>Существенные обстоятельства</h5>
-                    <p>Не расписывайте незначительные подробности, уберите все лишнее, описывайте только ключевые
-                        события. </p>
-                    <h5>Доказательства</h5>
-                    <p>Опишите тип и краткие характеристики доказательств. Не обязательно делать расшифровку
-                        аудиозаписи, например: “я владею аудио-видео файлами требований сотрудника правоохранительных
-                        структур (И.Ф. сотрудника и его должность), где он требует взятку/угрожает физической расправой
-                        и т.д.”</p>
-
-                    <div class="editor-contaiter">
-                        <div id="editor" data-name="main"></div>
-                    </div>
-
-                    <p class="grey-3">Внимание!</p>
-                    <p class="grey-3">Нельзя обвинять лицо в совершение преступления пока его причастность не докажут в
-                        судебном порядке <br />
-                        <a href="http://" target="_blank" rel="noopener noreferrer">ст. 14 УПК РФ</a>.</p>
-                    <p class="grey-3">Нельзя распространять информацию в неприличной форме<br />
-                        <a href="http://" target="_blank" rel="noopener noreferrer">ч.3 ст. 20.1 КоАП РФ</a>.
-                    </p>
-                    <p class="grey-3">Нельзя распространять заведомо ложные сведения<br />
-                        <a href="http://" target="_blank" rel="noopener noreferrer">ч.3,5 ст.128.1 УК РФ</a> .
-                    </p>
-                </div>
-
-                <div class="logoFormalist">
-                    <p class="logoFormalist__label">Сделано на</p>
-                    <svg class="logoFormalist__icon">
-                        <use xlink:href="icons.svg#logoFormalist"></use>
+                <button id="submitButton" type="submit" class='validateBtn'>
+                    <svg id="progress" viewBox="15 15 156 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="93" y="43" fill="white">Далее</text>
+                        <rect id="progressLine" class="progressLine" stroke-linecap="round" x="21" y="20" rx="18"
+                            width="144" height="37" stroke-width="3" stroke="#ccc" />
                     </svg>
-                </div>
-
-                <button type="submit" value="" class='validateBtn'>Далее</button>
-            </form>
-        </div>
-        <div class="post-material step4" id="step4">
-            <h3>Ваши предложения</h3>
-            <h4>Что думаете о борьбе с коррупцией и ваши предложения?</h4>
-            <p>В свободной форме оцените уровень коррумпированности, работу правоохранительных и судебных органов,
-                руководства страны. Что вы предлагаете для совершенствования работы правоохранительных органов,
-                снижения криминализации в стране.</p>
-            <form action="#">
-                <div class="text suggestion">
-                    <textarea name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
-                </div>
-
-                <div class="logoFormalist">
-                    <p class="logoFormalist__label">Сделано на</p>
-                    <svg class="logoFormalist__icon">
-                        <use xlink:href="icons.svg#logoFormalist"></use>
-                    </svg>
-                </div>
-
-                <button type="submit" value="" class='validateBtn'>Далее</button>
-            </form>
-        </div>
-        <div class="post-material step5" id="step5">
-            <h3>Поддержать редакцию</h3>
-            <p class="grey-3">Мы не финансируемся государством. <br /> Экономическая независимость дает нам возможность
-                честно и непредвзято освещать проблемы борьбы с коррупцией в России.</p>
-
-
-            <p class="grey-3">За молчание нам предлагают деньги министры и губернаторы, но мы сохраняем чистоту и
-                продолжаем давать читателям правдивую, актуальную информацию. <br /> Мы поможем вам опубликовать факты
-                коррупции, вы - поддержите юристов и журналистов редакции.</p>
-
-            <p class="grey-3">Запомните дату, время и сумму пожертвования и сообщите данные юристу, который с вами
-                свяжется.</p>
-
-            <p class="grey-3">Нам важно сказать вам спасибо.</p>
-            <hr />
-            <form action="">
-
-                <label class="checkbox acceptTerms">
-                    <input class="checkbox__input" type="checkbox" name="acceptTerms">
-                    <span class="checkbox__text">Я принимаю &nbsp; <a href="http://" target="_blank"
-                            rel="noopener noreferrer">условия</a></span>
-                </label>
-                <label class="checkbox monthlyTransfer">
-                    <input class="checkbox__input" type="checkbox" name="monthlyTransfer">
-                    <span class="checkbox__text">Ежемесячный перевод</span>
-                </label>
-
-                <label class="email input-wrapper icon">
-                    <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
-                    <span class="input-wrapper__text">почта для платежной системы</span>
-                    <div class="input-wrapper__icon">
-                        <svg>
-                            <use href="icons.svg#email"></use>
-                        </svg>
-                    </div>
-                </label>
-
-                <div class="transferValue radio flex-row">
-                    <div class="radio__item default">
-                        <input class="radio__input" name="transferValue" id="transferValue1" type="radio" checked
-                            value="">
-                        <label for="transferValue1" class="radio__label"></label>
-                    </div>
-                    <div class="radio__item">
-                        <input class="radio__input" name="transferValue" id="transferValue3000" type="radio"
-                            value="3000">
-                        <label for="transferValue3000" class="radio__label">3&nbsp;000</label>
-                    </div>
-                    <div class="radio__item">
-                        <input class="radio__input" name="transferValue" id="transferValue5000" type="radio"
-                            value="5000">
-                        <label for="transferValue5000" class="radio__label">5&nbsp;000</label>
-                    </div>
-                    <div class="radio__item">
-                        <input class="radio__input" name="transferValue" id="transferValue7000" type="radio"
-                            value="7000">
-                        <label for="transferValue7000" class="radio__label">7&nbsp;000</label>
-                    </div>
-                    <div class="radio__item">
-                        <input class="radio__input" name="transferValue" id="transferValue10000" type="radio"
-                            value="10000">
-                        <label for="transferValue10000" class="radio__label">10&nbsp;000</label>
-                    </div>
-
-                    <label class="input-wrapper">
-                        <input class="input-wrapper__input" type="text" name="transferValue" placeholder=" ">
-                        <span class="input-wrapper__text">другая сумма</span>
-                    </label>
-                </div>
-
-
-
-                <div class="logoFormalist">
-                    <p class="logoFormalist__label">Сделано на</p>
-                    <svg class="logoFormalist__icon">
-                        <use xlink:href="icons.svg#logoFormalist"></use>
-                    </svg>
-                </div>
-
-                <button type="submit" value="" class='validateBtn'>Отправить</button>
-            </form>
-
-        </div>
+                </button>
+            </div>
+        </form>
     </div>
     <script src="https://unpkg.com/imask"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
@@ -539,14 +515,3 @@
 </body>
 
 </html>
-
-
-<!-- <svg id="progress" width="196" height="87" viewBox="0 0 196 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="15" y="15" width="156" height="47" rx="23.5" fill="#2C2B30" />
-    <path
-        d="M68.208 40.288H69.584C70.064 39.6267 70.432 38.9333 70.688 38.208C70.9547 37.472 71.1467 36.7147 71.264 35.936C71.392 35.1467 71.4667 34.336 71.488 33.504C71.5093 32.6613 71.52 31.7973 71.52 30.912H78.32V40.288H79.968V44.96H78.032V42H70.144V44.96H68.208V40.288ZM73.456 32.64C73.424 33.28 73.3867 33.936 73.344 34.608C73.3013 35.28 73.2213 35.9467 73.104 36.608C72.9973 37.2587 72.8427 37.8987 72.64 38.528C72.4373 39.1467 72.16 39.7333 71.808 40.288H76.336V32.64H73.456ZM84.4104 40.64C85.0077 40.64 85.461 40.608 85.7704 40.544V38.4C85.6637 38.368 85.509 38.336 85.3064 38.304C85.1037 38.272 84.8797 38.256 84.6344 38.256C84.421 38.256 84.2024 38.272 83.9784 38.304C83.765 38.336 83.5677 38.3947 83.3864 38.48C83.2157 38.5653 83.077 38.688 82.9704 38.848C82.8637 38.9973 82.8104 39.1893 82.8104 39.424C82.8104 39.8827 82.9544 40.2027 83.2424 40.384C83.5304 40.5547 83.9197 40.64 84.4104 40.64ZM84.2504 33.424C84.8904 33.424 85.429 33.504 85.8664 33.664C86.3037 33.824 86.6504 34.048 86.9064 34.336C87.173 34.624 87.3597 34.976 87.4664 35.392C87.5837 35.7973 87.6424 36.2453 87.6424 36.736V41.808C87.3437 41.872 86.8904 41.9467 86.2824 42.032C85.685 42.128 85.0077 42.176 84.2504 42.176C83.749 42.176 83.2904 42.128 82.8744 42.032C82.4584 41.936 82.101 41.7813 81.8024 41.568C81.5144 41.3547 81.285 41.0773 81.1144 40.736C80.9544 40.3947 80.8744 39.9733 80.8744 39.472C80.8744 38.992 80.965 38.5867 81.1464 38.256C81.3384 37.9253 81.5944 37.6587 81.9144 37.456C82.2344 37.2427 82.6024 37.0933 83.0184 37.008C83.445 36.912 83.8877 36.864 84.3464 36.864C84.5597 36.864 84.7837 36.88 85.0184 36.912C85.253 36.9333 85.5037 36.976 85.7704 37.04V36.72C85.7704 36.496 85.7437 36.2827 85.6904 36.08C85.637 35.8773 85.541 35.7013 85.4024 35.552C85.2744 35.392 85.0984 35.2693 84.8744 35.184C84.661 35.0987 84.389 35.056 84.0584 35.056C83.6104 35.056 83.1997 35.088 82.8264 35.152C82.453 35.216 82.149 35.2907 81.9144 35.376L81.6744 33.808C81.9197 33.7227 82.277 33.6373 82.7464 33.552C83.2157 33.4667 83.717 33.424 84.2504 33.424ZM93.2933 35.232C93.2826 35.7013 93.2666 36.192 93.2453 36.704C93.2239 37.2053 93.1706 37.7013 93.0853 38.192C93.0106 38.6827 92.8879 39.152 92.7173 39.6C92.5466 40.048 92.3066 40.4533 91.9973 40.816C91.6986 41.168 91.3199 41.4667 90.8613 41.712C90.4133 41.9467 89.8639 42.096 89.2133 42.16L88.9413 40.544C89.4853 40.4373 89.9066 40.2667 90.2053 40.032C90.5039 39.7867 90.7333 39.4773 90.8932 39.104C91.0213 38.8267 91.1173 38.512 91.1813 38.16C91.2559 37.808 91.3093 37.44 91.3413 37.056C91.3839 36.6613 91.4106 36.2613 91.4213 35.856C91.4319 35.4507 91.4373 35.056 91.4373 34.672V33.632H97.3573V42H95.4213V35.232H93.2933ZM99.3618 37.856C99.3618 37.12 99.4684 36.4747 99.6818 35.92C99.9058 35.3653 100.199 34.9067 100.562 34.544C100.924 34.1707 101.34 33.8933 101.81 33.712C102.279 33.52 102.759 33.424 103.25 33.424C104.402 33.424 105.298 33.7813 105.938 34.496C106.588 35.2107 106.914 36.2773 106.914 37.696C106.914 37.8027 106.908 37.9253 106.898 38.064C106.898 38.192 106.892 38.3093 106.882 38.416H101.362C101.415 39.088 101.65 39.6107 102.066 39.984C102.492 40.3467 103.106 40.528 103.906 40.528C104.375 40.528 104.802 40.4853 105.186 40.4C105.58 40.3147 105.89 40.224 106.114 40.128L106.37 41.712C106.263 41.7653 106.114 41.824 105.922 41.888C105.74 41.9413 105.527 41.9893 105.282 42.032C105.047 42.0853 104.791 42.128 104.514 42.16C104.236 42.192 103.954 42.208 103.666 42.208C102.93 42.208 102.29 42.1013 101.746 41.888C101.202 41.664 100.754 41.36 100.402 40.976C100.05 40.5813 99.7884 40.1227 99.6178 39.6C99.4471 39.0667 99.3618 38.4853 99.3618 37.856ZM104.978 36.992C104.978 36.7253 104.94 36.4747 104.866 36.24C104.791 35.9947 104.679 35.7867 104.53 35.616C104.391 35.4347 104.215 35.296 104.002 35.2C103.799 35.0933 103.554 35.04 103.266 35.04C102.967 35.04 102.706 35.0987 102.482 35.216C102.258 35.3227 102.066 35.4667 101.906 35.648C101.756 35.8293 101.639 36.0373 101.554 36.272C101.468 36.5067 101.41 36.7467 101.378 36.992H104.978ZM108.502 37.856C108.502 37.12 108.609 36.4747 108.822 35.92C109.046 35.3653 109.34 34.9067 109.702 34.544C110.065 34.1707 110.481 33.8933 110.95 33.712C111.42 33.52 111.9 33.424 112.39 33.424C113.542 33.424 114.438 33.7813 115.078 34.496C115.729 35.2107 116.054 36.2773 116.054 37.696C116.054 37.8027 116.049 37.9253 116.038 38.064C116.038 38.192 116.033 38.3093 116.022 38.416H110.502C110.556 39.088 110.79 39.6107 111.206 39.984C111.633 40.3467 112.246 40.528 113.046 40.528C113.516 40.528 113.942 40.4853 114.326 40.4C114.721 40.3147 115.03 40.224 115.254 40.128L115.51 41.712C115.404 41.7653 115.254 41.824 115.062 41.888C114.881 41.9413 114.668 41.9893 114.422 42.032C114.188 42.0853 113.932 42.128 113.654 42.16C113.377 42.192 113.094 42.208 112.806 42.208C112.07 42.208 111.43 42.1013 110.886 41.888C110.342 41.664 109.894 41.36 109.542 40.976C109.19 40.5813 108.929 40.1227 108.758 39.6C108.588 39.0667 108.502 38.4853 108.502 37.856ZM114.118 36.992C114.118 36.7253 114.081 36.4747 114.006 36.24C113.932 35.9947 113.82 35.7867 113.67 35.616C113.532 35.4347 113.356 35.296 113.142 35.2C112.94 35.0933 112.694 35.04 112.406 35.04C112.108 35.04 111.846 35.0987 111.622 35.216C111.398 35.3227 111.206 35.4667 111.046 35.648C110.897 35.8293 110.78 36.0373 110.694 36.272C110.609 36.5067 110.55 36.7467 110.518 36.992H114.118Z"
-        fill="white" />
-    <rect id="progressLine" stroke-linecap="round" x="21" y="20" rx="18" width="144" height="37" stroke-width="3"
-        stroke="#ccc" />
-     stroke-dasharray="280" stroke-dashoffset="280"  
-</svg> -->

@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 630px) {
-  .two-column {
+  .two-column:not(.footer) {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -158,6 +158,8 @@ textarea::placeholder {
 /* button type="submit"***************************************************************************************************** */
 .validateBtn {
   width: 156px;
+  height: 47px;
+  padding: 0;
   background: #2c2b30;
   -webkit-box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.6), 0px -4px 10px rgba(255, 255, 255, 0.92);
           box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.6), 0px -4px 10px rgba(255, 255, 255, 0.92);
@@ -169,12 +171,18 @@ textarea::placeholder {
   color: #ffffff;
   outline: none;
   border: none;
-  height: 48px;
   margin-top: 130px;
   margin-left: auto;
   cursor: pointer;
   -webkit-transition: 0.1s;
   transition: 0.1s;
+}
+
+.validateBtn svg text {
+  font-weight: 500;
+  font-size: 16px;
+  fill: #ffffff;
+  text-anchor: middle;
 }
 
 .validateBtn:hover {
@@ -186,11 +194,16 @@ textarea::placeholder {
           box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.4), 0px -4px 10px rgba(255, 255, 255, 0.8);
 }
 
+.validateBtn .progressLine {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 @media screen and (max-width: 630px) {
   .validateBtn {
     font-size: 14px;
     line-height: 16px;
-    height: 40px;
+    height: 35px;
     width: 115px;
   }
 }
@@ -688,7 +701,7 @@ select {
   width: 70px;
 }
 
-.step1 form {
+.step1 .form {
   display: -ms-grid;
   display: grid;
   grid-column-gap: 50px;
@@ -700,11 +713,11 @@ select {
       grid-template-areas: "fio           fio         " "tel           email       " "line          line        " "radio         organization" "radio         organization" "radio         jobTitle    " "logoFormalist validateBtn ";
 }
 
-.step1 form .input-wrapper {
+.step1 .form .input-wrapper {
   margin: 0;
 }
 
-.step1 form .fio {
+.step1 .form .fio {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -712,20 +725,20 @@ select {
   margin-top: 20px;
 }
 
-.step1 form .tel {
+.step1 .form .tel {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: tel;
 }
 
-.step1 form .email {
+.step1 .form .email {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: email;
 }
 
-.step1 form .line {
+.step1 .form .line {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -734,14 +747,14 @@ select {
   margin: 20px 0;
 }
 
-.step1 form .radio {
+.step1 .form .radio {
   -ms-grid-row: 4;
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: radio;
 }
 
-.step1 form .organization {
+.step1 .form .organization {
   -ms-grid-row: 4;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -749,7 +762,7 @@ select {
   margin-top: 80px;
 }
 
-.step1 form .jobTitle {
+.step1 .form .jobTitle {
   -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: jobTitle;
@@ -757,40 +770,40 @@ select {
   top: -55px;
 }
 
-.step1 form .logoFormalist {
+.step1 .form .logoFormalist {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
-.step1 form .validateBtn {
+.step1 .form .validateBtn {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
 
 @media screen and (max-width: 630px) {
-  .step1 form {
+  .step1 .form {
     grid-row-gap: 25px;
         grid-template-areas: "fio fio  " "tel tel" "email email" "radio radio" "organization organization" "jobTitle jobTitle" "logoFormalist validateBtn";
   }
-  .step1 form .organization {
+  .step1 .form .organization {
     margin-top: 0px;
   }
-  .step1 form .jobTitle {
+  .step1 .form .jobTitle {
     top: 0;
   }
-  .step1 form .logoFormalist,
-  .step1 form .validateBtn {
+  .step1 .form .logoFormalist,
+  .step1 .form .validateBtn {
     margin-top: 25px;
   }
-  .step1 form .line {
+  .step1 .form .line {
     display: none;
   }
-  .step1 form .radio {
+  .step1 .form .radio {
     padding-top: 10px;
   }
-  .step1 form .radio::before {
+  .step1 .form .radio::before {
     display: block;
     position: relative;
     top: -5px;
@@ -799,7 +812,7 @@ select {
   }
 }
 
-.step2 form {
+.step2 .form {
   display: -ms-grid;
   display: grid;
   grid-column-gap: 50px;
@@ -811,33 +824,33 @@ select {
       grid-template-areas: "who-committed    who-dont-react  " "where-committed  where-committed " "who-was-informed who-was-informed" "appeal           appeal          " "evidence         evidence        " "logoFormalist    validateBtn     ";
 }
 
-.step2 form .who-committed {
+.step2 .form .who-committed {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: who-committed;
 }
 
-.step2 form .who-dont-react {
+.step2 .form .who-dont-react {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: who-dont-react;
 }
 
-.step2 form .where-committed {
+.step2 .form .where-committed {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: where-committed;
 }
 
-.step2 form .who-was-informed {
+.step2 .form .who-was-informed {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: who-was-informed;
 }
 
-.step2 form .appeal {
+.step2 .form .appeal {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -847,68 +860,68 @@ select {
           align-items: center;
 }
 
-.step2 form .appeal .input-wrapper {
+.step2 .form .appeal .input-wrapper {
   max-width: 225px;
   margin: 0;
 }
 
-.step2 form .appeal .input-wrapper:not(:last-child) {
+.step2 .form .appeal .input-wrapper:not(:last-child) {
   margin-right: 30px;
 }
 
-.step2 form .appeal .input-wrapper__button {
+.step2 .form .appeal .input-wrapper__button {
   margin: 0;
 }
 
-.step2 form .evidence {
+.step2 .form .evidence {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: evidence;
 }
 
-.step2 form .logoFormalist {
+.step2 .form .logoFormalist {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
-.step2 form .validateBtn {
+.step2 .form .validateBtn {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
 
-.step2 form .radio {
+.step2 .form .radio {
   margin-bottom: 28px;
 }
 
-.step2 form .radio__item {
+.step2 .form .radio__item {
   margin-bottom: 22px;
 }
 
 @media screen and (max-width: 630px) {
-  .step2 form {
+  .step2 .form {
     grid-row-gap: 25px;
         grid-template-areas: "who-committed    who-committed   " "who-dont-react   who-dont-react  " "where-committed  where-committed " "who-was-informed who-was-informed" "appeal           appeal          " "evidence         evidence        " "logoFormalist    validateBtn     ";
   }
-  .step2 form .logoFormalist,
-  .step2 form .validateBtn {
+  .step2 .form .logoFormalist,
+  .step2 .form .validateBtn {
     margin-top: 0;
   }
-  .step2 form .input-wrapper,
-  .step2 form .custom-select {
+  .step2 .form .input-wrapper,
+  .step2 .form .custom-select {
     margin-bottom: 20px;
   }
-  .step2 form .radio__item {
+  .step2 .form .radio__item {
     margin-bottom: 1px;
   }
-  .step2 form .appeal .input-wrapper {
+  .step2 .form .appeal .input-wrapper {
     margin-bottom: 20px;
     padding: 0;
     max-width: 100%;
   }
-  .step2 form .appeal .input-wrapper:not(:last-child) {
+  .step2 .form .appeal .input-wrapper:not(:last-child) {
     margin-right: 0px;
   }
 }
@@ -918,7 +931,7 @@ select {
   margin-bottom: 30px;
 }
 
-.step3 form {
+.step3 .form {
   display: -ms-grid;
   display: grid;
   grid-column-gap: 50px;
@@ -931,62 +944,62 @@ select {
 }
 
 @media screen and (max-width: 630px) {
-  .step3 form {
+  .step3 .form {
     grid-row-gap: 25px;
         grid-template-areas: "photo          photo       " "heading        heading     " "description    description " "main           main        " "logoFormalist  validateBtn ";
   }
-  .step3 form .validateBtn,
-  .step3 form .logoFormalist {
+  .step3 .form .validateBtn,
+  .step3 .form .logoFormalist {
     margin-top: 20px;
   }
 }
 
-.step3 form .photo {
+.step3 .form .photo {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: photo;
 }
 
-.step3 form .heading {
+.step3 .form .heading {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: heading;
   margin-top: 40px;
 }
 
-.step3 form .description {
+.step3 .form .description {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: description;
 }
 
-.step3 form .main {
+.step3 .form .main {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: main;
 }
 
-.step3 form .logoFormalist {
+.step3 .form .logoFormalist {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
-.step3 form .validateBtn {
+.step3 .form .validateBtn {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
 }
 
-.step3 form .photo .input-wrapper__button {
+.step3 .form .photo .input-wrapper__button {
   width: 147px;
   height: 130px;
   padding-top: 40px;
 }
 
-.step3 form .photo .input-wrapper__preview {
+.step3 .form .photo .input-wrapper__preview {
   -o-object-fit: cover;
      object-fit: cover;
   width: 147px;
@@ -994,31 +1007,31 @@ select {
   border-radius: 10px;
 }
 
-.step3 form .photo .input-wrapper__delete-button {
+.step3 .form .photo .input-wrapper__delete-button {
   right: auto;
   left: 110px;
   top: 0;
   display: none;
 }
 
-.step3 form .photo .input-wrapper__delete-button + .input-wrapper__hint {
+.step3 .form .photo .input-wrapper__delete-button + .input-wrapper__hint {
   right: auto;
   left: 120px;
 }
 
-.step3 form .description {
+.step3 .form .description {
   padding-bottom: 20px;
 }
 
-.step3 form .description .examples {
+.step3 .form .description .examples {
   margin-top: 10px;
 }
 
-.step3 form .description p:nth-of-type(2) {
+.step3 .form .description p:nth-of-type(2) {
   margin-bottom: 0;
 }
 
-.step3 form .description ul {
+.step3 .form .description ul {
   font-size: 14px;
   color: #acaab6;
   margin: 0;
@@ -1026,7 +1039,7 @@ select {
   list-style: none;
 }
 
-.step3 form .examples {
+.step3 .form .examples {
   display: block;
   color: #2c2b30;
   font-size: 14px;
@@ -1039,13 +1052,13 @@ select {
   width: max-content;
 }
 
-.step3 form .examples span {
+.step3 .form .examples span {
   font-size: 30px;
   position: relative;
   top: 4px;
 }
 
-.step3 form .main p a {
+.step3 .form .main p a {
   font-weight: 500;
 }
 
@@ -1053,7 +1066,7 @@ select {
   margin-bottom: 9px;
 }
 
-.step4 form {
+.step4 .form {
   display: -ms-grid;
   display: grid;
   grid-column-gap: 50px;
@@ -1065,7 +1078,7 @@ select {
       grid-template-areas: "suggestion     suggestion  " "logoFormalist  validateBtn ";
 }
 
-.step4 form .suggestion {
+.step4 .form .suggestion {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -1073,13 +1086,13 @@ select {
   margin-top: 10px;
 }
 
-.step4 form .logoFormalist {
+.step4 .form .logoFormalist {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
 }
 
-.step4 form .validateBtn {
+.step4 .form .validateBtn {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
@@ -1159,31 +1172,31 @@ select {
   margin: 50px 0;
 }
 
-.step5 form {
+.step5 .form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "acceptTerms          acceptTerms     " "monthlyTransfer          monthlyTransfer     " "email               email     " "transferValue          transferValue    " "logoFormalist  validateBtn ";
+      grid-template-areas: "acceptTerms       acceptTerms     " "monthlyTransfer   monthlyTransfer " "email             email           " "transferValue     transferValue   " "logoFormalist     validateBtn     ";
 }
 
-.step5 form .acceptTerms {
+.step5 .form .acceptTerms {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: acceptTerms;
 }
 
-.step5 form .monthlyTransfer {
+.step5 .form .monthlyTransfer {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: monthlyTransfer;
 }
 
-.step5 form .email {
+.step5 .form .email {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -1191,28 +1204,28 @@ select {
   max-width: 369px;
 }
 
-.step5 form .transferValue {
+.step5 .form .transferValue {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: transferValue;
 }
 
-.step5 form .logoFormalist {
+.step5 .form .logoFormalist {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: logoFormalist;
   margin-top: 50px;
 }
 
-.step5 form .validateBtn {
+.step5 .form .validateBtn {
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: validateBtn;
   margin-top: 50px;
 }
 
-.step5 form .transferValue {
+.step5 .form .transferValue {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -1221,36 +1234,36 @@ select {
   max-width: 400px;
 }
 
-.step5 form .transferValue .radio__item {
+.step5 .form .transferValue .radio__item {
   width: 81px;
 }
 
-.step5 form .transferValue .input-wrapper {
+.step5 .form .transferValue .input-wrapper {
   width: 140px;
 }
 
-.step5 form .transferValue .default {
+.step5 .form .transferValue .default {
   display: none;
 }
 
-.step5 form .transferValue .radio__item {
+.step5 .form .transferValue .radio__item {
   padding: 0;
   margin-right: 10px;
   height: 40px;
 }
 
-.step5 form .transferValue .radio__label {
+.step5 .form .transferValue .radio__label {
   line-height: 40px;
   padding: 0 20px;
   border-radius: 20px;
   cursor: pointer;
 }
 
-.step5 form .transferValue .radio__input {
+.step5 .form .transferValue .radio__input {
   display: none;
 }
 
-.step5 form .transferValue .radio__input:checked ~ .radio__label {
+.step5 .form .transferValue .radio__input:checked ~ .radio__label {
   background: rgba(205, 214, 241, 0.5);
 }
 

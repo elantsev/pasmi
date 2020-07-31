@@ -37,15 +37,16 @@ $input-active: rgba(205, 214, 241, 0.5);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 50px;
-  @media screen and (max-width: 630px) {
-    grid-template-columns: 1fr;
+  &:not(.footer) {
+    @media screen and (max-width: 630px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 * {
   box-sizing: border-box;
   font-family: Ubuntu;
-  // outline: 1px solid rgb(250, 140, 140);
 }
 
 h3 {
@@ -124,6 +125,9 @@ textarea {
 
 .validateBtn {
   width: 156px;
+  height: 47px;
+  padding: 0;
+
   background: $grey-3;
   box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.6),
     0px -4px 10px rgba(255, 255, 255, 0.92);
@@ -135,11 +139,18 @@ textarea {
   color: #ffffff;
   outline: none;
   border: none;
-  height: 48px;
   margin-top: 130px;
   margin-left: auto;
-  cursor: pointer; 
+  cursor: pointer;
   transition: 0.1s;
+  svg {
+    text {
+      font-weight: 500;
+      font-size: 16px;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+  }
   &:hover {
     background: #000;
   }
@@ -147,10 +158,14 @@ textarea {
     box-shadow: 5px 5px 20px rgba(67, 79, 97, 0.4),
       0px -4px 10px rgba(255, 255, 255, 0.8);
   }
+
+  .progressLine {
+    transition: 0.5s;
+  }
   @media screen and (max-width: 630px) {
     font-size: 14px;
     line-height: 16px;
-    height: 40px;
+    height: 35px;
     width: 115px;
   }
 }
@@ -597,7 +612,7 @@ select {
 }
 // step1******************************************************************************************
 // ************************************************************************************************
-.step1 form {
+.step1 .form {
   display: grid;
   grid-column-gap: 50px;
   grid-row-gap: 30px;
@@ -688,7 +703,7 @@ select {
 // ************************************************************************************************
 
 .step2 {
-  form {
+  .form {
     display: grid;
     grid-column-gap: 50px;
     grid-row-gap: 30px;
@@ -790,7 +805,7 @@ select {
 // step3******************************************************************************************
 // ************************************************************************************************
 .step3 {
-  form {
+  .form {
     display: grid;
     grid-column-gap: 50px;
     grid-row-gap: 30px;
@@ -901,7 +916,7 @@ select {
   h4 {
     margin-bottom: 9px;
   }
-  form {
+  .form {
     display: grid;
     grid-column-gap: 50px;
     grid-row-gap: 30px;
@@ -983,18 +998,18 @@ select {
   .email {
     margin: 50px 0;
   }
-  form {
+  .form {
     display: grid;
     // grid-column-gap: 50px;
     // grid-row-gap: 30px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "acceptTerms          acceptTerms     "
-      "monthlyTransfer          monthlyTransfer     "
-      "email               email     "
-      "transferValue          transferValue    "
-      "logoFormalist  validateBtn ";
+      "acceptTerms       acceptTerms     "
+      "monthlyTransfer   monthlyTransfer "
+      "email             email           "
+      "transferValue     transferValue   "
+      "logoFormalist     validateBtn     ";
 
     .acceptTerms {
       grid-area: acceptTerms;

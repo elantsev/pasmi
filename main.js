@@ -39,27 +39,26 @@ const saveResult = (stepName, fields, fieldName) => {
 
 //переключение шагов********************************************************************************************
 class Step {
-    constructor(name, isOpen, isActive = false) {
+    constructor(name, progress, isOpen, isActive = false) {
         this.name = name;
+        this.progress = progress;
         this.isOpen = isOpen;
         this.isActive = isActive;
         this.isValid = false;
 
         this.getTab = function () { return document.querySelector(`.tabs li[data-step=${this.name}]`) }
-        this.getElement = function () { return document.querySelector(`#${this.name}`) }
-        this.getForm = function () { return document.querySelector(`#${this.name} form`) }
+        this.getElement = function () { return document.querySelector(`.${this.name}`) }
+        this.getForm = function () { return document.querySelector(`.${this.name} .form`) }
     }
     get tab () { return document.querySelector(`.tabs li[data-step=${this.name}]`) }
-    get element () { return document.querySelector(`#${this.name}`) }
-    get form () { return document.querySelector(`#${this.name} form`) }
 }
 
 let steps = [
-    new Step('step1', true),
-    new Step('step2', true),
-    new Step('step3', true),
-    new Step('step4', true),
-    new Step('step5', true),
+    new Step('step1', 0.2, true, true),
+    new Step('step2', 0.4, true),
+    new Step('step3', 0.6, true),
+    new Step('step4', 0.8, true),
+    new Step('step5', 1, true),
 ]
 
 const setActiveStep = (stepName) => {
@@ -71,6 +70,7 @@ const setActiveStep = (stepName) => {
             step.getElement().style.display = 'block';
             step.getTab().className = 'active'
             step.isActive = true
+            progressLine.style.strokeDashoffset = strokeLength + strokeLength * step.progress
         } else {
             step.getElement().style.display = 'none';
             step.getTab().className = ''
@@ -90,9 +90,7 @@ const setValidStep = (stepName, isValid) => {
 
 steps.forEach((step) => {
     step.tab.addEventListener('click', () => setActiveStep(step.tab.dataset.step))
-    step.form?.addEventListener('submit', (e) => submitForm(e, step))
 })
-
 
 
 //Валидация форм******************************************************************************************
@@ -189,10 +187,13 @@ const checkDateFormat = (date) => {
     }
     return result
 }
+const submitButton = document.getElementById("submitButton")
+submitButton.onclick = (e) => submitForm(e)
 
-const submitForm = (event, step) => {
-
-    const { name, form } = step
+const submitForm = (event) => {
+    const currentStep = steps.find(step => step.isActive)
+    const { name } = currentStep
+    const form = currentStep.getForm()
     event.preventDefault()
     removeValidation(form)
     const textareas = form.querySelectorAll('textarea')
@@ -219,10 +220,10 @@ const submitForm = (event, step) => {
         setValidStep(name, true)
         console.log("submitForm -> data", data)
         if (name !== "step5") {
-            const currentIndex = steps.findIndex(s => s.name === step.name)
+            const currentIndex = steps.findIndex(s => s.name === currentStep.name)
             const nextStep = steps[currentIndex + 1]
             setOpenStep(nextStep.name, true)
-            // setActiveStep(nextStep.name)
+            setActiveStep(nextStep.name)
         }
         if (name === "step4") {
             // sendDataToServer(data)
@@ -519,14 +520,6 @@ function previewFiles (selector, step) {
 
 
 //progressLine
-
-const progressLine = document.querySelector("#progressLine")
-const progress = document.querySelector("#progress")
-
-progressLine.style.transition = "0.5s"
 const strokeLength = 332
 progressLine.style.strokeDasharray = strokeLength
-progressLine.style.strokeDashoffset = strokeLength + strokeLength / 5
-progress.addEventListener("click", () => {
-    progressLine.style.strokeDashoffset = strokeLength + (+progressLine.style.strokeDashoffset + strokeLength / 5) % strokeLength
-})
+progressLine.style.strokeDashoffset = strokeLength + strokeLength * 0.2
