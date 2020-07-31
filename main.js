@@ -516,3 +516,17 @@ function previewFiles (selector, step) {
         }
     }
 }
+
+
+//progressLine
+
+const progressLine = document.querySelector("#progressLine")
+const progress = document.querySelector("#progress")
+
+progressLine.style.transition = "0.5s"
+const strokeLength = 332
+progressLine.style.strokeDasharray = strokeLength
+progressLine.style.strokeDashoffset = strokeLength + strokeLength / 5
+progress.addEventListener("click", () => {
+    progressLine.style.strokeDashoffset = strokeLength + (+progressLine.style.strokeDashoffset + strokeLength / 5) % strokeLength
+})

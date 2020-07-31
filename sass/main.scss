@@ -8,8 +8,8 @@ $input-active: rgba(205, 214, 241, 0.5);
 }
 
 .post-material {
-  &.step1,
   &.step2,
+  &.step3,
   &.step4,
   &.step5 {
     display: none;
@@ -138,7 +138,7 @@ textarea {
   height: 48px;
   margin-top: 130px;
   margin-left: auto;
-  cursor: pointer;
+  cursor: pointer; 
   transition: 0.1s;
   &:hover {
     background: #000;
