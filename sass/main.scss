@@ -859,6 +859,8 @@ select {
         width: 147px;
         height: 130px;
         border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(214, 216, 224, 0.67),
+          -4px -4px 7px rgba(255, 255, 255, 0.5);
       }
       &__delete-button {
         right: auto;

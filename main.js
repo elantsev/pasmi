@@ -151,7 +151,7 @@ const checkTelFormat = (tel) => {
         return true
     }
     let result = true
-    let regExp = /^([+]?[0-9\s-\(\)]{3,25})*$/i
+    let regExp = /^(\+7 \(\d{3}\) \d{3} \d{2} \d{2})$/i
     if (regExp.test(tel.value) === false) {
         let errorText = tel.value === "+7 (___) ___ __ __" ? 'Введите номер телефона.' : 'Некорректный номер телефона.'
         let error = generateError(errorText)
@@ -223,7 +223,7 @@ const submitForm = (event) => {
             const currentIndex = steps.findIndex(s => s.name === currentStep.name)
             const nextStep = steps[currentIndex + 1]
             setOpenStep(nextStep.name, true)
-            setActiveStep(nextStep.name)
+            // setActiveStep(nextStep.name)
         }
         if (name === "step4") {
             // sendDataToServer(data)
