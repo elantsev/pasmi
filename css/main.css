@@ -375,10 +375,9 @@ select {
   background: rgba(205, 214, 241, 0.5);
 }
 
-.input-wrapper__input:focus + span, .input-wrapper__input:not(:placeholder-shown) + span {
+.input-wrapper__input:focus + .input-wrapper__text, .input-wrapper__input:not(:placeholder-shown) + .input-wrapper__text {
   position: absolute;
   top: 7px;
-  left: 20px;
   font-size: 11px;
   line-height: 13px;
   letter-spacing: 0.5px;

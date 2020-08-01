@@ -13,20 +13,20 @@
     <div class="container">
         <ul class="tabs">
             <li data-step="step1" class="active">Кто Вы?</li>
-            <li>&#8594</li>
+            <li>&#8594;</li>
             <li data-step="step2">Что произошло? </li>
-            <li>&#8594</li>
+            <li>&#8594;</li>
             <li data-step="step3">Статья </li>
-            <li>&#8594</li>
+            <li>&#8594;</li>
             <li data-step="step4">Ваши предложения</li>
-            <li>&#8594</li>
+            <li>&#8594;</li>
             <li data-step="step5">поддержать редакцию</li>
         </ul>
         <form action="#">
             <div class="post-material step1">
                 <h3>Кто Вы?</h3>
                 <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
-                <div class="form" action="#">
+                <div class="form">
                     <label class="input-wrapper fio">
                         <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
                         <span class="input-wrapper__text">ФИО</span>
@@ -35,20 +35,20 @@
                     <label class="tel input-wrapper icon">
                         <input class="input-wrapper__input" name="tel" type="text" placeholder=" ">
                         <span class="input-wrapper__text">моб. телефон</span>
-                        <div class="input-wrapper__icon">
+                        <span class="input-wrapper__icon">
                             <svg>
                                 <use href="icons.svg#tel"></use>
                             </svg>
-                        </div>
+                        </span>
                     </label>
                     <label class="email input-wrapper icon">
                         <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
                         <span class="input-wrapper__text">e-mail</span>
-                        <div class="input-wrapper__icon">
+                        <span class="input-wrapper__icon">
                             <svg>
                                 <use href="icons.svg#email"></use>
                             </svg>
-                        </div>
+                        </span>
                     </label>
                     <div class="line"></div>
                     <div class="radio">
@@ -226,11 +226,11 @@
                             <label class="coordinates input-wrapper icon">
                                 <input class="input-wrapper__input" name="coordinates" type="text" placeholder=" ">
                                 <span class="input-wrapper__text">адрес или координаты</span>
-                                <div class="input-wrapper__icon">
+                                <span class="input-wrapper__icon">
                                     <svg>
                                         <use href="icons.svg#coordinates"></use>
                                     </svg>
-                                </div>
+                                </span>
                             </label>
                         </div>
 
@@ -282,11 +282,11 @@
                         <label class="input-wrapper icon">
                             <input class="input-wrapper__input" name="appealDate" type="text" placeholder=" ">
                             <span class="input-wrapper__text">дата обращения</span>
-                            <div class="input-wrapper__icon">
+                            <span class="input-wrapper__icon">
                                 <svg>
                                     <use href="icons.svg#calendar"></use>
                                 </svg>
-                            </div>
+                            </span>
                         </label>
 
                         <label class="input-wrapper">
@@ -296,8 +296,8 @@
 
                         <label class="input-wrapper file">
                             <input class="input-wrapper__input" name="appealFile" type="file">
-                            <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
-                            <div class="input-wrapper__fileList"> </div>
+                            <span class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</span>
+                            <span class="input-wrapper__fileList"> </span>
                         </label>
 
                     </div>
@@ -306,8 +306,8 @@
 
                         <label class="input-wrapper file">
                             <input class="input-wrapper__input" name="personWasInformedFile" type="file" multiple>
-                            <p class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</p>
-                            <div class="input-wrapper__fileList"> </div>
+                            <span class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</span>
+                            <span class="input-wrapper__fileList"> </span>
                         </label>
 
                     </div>
@@ -315,15 +315,15 @@
             </div>
             <div class="post-material step3">
                 <h3>Статья</h3>
-                <div class="form" action="#">
+                <div class="form">
                     <div class="photo">
                         <h4>Фото для статьи</h4>
                         <label class="input-wrapper file">
                             <input id="uploadImage" class="input-wrapper__input" name="photo" type="file" multiple
                                 onchange="previewImage()" accept="image/*">
-                            <p id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
-                                файл</p>
-                            <img id="uploadPreview" class="input-wrapper__preview" />
+                            <span id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
+                                файл</span>
+                            <img id="uploadPreview" class="input-wrapper__preview" src="#" alt="просмотр недоступен" />
                             <span id="deleteImage" class="input-wrapper__delete-button">+
                             </span>
                             <span class="input-wrapper__hint">Удалить</span>
@@ -337,8 +337,7 @@
                             <input class="input-wrapper__input" type="text" name="essence" placeholder=" ">
                             <span class="input-wrapper__text">введите</span>
                         </label>
-                        <a class="examples" href="http://" target="_blank"
-                            rel="noopener noreferrer"><span>&#8250;</span>
+                        <a class="examples" href="#" target="_blank" rel="noopener noreferrer"><span>&#8250;</span>
                             Примеры.</a>
                     </div>
 
@@ -361,7 +360,7 @@
                         </div>
 
 
-                        <a class="examples" href="http://" target="_blank"
+                        <a class="examples" href="#" target="_blank"
                             rel="noopener noreferrer"><span>&#8250;</span>
                             Примеры.</a>
                     </div>
@@ -395,12 +394,12 @@
                         <p class="grey-3">Нельзя обвинять лицо в совершение преступления пока его причастность не
                             докажут в
                             судебном порядке <br />
-                            <a href="http://" target="_blank" rel="noopener noreferrer">ст. 14 УПК РФ</a>.</p>
+                            <a href="#" target="_blank" rel="noopener noreferrer">ст. 14 УПК РФ</a>.</p>
                         <p class="grey-3">Нельзя распространять информацию в неприличной форме<br />
-                            <a href="http://" target="_blank" rel="noopener noreferrer">ч.3 ст. 20.1 КоАП РФ</a>.
+                            <a href="#" target="_blank" rel="noopener noreferrer">ч.3 ст. 20.1 КоАП РФ</a>.
                         </p>
                         <p class="grey-3">Нельзя распространять заведомо ложные сведения<br />
-                            <a href="http://" target="_blank" rel="noopener noreferrer">ч.3,5 ст.128.1 УК РФ</a> .
+                            <a href="#" target="_blank" rel="noopener noreferrer">ч.3,5 ст.128.1 УК РФ</a> .
                         </p>
                     </div>
                 </div>
@@ -411,7 +410,7 @@
                 <p>В свободной форме оцените уровень коррумпированности, работу правоохранительных и судебных органов,
                     руководства страны. Что вы предлагаете для совершенствования работы правоохранительных органов,
                     снижения криминализации в стране.</p>
-                <div class="form" action="#">
+                <div class="form">
                     <div class="text suggestion">
                         <textarea name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
                     </div>
@@ -434,11 +433,11 @@
 
                 <p class="grey-3">Нам важно сказать вам спасибо.</p>
                 <hr />
-                <div class="form" action="">
+                <div class="form">
 
                     <label class="checkbox acceptTerms">
                         <input class="checkbox__input" type="checkbox" name="acceptTerms">
-                        <span class="checkbox__text">Я принимаю &nbsp; <a href="http://" target="_blank"
+                        <span class="checkbox__text">Я принимаю &nbsp; <a href="#" target="_blank"
                                 rel="noopener noreferrer">условия</a></span>
                     </label>
                     <label class="checkbox monthlyTransfer">
@@ -449,11 +448,11 @@
                     <label class="email input-wrapper icon">
                         <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
                         <span class="input-wrapper__text">почта для платежной системы</span>
-                        <div class="input-wrapper__icon">
+                        <span class="input-wrapper__icon">
                             <svg>
                                 <use href="icons.svg#email"></use>
                             </svg>
-                        </div>
+                        </span>
                     </label>
 
                     <div class="transferValue radio flex-row">

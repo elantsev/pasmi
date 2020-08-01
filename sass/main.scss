@@ -330,10 +330,9 @@ select {
     &:focus,
     &:not(:placeholder-shown) {
       background: $input-active;
-      + span {
+      + .input-wrapper__text {
         position: absolute;
         top: 7px;
-        left: 20px;
         font-size: 11px;
         line-height: 13px;
         letter-spacing: 0.5px;
