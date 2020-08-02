@@ -147,7 +147,7 @@ const checkFieldsPresence = (fields) => {
 }
 
 const checkTelFormat = (tel) => {
-    if (!tel) {
+    if (!tel || !tel.value) {
         return true
     }
     let result = true
@@ -161,7 +161,7 @@ const checkTelFormat = (tel) => {
     return result
 }
 const checkEmailFormat = (email) => {
-    if (!email) {
+    if (!email || !email.value) {
         return true
     }
     let result = true
@@ -174,7 +174,7 @@ const checkEmailFormat = (email) => {
     return result
 }
 const checkDateFormat = (date) => {
-    if (!date) {
+    if (!date || !date.value) {
         return true
     }
     let result = true
