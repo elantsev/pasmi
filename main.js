@@ -238,12 +238,13 @@ const submitForm = (event) => {
 
 
 // маска даты*******************************************************************************************************
+let dateMask
 let dateInput = document.querySelector('.step2 .appeal input[name="appealDate"]');
-let dateMask = IMask(
-    dateInput,
-    {
+dateInput.addEventListener('focus', () => {
+    dateMask = IMask(
+        dateInput, {
         mask: Date,
-        lazy: true,
+        lazy: false,
         overwrite: true,
         autofix: true,
         blocks: {
@@ -251,23 +252,31 @@ let dateMask = IMask(
             m: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1, to: 12, maxLength: 2 },
             Y: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1900, to: 2100, maxLength: 4 }
         }
+    });
+})
+dateInput.addEventListener('blur', () => {
+    dateMask.destroy()
+    if (dateInput.value === "__.__.____") {
+        dateInput.value = null
     }
-);
-dateInput.addEventListener('focus', () => {
-    dateMask.updateOptions({ lazy: false })
 })
 
 
 // маска телефона*******************************************************************************************************
-
+let phoneMask
 let telInput = document.querySelector('.step1 .tel input[name="tel"]')
-let phoneMask = IMask(
-    telInput, {
-    mask: '+{7} (000) 000 00 00',
-    lazy: true
-});
 telInput.addEventListener('focus', () => {
-    phoneMask.updateOptions({ lazy: false })
+    phoneMask = IMask(
+        telInput, {
+        mask: '+{7} (000) 000 00 00',
+        lazy: false
+    });
+})
+telInput.addEventListener('blur', () => {
+    phoneMask.destroy()
+    if (telInput.value === "+7 (___) ___ __ __") {
+        telInput.value = null
+    }
 })
 
 
