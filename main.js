@@ -238,9 +238,9 @@ const submitForm = (event) => {
 
 
 // маска даты*******************************************************************************************************
-
+let dateInput = document.querySelector('.step2 .appeal input[name="appealDate"]');
 let dateMask = IMask(
-    document.querySelector('.step2 .appeal input[name="appealDate"]'),
+    dateInput,
     {
         mask: Date,
         lazy: true,
@@ -252,19 +252,23 @@ let dateMask = IMask(
             Y: { mask: IMask.MaskedRange, placeholderChar: '_', from: 1900, to: 2100, maxLength: 4 }
         }
     }
-
-
-
 );
+dateInput.addEventListener('focus', () => {
+    dateMask.updateOptions({ lazy: false })
+})
 
 
 // маска телефона*******************************************************************************************************
 
+let telInput = document.querySelector('.step1 .tel input[name="tel"]')
 let phoneMask = IMask(
-    document.querySelector('.step1 .tel input[name="tel"]'), {
+    telInput, {
     mask: '+{7} (000) 000 00 00',
     lazy: true
 });
+telInput.addEventListener('focus', () => {
+    phoneMask.updateOptions({ lazy: false })
+})
 
 
 
