@@ -459,17 +459,6 @@ select {
   display: none;
 }
 
-.input-wrapper.file .input-wrapper__hint {
-  visibility: hidden;
-  position: absolute;
-  display: block;
-  right: -50px;
-  top: -20px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  color: transparent;
-}
-
 .input-wrapper.file .input-wrapper__fileList ol {
   padding: 0;
   margin: 0;
@@ -543,17 +532,12 @@ select {
   right: 0;
   line-height: 8px;
   font-size: 28px;
-  color: #c4c4c4;
+  color: #000000;
   cursor: pointer;
 }
 
 .input-wrapper.file .input-wrapper__delete-button:hover {
   color: #2c2b30;
-}
-
-.input-wrapper.file .input-wrapper__delete-button:hover + .input-wrapper__hint {
-  color: #2c2b30;
-  visibility: visible;
 }
 
 /* error******************************************************************************************************************* */
@@ -1031,11 +1015,6 @@ select {
   left: 110px;
   top: 0;
   display: none;
-}
-
-.step3 .form .photo .input-wrapper__delete-button + .input-wrapper__hint {
-  right: auto;
-  left: 120px;
 }
 
 .step3 .form .description {

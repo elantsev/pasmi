@@ -484,9 +484,6 @@ function previewFiles (selector, step) {
                 const deleteButton = document.createElement('span');
                 deleteButton.className = "input-wrapper__delete-button"
                 deleteButton.textContent = '+';
-                const hint = document.createElement('span');
-                hint.className = "input-wrapper__hint"
-                hint.textContent = 'Удалить';
                 deleteButton.onclick = (e) => {
                     e.preventDefault()
                     curFiles = curFiles.filter(f => f.name !== file.name)
@@ -497,7 +494,6 @@ function previewFiles (selector, step) {
                     }
                 }
                 listItem.appendChild(deleteButton)
-                listItem.appendChild(hint)
                 list.appendChild(listItem);
             }
         }

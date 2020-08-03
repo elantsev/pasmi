@@ -399,16 +399,6 @@ select {
       height: 100%;
       display: none;
     }
-
-    .input-wrapper__hint {
-      visibility: hidden;
-      position: absolute;
-      display: block;
-      right: -50px;
-      top: -20px;
-      transition: 0.3s;
-      color: transparent;
-    }
     .input-wrapper__fileList {
       ol {
         padding: 0;
@@ -480,14 +470,10 @@ select {
       right: 0;
       line-height: 8px;
       font-size: 28px;
-      color: #c4c4c4;
+      color: #000000;
       cursor: pointer;
       &:hover {
         color: $grey-3;
-        + .input-wrapper__hint {
-          color: $grey-3;
-          visibility: visible;
-        }
       }
     }
   }
@@ -882,10 +868,6 @@ select {
         left: 110px;
         top: 0;
         display: none;
-        & + .input-wrapper__hint {
-          right: auto;
-          left: 120px;
-        }
       }
     }
 
