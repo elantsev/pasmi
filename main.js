@@ -226,6 +226,8 @@ const submitForm = (event) => {
             // setActiveStep(nextStep.name)
         }
         if (name === "step4") {
+            let formattedData = dataFormatter(data)
+            console.log("submitForm -> formattedData", formattedData)
             // sendDataToServer(data)
         }
         if (name === "step5") {
@@ -532,3 +534,24 @@ function previewFiles (selector, step) {
 const strokeLength = 332
 progressLine.style.strokeDasharray = strokeLength
 progressLine.style.strokeDashoffset = strokeLength + strokeLength * 0.2
+
+// dataFormatter*****************************************************************
+const dataFormatter = object => {
+    currentDate = (new Date()).toISOString()
+    let result = {}
+    for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+            let innerObject = object[key]
+
+            for (const innerKey in innerObject) {
+                if (innerObject.hasOwnProperty(innerKey)) {
+                    result[`${key}.${innerKey}`] = {
+                        "date": currentDate,
+                        "value": innerObject[innerKey]
+                    }
+                }
+            }
+        }
+    }
+    return result
+}
