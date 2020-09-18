@@ -211,6 +211,30 @@ const submitForm = (event) => {
     const isEmailValid = checkEmailFormat(email);
     const isDateValid = checkDateFormat(date);
 
+
+    async function sendDataToServer (url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *client
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        return await response.json(); // parses JSON response into native JavaScript objects
+    }
+
+
+
+
+
+
     if (
         true
         // isFields && (!tel || isTelValid) && (!email || isEmailValid)&& (!date || isDateValid)
@@ -228,7 +252,11 @@ const submitForm = (event) => {
         if (name === "step4") {
             let formattedData = dataFormatter(data)
             console.log("submitForm -> formattedData", formattedData)
-            // sendDataToServer(data)
+
+            sendDataToServer('http://127.0.0.1:5501/api', formattedData)
+                .then((data) => {
+                    console.log(data.json()); // JSON data parsed by `response.json()` call
+                });
         }
         if (name === "step5") {
             // sendDataToServer(data.step5)
