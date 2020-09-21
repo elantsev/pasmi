@@ -1,6 +1,6 @@
 let API_USER_ID = localStorage.formalist_API_USER_ID
 if (!API_USER_ID) {
-    API_USER_ID = `${new Date()} ${Date.now()} ${Math.random()}`
+    API_USER_ID = `${Date.now()}`
     localStorage.formalist_API_USER_ID = API_USER_ID
 }
 // переменная для аккумулирования введенных данных**************************************************************
@@ -244,7 +244,7 @@ const submitForm = (event) => {
                 },
                 redirect: 'follow', // manual, *follow, error
                 referrerPolicy: 'no-referrer', // no-referrer, *client
-                body: JSON.stringify({ API_USER_ID, data: formattedData}) // body data type must match "Content-Type" header
+                body: JSON.stringify({ API_USER_ID, answers: formattedData}) // body data type must match "Content-Type" header
             })
         }
         if (name === "step5") {

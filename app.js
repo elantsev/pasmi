@@ -1,22 +1,28 @@
 const express = require('express')
-const axios = require('axios');
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const fetch = require("node-fetch");
 const port = 5501
 app.use(bodyParser.json())
 app.use(cors())
-const API_KEY = "34370821616d33b52a5834528b74f6435f476ec2ee044acf1ae3e1a58611"
-const API_TEMPLATE_ID = "???????????????????????????????????"
-
+const API_KEY = "c74981855ad8681d0d86d1e91e00167939cb6694d2c422acd208a0072939"
+const API_TEMPLATE_ID = "52"
 
 app.post('/api', (req, res) => {
-    const { API_USER_ID,...data} = req.body;
+    const { API_USER_ID, ...answers } = req.body;
     res.sendStatus(200);
-    axios.post("http://api.frml.st/api/v1/results/1", {
-        headers: { API_KEY, API_TEMPLATE_ID, API_USER_ID},
-        data
-    })
+
+    fetch(`https://api.frml.st/api/v1/results/${API_USER_ID}/check/ghost_user`, {
+        method: "post",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            API_KEY,
+            API_TEMPLATE_ID
+        },
+        body: JSON.stringify(answers)
+    });
 });
 
 app.get('/api', (req, res) => {
