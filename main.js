@@ -224,7 +224,6 @@ const submitForm = (event) => {
         saveResult(name, fields)
         setOpenStep(name, true)
         setValidStep(name, true)
-        console.log("submitForm -> data", data)
         if (name !== "step5") {
             const currentIndex = steps.findIndex(s => s.name === currentStep.name)
             const nextStep = steps[currentIndex + 1]
@@ -234,17 +233,34 @@ const submitForm = (event) => {
         if (name === "step4") {
             let formattedData = dataFormatter(data)
 
+            const form = document.forms.form,
+             formData = new FormData(form)
+            formData.delete('acceptTerms')
+            formData.delete('monthlyTransfer')
+            formData.delete('email')
+            formData.delete('transferValue')
+            const editor = document.querySelector("#editor")
+            const editorInnerHTML = editor.querySelector(".ql-editor").innerHTML
+            const editorName = editor.dataset.name
+            formData.set(editorName, editorInnerHTML)
+
+            console.log("submitForm -> formData", formData)
+            console.log("submitForm -> formData.get(suggestion)", formData.get("suggestion"))
+            console.log("submitForm -> formData.get(fio)", formData.get("fio"))
+            console.log("submitForm -> formData.get(photo)", formData.get("photo"))
+
             fetch('http://127.0.0.1:5501/api', {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 mode: 'cors', // no-cors, *cors, same-origin
                 cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
                 credentials: 'same-origin', // include, *same-origin, omit
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
                 redirect: 'follow', // manual, *follow, error
                 referrerPolicy: 'no-referrer', // no-referrer, *client
-                body: JSON.stringify({ API_USER_ID, answers: formattedData}) // body data type must match "Content-Type" header
+                // body: JSON.stringify({ API_USER_ID, answers: formattedData }) // body data type must match "Content-Type" header
+                body: formData // body data type must match "Content-Type" header
             })
         }
         if (name === "step5") {
@@ -258,7 +274,7 @@ const submitForm = (event) => {
 
 // маска даты*******************************************************************************************************
 let dateMask
-let dateInput = document.querySelector('.step2 .appeal input[name="appealDate"]');
+let dateInput = document.querySelector('.step2 .appeal input[name="step2.appealDate"]');
 dateInput.addEventListener('focus', () => {
     dateMask = IMask(
         dateInput, {
@@ -283,7 +299,7 @@ dateInput.addEventListener('blur', () => {
 
 // маска телефона*******************************************************************************************************
 let phoneMask
-let telInput = document.querySelector('.step1 .tel input[name="tel"]')
+let telInput = document.querySelector('.step1 .tel input[name="step1.tel"]')
 telInput.addEventListener('focus', () => {
     phoneMask = IMask(
         telInput, {

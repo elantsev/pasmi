@@ -22,18 +22,18 @@
             <li>&#8594;</li>
             <li data-step="step5">поддержать редакцию</li>
         </ul>
-        <form action="#">
+        <form action="#" name="form">
             <div class="post-material step1">
                 <h3>Кто Вы?</h3>
                 <p>Опубликовать самостоятельно свое обращение можно после обратной связи с редакцией ПАСМИ.</p>
                 <div class="form">
                     <label class="input-wrapper fio">
-                        <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
+                        <input class="input-wrapper__input" type="text" name="step1.fio" placeholder=" ">
                         <span class="input-wrapper__text">ФИО</span>
                     </label>
 
                     <label class="tel input-wrapper icon">
-                        <input class="input-wrapper__input" name="tel" type="text" placeholder=" ">
+                        <input class="input-wrapper__input" name="step1.tel" type="text" placeholder=" ">
                         <span class="input-wrapper__text">моб. телефон</span>
                         <span class="input-wrapper__icon">
                             <svg>
@@ -42,7 +42,7 @@
                         </span>
                     </label>
                     <label class="email input-wrapper icon">
-                        <input class="input-wrapper__input" name="email" type="text" placeholder=" ">
+                        <input class="input-wrapper__input" name="step1.email" type="text" placeholder=" ">
                         <span class="input-wrapper__text">e-mail</span>
                         <span class="input-wrapper__icon">
                             <svg>
@@ -54,33 +54,33 @@
                     <div class="radio">
                         <h4>Статус</h4>
                         <label class="radio__item">
-                            <input class="radio__input" name="status" type="radio" checked value="Executive">
+                            <input class="radio__input" name="step1.status" type="radio" checked value="Executive">
                             <span class="radio__text">Должностное лицо</span>
                         </label>
                         <label class="radio__item">
-                            <input class="radio__input" name="status" type="radio" value="Businessman">
+                            <input class="radio__input" name="step1.status" type="radio" value="Businessman">
                             <span class="radio__text">Предприниматель</span>
                         </label>
                         <label class="radio__item">
-                            <input class="radio__input" name="status" type="radio" value="Journalist">
+                            <input class="radio__input" name="step1.status" type="radio" value="Journalist">
                             <span class="radio__text">Журналист</span>
                         </label>
                         <label class="radio__item">
-                            <input class="radio__input" name="status" type="radio" value="Lawyer">
+                            <input class="radio__input" name="step1.status" type="radio" value="Lawyer">
                             <span class="radio__text">Адвокат</span>
                         </label>
                         <label class="radio__item">
-                            <input class="radio__input" name="status" type="radio" value="Individual">
+                            <input class="radio__input" name="step1.status" type="radio" value="Individual">
                             <span class="radio__text">Физическое лицо</span>
                         </label>
                     </div>
 
                     <label class="input-wrapper organization">
-                        <input class="input-wrapper__input" type="text" name="fio" placeholder=" ">
+                        <input class="input-wrapper__input" type="text" name="step1.organization" placeholder=" ">
                         <span class="input-wrapper__text">Название организации</span>
                     </label>
                     <label class="input-wrapper jobTitle">
-                        <input class="input-wrapper__input" type="text" name="jobTitle" placeholder=" ">
+                        <input class="input-wrapper__input" type="text" name="step1.jobTitle" placeholder=" ">
                         <span class="input-wrapper__text">Должность</span>
                     </label>
                 </div>
@@ -93,18 +93,18 @@
                         <h4>Кто совершил правонарушение? </h4>
                         <div class="custom-select">
 
-                            <select name="whoCommitted">
+                            <select name="step2.whoCommitted">
                                 <option value="">название органа / организации</option>
                                 <option value="1111">11111</option>
                                 <option value="2222">22222</option>
                             </select>
                         </div>
                         <label class="input-wrapper fio">
-                            <input class="input-wrapper__input" type="text" name="CommitPersonFIO" placeholder=" ">
+                            <input class="input-wrapper__input" type="text" name="step2.CommitPersonFIO" placeholder=" ">
                             <span class="input-wrapper__text">ФИО</span>
                         </label>
                         <label class="input-wrapper fio">
-                            <input class="input-wrapper__input" type="text" name="CommitPersonPosition" placeholder=" ">
+                            <input class="input-wrapper__input" type="text" name="step2.CommitPersonPosition" placeholder=" ">
                             <span class="input-wrapper__text">Должность</span>
                         </label>
 
@@ -112,7 +112,7 @@
                     <div class="who-dont-react">
                         <h4>Кто не реагирует?</h4>
                         <div class="custom-select">
-                            <select name="whoDontReact">
+                            <select name="step2.whoDontReact">
                                 <option value="">название органа</option>
                                 <option value="1111">11111</option>
                                 <option value="2222">22222</option>
@@ -120,11 +120,11 @@
                         </div>
 
                         <label class="input-wrapper fio">
-                            <input class="input-wrapper__input" type="text" name="dontReactPersonFIO" placeholder=" ">
+                            <input class="input-wrapper__input" type="text" name="step2.dontReactPersonFIO" placeholder=" ">
                             <span class="input-wrapper__text">ФИО</span>
                         </label>
                         <label class="input-wrapper fio">
-                            <input class="input-wrapper__input" type="text" name="dontReactPersonPosition"
+                            <input class="input-wrapper__input" type="text" name="step2.dontReactPersonPosition"
                                 placeholder=" ">
                             <span class="input-wrapper__text">Должность</span>
                         </label>
@@ -133,7 +133,7 @@
                         <h4>Где совершено преступление?</h4>
                         <div class="two-column">
                             <div class="custom-select">
-                                <select name="whereCommitted">
+                                <select name="step2.whereCommitted">
                                     <option value="">субъект</option>
                                     <option value="79">Республика Адыгея</option>
                                     <option value="84">Республика Алтай</option>
@@ -224,7 +224,7 @@
                             </div>
 
                             <label class="coordinates input-wrapper icon">
-                                <input class="input-wrapper__input" name="coordinates" type="text" placeholder=" ">
+                                <input class="input-wrapper__input" name="step2.coordinates" type="text" placeholder=" ">
                                 <span class="input-wrapper__text">адрес или координаты</span>
                                 <span class="input-wrapper__icon">
                                     <svg>
@@ -239,31 +239,31 @@
                         <h4>Кому сообщили о коррупции?</h4>
                         <div class="radio two-column">
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" checked value="Putin">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" checked value="Putin">
                                 <span class="radio__text">Владимиру Путину</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Bortnikov">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Bortnikov">
                                 <span class="radio__text">Александру Бортникову</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Kolokoltsev">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Kolokoltsev">
                                 <span class="radio__text">Владимиру Колокольцеву</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Lebedev">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Lebedev">
                                 <span class="radio__text">Вячеславу Лебедеву</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Krasnov">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Krasnov">
                                 <span class="radio__text">Игорю Краснову</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Bastrikin">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Bastrikin">
                                 <span class="radio__text">Александру Бастрыкину</span>
                             </label>
                             <label class="radio__item">
-                                <input class="radio__input" name="personWasInformed" type="radio" value="Other">
+                                <input class="radio__input" name="step2.personWasInformed" type="radio" value="Other">
                                 <span class="radio__text">Иному должностному лицу</span>
                             </label>
                         </div>
@@ -280,7 +280,7 @@
                     <div class="appeal flex-row">
 
                         <label class="input-wrapper icon">
-                            <input class="input-wrapper__input" name="appealDate" type="text" placeholder=" ">
+                            <input class="input-wrapper__input" name="step2.appealDate" type="text" placeholder=" ">
                             <span class="input-wrapper__text">дата обращения</span>
                             <span class="input-wrapper__icon">
                                 <svg>
@@ -290,12 +290,12 @@
                         </label>
 
                         <label class="input-wrapper">
-                            <input class="input-wrapper__input" type="text" name="appealRegNumber" placeholder=" ">
+                            <input class="input-wrapper__input" type="text" name="step2.appealRegNumber" placeholder=" ">
                             <span class="input-wrapper__text">Регистрационный №</span>
                         </label>
 
                         <label class="input-wrapper file">
-                            <input class="input-wrapper__input" name="appealFile" type="file">
+                            <input class="input-wrapper__input" name="step2.appealFile" type="file">
                             <span class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</span>
                             <span class="input-wrapper__fileList"> </span>
                         </label>
@@ -305,7 +305,7 @@
                         <h4>Ваши доказательства</h4>
 
                         <label class="input-wrapper file">
-                            <input class="input-wrapper__input" name="personWasInformedFile" type="file" multiple>
+                            <input class="input-wrapper__input" name="step2.personWasInformedFile" type="file" multiple>
                             <span class="input-wrapper__button"><span>+</span> <br> добавить<br> файл</span>
                             <span class="input-wrapper__fileList"> </span>
                         </label>
@@ -319,7 +319,7 @@
                     <div class="photo">
                         <h4>Фото для статьи</h4>
                         <label class="input-wrapper file">
-                            <input id="uploadImage" class="input-wrapper__input" name="photo" type="file" multiple
+                            <input id="uploadImage" class="input-wrapper__input" name="step3.photo" type="file"
                                 onchange="previewImage()" accept="image/*">
                             <span id="uploadImageLabel" class="input-wrapper__button"><span>+</span> <br> добавить<br>
                                 файл</span>
@@ -333,7 +333,7 @@
                         <h4>Заголовок</h4>
                         <p>Одно предложение, которое отражает суть проблемы</p>
                         <label class="input-wrapper">
-                            <input class="input-wrapper__input" type="text" name="essence" placeholder=" ">
+                            <input class="input-wrapper__input" type="text" name="step3.essence" placeholder=" ">
                             <span class="input-wrapper__text">введите</span>
                         </label>
                         <a class="examples" href="#" target="_blank" rel="noopener noreferrer"><span>&#8250;</span>
@@ -355,7 +355,7 @@
                         <p>Информация в отношении высокопоставленных чиновников, <br />
                             их должности и имена должны быть отражены во вводной части.</p>
                         <div class="text">
-                            <textarea name="description" cols="30" rows="10" placeholder="введите"></textarea>
+                            <textarea name="step3.description" cols="30" rows="10" placeholder="введите"></textarea>
                         </div>
 
 
@@ -385,7 +385,7 @@
                             и т.д.”</p>
 
                         <div class="editor-contaiter">
-                            <div id="editor" data-name="main"></div>
+                            <div id="editor" data-name="step3.main"></div>
                         </div>
 
                         <p class="grey-3">Внимание!</p>
@@ -410,7 +410,7 @@
                     снижения криминализации в стране.</p>
                 <div class="form">
                     <div class="text suggestion">
-                        <textarea name="suggestion" cols="30" rows="10" placeholder="введите"></textarea>
+                        <textarea name="step4.suggestion" cols="30" rows="10" placeholder="введите"></textarea>
                     </div>
                 </div>
             </div>
